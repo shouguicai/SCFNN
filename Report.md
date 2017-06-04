@@ -16,7 +16,7 @@
 
 	最后，取采样协方差矩阵上三角每个元素的实部和虚部，组成 **_D=L*(L+1)_**维的列向量作为前馈神经网络的输入。
 
-###声源位置映射：
+### 声源位置映射：
 >声源定位当作分类问题
 
 将要搜索的Range划分成K个网格，一个声源水平位置对应一个标记向量**t<sub> n</sub>**，每一个向量只有一个元素是1，对应声源位置
@@ -33,7 +33,7 @@
 
 <p align="center"> 图1 声源定位当作分类问题 </p>
 
-###前馈神经网络:
+### 前馈神经网络:
 >网络由输入、输出和一个隐含层构成，分别包含D，M，K个神经元
 
 >神经网络的输出对应了声源水平位置的概率估计
@@ -55,7 +55,7 @@ _**W**_ , **_V_** 是待学习的神经网络系数，**_f_**, **_h_**为非线�
 <img src="./figure/equation/cost_function.png" width = "300"  alt="cost_function" align=center />
 </div>  
 
-##二、仿真和实验结果
+## 二、仿真和实验结果
 >Matlab处理数据+Tensorflow训练神经网络
 
 仿真环境为[SWell96Ex](http://swellex96.ucsd.edu/environment.htm),如下图：
@@ -66,9 +66,9 @@ _**W**_ , **_V_** 是待学习的神经网络系数，**_f_**, **_h_**为非线�
 
 <p align="center"> 图4 仿真环境示意图 </p>
 
-###仿真设置
+### 仿真设置
 用来训练神经网络的声学数据由Kraken生成,仿真中Ns=10，L=21，D=441，M=441，K=300。训练集是1.82-8.65km之间的均匀采样的3000个数据样本，测试集为另外生成的300个数据样本，仿真中噪声设置为高斯白噪声。
-####仿真数据训练和测试的结果
+#### 仿真数据训练和测试的结果
 单频频率为109Hz，多频频率为109,232,385Hz
 <div align="center">   
     <img src="./figure/result/simulation/simulation_rang_prediction@109Hz.png" width = "400"  alt="simulation_range_prediction@109Hz">
@@ -89,7 +89,7 @@ _**W**_ , **_V_** 是待学习的神经网络系数，**_f_**, **_h_**为非线�
 </div>
 <p align="center"> 图7 学习曲线：交叉熵随训练步数的变化(左：单频，右：多频)  </p>
 
-###实验数据训练和测试的结果
+### 实验数据训练和测试的结果
 实验数据取自[SWell96Ex Event S5](http://swellex96.ucsd.edu/s5.htm)，数据处理的时候，取1s为一个快拍（无重叠）,每2个快拍求一次采样协方差矩阵，也即取Ns=2，其余参数同仿真数据训练部分。同样，图8~9中，单频频率为109Hz，多频频率为109,232,385Hz。
 
 <div  align="center">  
@@ -109,7 +109,7 @@ _**W**_ , **_V_** 是待学习的神经网络系数，**_f_**, **_h_**为非线�
 </div>
 <p align="center">图10 模型准确度随训练步数的变化 </p>
 
-##FNN定位的性能以及与传统匹配场处理方法的比较
+## FNN定位的性能以及与传统匹配场处理方法的比较
 <div  align="center">  
     <img src="./figure/result/experimental/FNN on SWellS5 @ 109Hz.png" width = "400"  alt="FNN on SWellS5 @ 109Hz" >
     <img src="./figure/result/experimental/MCE on SWellEx95S5 @ 109Hz(measure data as replica_line_pic_1.png" width = "400"  alt="MCE on SWellEx95S5 @ 109Hz(measure data as replica_line_pic" >
@@ -129,7 +129,7 @@ Note:
 FNN定位的性能以及与传统匹配场处理方法的比较（多频点@109，232，385Hz） </p>
 Note:
 
-###声速剖面失配对定位结果的影响
+### 声速剖面失配对定位结果的影响
 图13，15，16的仿真中，快拍数Ns=10,信噪比SNR=5dB。
 <div  align="center">  
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN.png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN" >
@@ -147,7 +147,7 @@ Note:
 </div>
 <p align="center">图14
 FNN定位的性能曲线（多频点@109，232，385Hz） </p>
-###混合不同ssp下采集数据进行训练的结果
+### 混合不同ssp下采集数据进行训练的结果
 <div  align="center">  
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN.png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN" >
     <img src="./figure/result/experimental/ssp4.png" width = "400"  alt="ssp4" >
@@ -170,4 +170,4 @@ FNN定位的性能曲线（多频点@109，232，385Hz） </p>
 <p align="center">图17
 FNN定位的性能曲线（多频点@109，232，385Hz） </p>
 
-##三、小结
+## 三、小结
