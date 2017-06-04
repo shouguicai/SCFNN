@@ -1,6 +1,6 @@
-#基于有监督机器学习的声源定位
-##一 、基于机器学习的定位方法
-###输入数据预处理：
+# 基于有监督机器学习的声源定位
+## 一 、基于机器学习的定位方法
+### 输入数据预处理：
 >输入采样协方差矩阵
 
 - 声压：<img src="./figure/equation/sound_pressure.png" width = "180"  alt="sound_pressure" align=center />
