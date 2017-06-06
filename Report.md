@@ -147,7 +147,9 @@ Note:
 </div>
 <p align="center">图14
 FNN定位的性能曲线（多频点@109，232，385Hz） </p>
+
 ### 混合不同ssp下采集数据进行训练的结果
+
 <div  align="center">  
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN.png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN" >
     <img src="./figure/result/experimental/ssp4.png" width = "400"  alt="ssp4" >
