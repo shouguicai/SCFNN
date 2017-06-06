@@ -220,7 +220,7 @@
 
 
 ### 声速剖面失配对定位结果的影响
-在匹配场定位方法中，模型精度受失配影响很大。在这里，通过简单的改变声速剖面，给出了FNN在不同程度的声速剖面变化下的定位结果。图10，13，14的仿真中，快拍数Ns=10,信噪比SNR=5dB。
+在匹配场定位方法中，模型精度受失配影响很大。在这里，通过简单的改变声速剖面，给出了FNN在不同程度的声速剖面变化下的定位结果。图10，12，13的仿真中，快拍数Ns=10,信噪比SNR=5dB。
 
 <div  align="center">  
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN.png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN" >
