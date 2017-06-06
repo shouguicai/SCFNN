@@ -6,8 +6,8 @@
 
 - 声压：<img src="./figure/equation/sound_pressure.png" width = "180"  alt="sound_pressure" align=center />
 
-	其中， ***n** 是噪声，**_S(f)_**是声源信号， 
-    **_g(f,r)_**是格林函数，接收阵有**_L_**个传感器
+	其中， ***n*** 是噪声，***S(f)*** 是声源信号， 
+    ***g(f,r)*** 是格林函数，接收阵有 ***L*** 个传感器
 
 - 归一化：<img src="./figure/equation/norm_pressure.png" width = "130"  alt="norm_pressure" align=center />
     
@@ -15,7 +15,7 @@
 
 - 采样协方差矩阵：<img src="./figure/equation/scm.png" width = "180"  alt="scm" align=center />
 
-	最后，取采样协方差矩阵上三角每个元素的实部和虚部，组成 **_D=L*(L+1)_**维的列向量**x**作为前馈神经网络的输入。
+	最后，取采样协方差矩阵上三角每个元素的实部和虚部，组成 ***D=L*(L+1)***维的列向量**x**作为前馈神经网络的输入。
 
 ### 声源位置映射：
 >声源定位当作分类问题
