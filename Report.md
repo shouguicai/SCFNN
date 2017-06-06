@@ -6,7 +6,7 @@
 
 - 声压：<img src="./figure/equation/sound_pressure.png" width = "180"  alt="sound_pressure" align=center />
 
-	其中，**_n_**是噪声，**_S(f)_**是声源信号， 
+	其中， ***n** 是噪声，**_S(f)_**是声源信号， 
     **_g(f,r)_**是格林函数，接收阵有**_L_**个传感器
 
 - 归一化：<img src="./figure/equation/norm_pressure.png" width = "130"  alt="norm_pressure" align=center />
@@ -187,8 +187,8 @@
 
 
 <div  align="center">  
-    <img src="./figure/result/experimental/four_in_all_@109.png" width = "450"  alt="four_in_all_@109">
-    <img src="./figure/result/experimental/four_in_all_@109,232,385.png" width = "450"  alt="four_in_all_@109,232,385">
+    <img src="./figure/result/experimental/four_in_all_@109.png" width = "400"  alt="four_in_all_@109">
+    <img src="./figure/result/experimental/four_in_all_@109,232,385.png" width = "400"  alt="four_in_all_@109,232,385">
 </div>
 <p align="center">
 图9 FNN定位的性能以及与传统匹配场处理方法的比较
