@@ -16,7 +16,7 @@
 - 采样协方差矩阵：<img src="./figure/equation/scm.png" width = "180"  alt="scm" align=center />
 
 	最后，取采样协方差矩阵上三角每个元素的实部和虚部，组成 
-    **D=L(L+1)** 维的列向量 **x** 作为前馈神经网络的输入。
+    ***D=L(L+1)*** 维的列向量 **x** 作为前馈神经网络的输入。
 
 ### 声源位置映射：
 >声源定位当作分类问题
@@ -84,7 +84,7 @@
 <div  align="center"> 
 <img src="./figure/equation/sigmoid_function.png" width = "400"  alt="sigmoid_function" align=center />
 </div>  
-<p align="center"> 图 3  **_Sigmoid&Softmax_** 函数 </p>
+<p align="center"> 图 3  ***Sigmoid,Softmax*** 函数 </p>
 
 使用FNN对无标签数据进行分类之前，需要先使用有标签数据对网络进行训练，学习出网络的权重系数。在训练的过程中，使用*Kullback-Leibler(KL)*散度度量输出概率分布 **y**(**x**<sub>n</sub>,**w**) 和真实分布 **t**<sub>n</sub> 之间的距离，
 
@@ -117,7 +117,7 @@
 尝试用不同ssp下的采集数据混合训练来提高分类器的泛化能力。
 
 仿真环境是被大家广泛研究的
-[SWell96Ex](http://swellex96.ucsd.edu/environment.htm)试验,该水声试验由美国海洋物理实验室(Marine Physical Lab)等单位在1996年5月10日至18日于圣迭戈市附近海域进行，试验环境是一个216m深的浅海波导环境。试验中水面船船速是2.5m/s，平均相对与垂直阵的摆放深度以及详细的环境参数如图4。
+[SWell96Ex](http://swellex96.ucsd.edu/environment.htm)试验,该水声试验由美国海洋物理实验室(Marine Physical Lab)等单位在1996年5月10日至18日于圣迭戈市附近海域进行，试验环境是一个216m深的浅海波导环境。试验中水面船船速是2.5m/s，垂直阵的摆放深度以及详细的环境参数如图4。
 
 <div  align="center">    
 <img src="./figure/enviroment/environment.png" width = "500"  alt="environment" align=center />
@@ -128,6 +128,7 @@
 
 ### 仿真设置
 用来训练及测试神经网络的声学数据由Kraken生成,仿真中快拍Ns=10，垂直阵阵元数L=21，FNN输入层神经元数D=441，隐含层神经元数M=441，输出层神经元数(分类数目)K=300。训练集是距离垂直阵1.82-8.65km之间的均匀采样的3000个数据样本，测试集为另外生成的300个数据样本，仿真中噪声设置为复高斯白噪声。
+
 #### 仿真数据训练和测试的结果
 单频的时候声源频率为109Hz，组合频率的时候声源频率为109,232,385Hz
 
