@@ -46,6 +46,7 @@
 <img src="./figure/equation/fnn.png" width = "400"  alt="fnn" align=center />
 <img src="./figure/equation/z=f(vx)&y=(wz).png" width = "150"  alt="z=f(vx)&y=(wz)" align=center />
 </div>  
+
 <p align="center"> 图 2 前馈神经网络 </p>
 
 图2给出的是一个三层的网络模型（输入层*L*<sub>1</sub>,隐藏层*L*<sub>2</sub>和输出层*L*<sub>3</sub>），输入层*L*<sub>1</sub>由**D**个输入变量**x**=[x<sub>1</sub>,...,x<sub>D</sub>]组成。
@@ -84,7 +85,8 @@
 <div  align="center"> 
 <img src="./figure/equation/sigmoid_function.png" width = "400"  alt="sigmoid_function" align=center />
 </div>  
-<p align="center"> 图 3  ***Sigmoid,Softmax*** 函数 </p>
+
+<p align="center"> 图 3 Sigmoid&Softmax函数</p>
 
 使用FNN对无标签数据进行分类之前，需要先使用有标签数据对网络进行训练，学习出网络的权重系数。在训练的过程中，使用*Kullback-Leibler(KL)*散度度量输出概率分布 **y**(**x**<sub>n</sub>,**w**) 和真实分布 **t**<sub>n</sub> 之间的距离，
 
@@ -136,6 +138,7 @@
     <img src="./figure/result/simulation/simulation_rang_prediction@109Hz.png" width = "400"  alt="simulation_range_prediction@109Hz">
     <img src="./figure/result/simulation/multi_fre_simulation_rang_prediction.png" width = "400"  alt="multi_fre_simulation_rang_prediction">
 </div>
+
 <p align="center"> 图5 测试集声源Range预测(左：单频，右：组合频率)  </p>
 
                                                 表1： 仿真数据不同信噪比下模型准确度
@@ -151,6 +154,7 @@
     <img src="./figure/result/simulation/simulation_learning_curve_4.png" width = "400"  alt="simulation_learning_curve_4" >
     <img src="./figure/result/simulation/multi_fre_simulation_learning_curve_4.png" width = "400"  alt="multi_fre_simulation_learning_curve_4" >
 </div>
+
 <p align="center"> 图6 学习曲线：交叉熵随训练步数的变化(左：单频，右：多频)  </p>
 
 图6给出了模型训练过程中，交叉熵在训练集和测试集上收敛情况。基本上，对于不同的信噪比和频率情况，FNN都是收敛的；
@@ -164,6 +168,7 @@
 <div  align="center">  
     <img src="./figure/enviroment/maps_s5.gif" width = "400"  alt="maps_s5" >
 </div>
+
 <p align="center">图7 试验示意图</p>
 
 *Note* : *垂直阵的位置并不在水面船的运动轨迹上，因此运动轨迹上的均匀采样并不是水面船到垂直阵Range上的均匀采样*
@@ -178,6 +183,7 @@
     <img src="./figure/result/experimental/FNN on SWellS5 @ 385Hz.png" width = "350"  alt="FNN on SWellS5 @ 385Hz" >
     <img src="./figure/result/experimental/FNN on SWellS5 @109,232,385Hz.png" width = "350"  alt="FNN on SWellS5 @109,232,385Hz" >
 </div>
+
 <p align="center">图8 测试集声源Range预测</p>
 
 ## FNN定位的性能以及与传统匹配场处理方法的比较
@@ -193,6 +199,7 @@
     <img src="./figure/result/experimental/four_in_all_@109.png" width = "400"  alt="four_in_all_@109">
     <img src="./figure/result/experimental/four_in_all_@109,232,385.png" width = "400"  alt="four_in_all_@109,232,385">
 </div>
+
 <p align="center">
 图9 FNN定位的性能以及与传统匹配场处理方法的比较
 （左：单频@109Hz 右：组合频率@109，232，385Hz） </p>
@@ -227,7 +234,9 @@
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN.png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized as training,optimized,i905,i906 as test)FNN" >
     <img src="./figure/result/experimental/ssp3.png" width = "400"  alt="ssp3" >
 </div>
+
 <p align="center">图10 SSP失配对FNN定位结果的影响</p>
+
 图中，Ns=10,SNR=5dB；(a),(d),(g):109,232,385Hz; (b),(e),(h):127,163,280Hz;(c),(f),(I):145,198,335Hz；(a),(b),(c):optimized;(d),(e),(f):i905;(g),(h),(i):i906。
 
 标记为i905的ssp相对于用来训练网络的ssp-optimized只有很微小的变化，同一深度的下的声速差异在0.5m/s以内(160m深度以下除外)；
@@ -242,6 +251,7 @@ i906相对与optimized变化要大很多，从ssp的形状上就可以看出明�
     <img src="./figure/result/experimental/Accuracy to SNR , FNN vs Bartlett & MCE_i906.png" width = "400"  alt="Accuracy to SNR , FNN vs Bartlett & MCE_i906" >
     <img src="./figure/result/experimental/Error to SNR , FNN vs Bartlett & MCE_i906.png" width = "400"  alt="Error to SNR , FNN vs Bartlett & MCE_i906" >
 </div>
+
 <p align="center">图11
 FNN定位的性能曲线（组合频率@109，232，385Hz） </p>
 
@@ -252,7 +262,9 @@ FNN定位的性能曲线（组合频率@109，232，385Hz） </p>
     <img src="./figure/result/experimental/Three-frequency localization on SWellS5(SNR5L10,optimized+i906 as training,combined,i905,i906nas test).png" width = "400"  alt="Three-frequency localization on SWellS5(SNR5L10,optimized+i906 as training,combined,i905,i906nas test)" >
     <img src="./figure/result/experimental/ssp4.png" width = "400"  alt="ssp4" >
 </div>
+
 <p align="center">图12 混合不同ssp(optimized+i906)下仿真数据进行训练的结果</p>
+
 图中，Ns=10,SNR=5dB；(a),(d),(g) :109,232,385Hz; (b),(e),(h):127,163,280Hz;(c),(f),(I):145,198,335Hz;(a),(b),(c) :optimized+i906; (d),(e),(f):i905;(g),(h),(i):i906i*。
 
 图12右中的i906\*是在ssp-i906的基础上，加上了一点高斯噪声，作为仿真中的测试数据。从图12左图可以看出，在混合数据训练下，FNN分类器在i905,i906\*两个差异很大的ssp上都有很好的定位效果。
@@ -261,7 +273,9 @@ FNN定位的性能曲线（组合频率@109，232，385Hz） </p>
     <img src="./figure/result/experimental/combinevssingle_lef.png" width = "400"  alt="combinevssingle_lef" >
     <img src="./figure/result/experimental/combinevssingle_right.png" width = "400"  alt="combinevssingle_right" >
 </div>
+
 <p align="center">图13 混合数据训练和单一数据训练比较</p>
+
 图中，Ns=10,SNR=5dB；Up to down:i905,i906*。
 
 虽然相比于单一数据训练的时候，混合训练FNN在i905上的定位效果稍稍下降，但是在i906\*上效果却得到了提高，这是个有趣的现象，值得深入。
@@ -272,6 +286,7 @@ FNN定位的性能曲线（组合频率@109，232，385Hz） </p>
     <img src="./figure/result/experimental/Accuracy to SNR , Combined vs Single.png" width = "400"  alt="Accuracy to SNR , Combined vs Single" >
     <img src="./figure/result/experimental/Error to SNR , Combined vs Single.png" width = "400"  alt="Error to SNR , Combined vs Single" >
 </div>
+
 <p align="center">图14
 FNN定位的性能曲线（组合频率@109，232，385Hz） </p>
 
