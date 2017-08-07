@@ -1,5 +1,5 @@
 \section{Introduction}
-As the increasing number of manned platforms deploying receiver arrays or  fixed/mobiled nodes in distributed underwater sensor networks,we are facing the scene of underwater big data.Due to the limitation of energy used,it is not realistically to process all the incoming data\cite{Yang2015Issues}.Now,machine learning technology is more and more mature, we should try to introduce some smart into our system,to extract task-relevent information,discover new patterns,construct a useful representation.It is convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
+As the increasing number of manned platforms deploying receiver arrays or  fixed/mobiled nodes in distributed underwater sensor networks,we are facing the scene of underwater big data.Due to the limitation of energy used,it is not realistically to process all the incoming data\cite{Yang2015Issues}.Now,machine learning technology is more and more mature, we could try to introduce some smart into our system,to extract task-relevent information,discover new patterns,construct a useful representation.It is convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
 \section{Machine Learning Based Data Sparse Representation}
 In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.So develop methods to represent the information present in metadata with a sparse format is very meaningful.
@@ -10,7 +10,7 @@ In this section,we discuss an effective scheme using machine learning based meth
 As we known,neural networks models can be viewed as a mathematical function $f$.Taking feedforward neural network(FNN) as an example,they define a mapping ${\rm{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$,which needed to be learned by a rule.Feedforward networks are called networks because they are typically represented by composing together many different functions.We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
 $f(x) = f^{2}(f^{1}(x))$.
 
-FNN extend linear models to represent nolinear transformed format $\phi(x)$ of input $x$.The transform function $\phi$ can be thinked as providing a set of features describing $x$, or as providing a new representation for x.The key problem here is how to choose the mapping $\phi$.
+FNN extend linear models to represent nonlinear transformed format $\phi(x)$ of input $x$.The transform function $\phi$ can be thinked as providing a set of features describing $x$, or as providing a new representation for x.The key problem here is how to choose the mapping $\phi$.
 
 The strategy of machine learning is to learn $\phi$.In a feedforward network,$\phi$ defines a hidden layer $h=\phi(x;w^{(1)})$,then the total model is $y=f(x;\theta,w)=hw^{(2)}$.
 obviously,We need to learn $\phi$ from a broad class of functions,and parameters $w$ mapping $\phi(x)$ to the desired output.
@@ -24,7 +24,7 @@ As maximum likelihood is a consistent estimator, the model is capable of represe
 
 \subsection{Regularization for neural networks}
 
-There are two main kind of regularization strategy for neural networks,one is weight-level regularization,another is neuron-level regularization with activation penalty.
+There are two main kind of regularization strategys for neural networks,one is weight-level regularization,another is neuron-level regularization with activation penalty.
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
 \end{equation}
@@ -39,10 +39,12 @@ When a useful sparse representation of any given data is learned,each datum will
 & s.t.{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\left\| {{W_i}^{(1)}} \right\|_2} \le C{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \forall {\kern 1pt} i = 1, \cdots ,M\\
 \end{split}
 \end{equation}
-Here,we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. $M$ is the number of neurons in hidden layer.
+The sparsity here not only indicates sparse data,but also indicates that the model features sparse. Thus,we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. In the equation, $M$ is the number of neurons in hidden layer.
 
 \section{Simulation and experimental results}
-In this section,we implement a simple FNN with just one hidden layer to train our model,and compare the performance of the classifier with the traditional matching field processing method (Bartlett) in terms of simulation data and experimental data, respectively.In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the generalization of the classifier by training the model using data sampled under different ssp.
+A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
+In this section,we implement a simple FNN with just one hidden layer to learn source range directly from observed acoustic data,
+and compare the performance of the classifier with the traditional matching field processing method (Bartlett) in terms of simulation data and experimental data, respectively.In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the tolerance of the classifier by training the model using data sampled under different ssp.
 
 Simulation environment is the widely studied SWell96Ex test,conducting in a 216m deep shallow waveguide environment.The ship proceeded northward at a speed of 2.5 m/s.
 
@@ -50,7 +52,7 @@ The source ship has two sound source, a deep source (J-15) and a shallow source 
 which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter Settings}
-In simulation part,acoustic data used to train and test the neural network is generated by kraken.Snapshot $N_{s}$ is 10,number of vertical array elements $L$ is 21,input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used),number of neurons in the output layer (number of classes) $K = 300$.We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$.specifically,the cost function now is
+In simulation part,acoustic data used to train and test the neural network is generated by kraken.Snapshot $N_{s}$ is 10,number of vertical array elements $L$ is 21,input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used),number of neurons in the output layer (number of classes) $K = 300$.We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$. Specifically,the cost function now becomes
 \begin{equation}
 \begin{split}
 &\min {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }\\
@@ -77,19 +79,31 @@ Compared to the case of training without sparse constraints, sparse constraint m
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_Test_data_for_different_constraint_exp}
-\includegraphics[width=4cm,height=3cm]{figure/hidden-Average-Density-on-Test-data-for-different-constraint_exp}
-\caption{Accuracy and Average-Density on test data for different-constraint.}
+\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
+\includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
+\caption{Model error and Average-activation-density for different $\lambda $.}
 \end{figure}
+
+
+%\begin{figure}
+%\includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_Test_data_for_different_constraint_exp}
+%\includegraphics[width=4cm,height=3cm]{figure/hidden-Average-Density-on-Test-data-for-different-constraint_exp}
+%\caption{Accuracy and Average-Density on test data for different-constraint.}
+%\end{figure}
+
+%\begin{figure}
+%\includegraphics[width=4cm,height=3cm]{figure/selected_16_features_real_part}
+%\includegraphics[width=4cm,height=3cm]{figure/selected_16_features_imag_part}
+%\caption{Selected 16 features learned by neural network.}
+%\end{figure}
 
 \begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/selected_16_features_real_part}
-\includegraphics[width=4cm,height=3cm]{figure/selected_16_features_imag_part}
-\caption{Selected 16 features learned by neural network.}
+\includegraphics[width=8cm]{figure/sparse_represention_model}
+\caption{The learned sparse representation model.}
 \end{figure}
 
-Apart from being beneficial to feature selection,sparse constraint reduce the activation rate of neurons in the hidden layer without reduce accuracy.As the picture shows,when the coefficient is 3.5e-5, the average activation neuron number is 11,which is greatly reduced,the activation rate is only 0.7{\%}.
-These mean the input 1323-dimension data can be represented by 140 feature vectors, and each data sample can be represented by only 11 feature.
+Apart from being beneficial to feature selection,sparse constraint reduce the activation rate of neurons in the hidden layer without reduce accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is 11,which is greatly reduced,the activation rate is only 0.7{\%}.
+These mean the input 1323-dimension data can be represented by 140 feature vectors, averagely, each data sample can be represented by only 11 feature, as Fig.2 showns.To sum up, by using regularization strategy on neural networks level and weight-level of the FNN, we can get a sparse and low rank model, sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low.
 
 \subsection{Comparison with traditional matching field processing method}
 As a reference,here we use Bartlett Processor to position the source position.There are two kinds of replica-field used in Bartlett Processor,one is calculated from model by kraken(noted as bartlett 2), another is from measurement data(noted as bartlett 1).
@@ -144,8 +158,9 @@ Fig.5 plots the performance curves for FNN, Bartlett, MCE by 1000 times Monte Ca
 order unchanged,but the absolute error of FNN becomes bigger than MCE.
 
 
-\subsection{Co-training using data collected from different ssp}
-The simulation results show that the hybrid ssp data training can significantly improve the generalization ability of the classifier,which means FNN can learn weigths over a set of changing ssp.This is an interesting and useful discovery.
+\subsection{%Co-training using data collected from different ssp
+Increase model tolerance by mixed data training}
+The simulation results show that train the model by data collected from different ssp can significantly improve the tolerance of the classifier,which means FNN can learn weigths over a set of changing ssp.This is an interesting and useful discovery.
 
 %\begin{figure}
 %\includegraphics[width=4cm,height=3cm]{figure/combinevssingle_lef}
@@ -162,11 +177,13 @@ In Fig.6, i906{*} is little changed from i906,for the sake of testing.Although t
 \end{figure}
 
 \section{Conclusions}
-In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.In this paper,we develop a method to learn sparse representation from data based on machine learning.
-Verification on experimental data shows this method can help select feature vectors and extract task-related information contained in the siganl. The pretained sparse repesentation model can help the underwater networks use the least possible amount of resource to store or transfer the data. Compared to the traditional MFP method,the neural network trained model have more ability to resist sound speed profile mismatch and can fine-tune to a feature extractor conveniently.
-
+%In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
+From the veiw of information theory, the objective of signal processing is to exact specific task-relevant information from data.
+How to exact the relevant information from measured data is an important issue.Machine learning may be able to provide ideas for this issue, because of its strong ability to learn and characterize.
+In this paper,we develop a method to learn sparse representation from data based on neural networks.At present, we only discuss the situation of a single linear array, the situation for multi-array will be dicussed in future.
+Verification on SWell96Ex experimental data shows this method can help select feature vectors and extract task-related information contained in the siganl. The pretained sparse repesentation model can help the underwater networks use the least possible amount of resource to store or transfer the data. Compared to the traditional MFP method, the neural network trained model have more ability to resist sound speed profile mismatch and can fine-tune to a feature extractor conveniently.
 
 \begin{acks}
-The work is supported by
+The work is supported by ...
 
 \end{acks}

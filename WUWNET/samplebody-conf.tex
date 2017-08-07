@@ -1,5 +1,5 @@
 \section{Introduction}
-As the increasing number of manned platforms deploying receiver arrays or  fixed/mobiled nodes in distributed underwater sensor networks,we are facing the scene of underwater big data.Due to the limitation of energy used,it is not realistically to process all the incoming data\cite{Yang2015Issues}.Now,machine learning technology is more and more mature, we should try to introduce some smart into our system,to extract task-relevent information,discover new patterns,construct a useful representation.It is convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
+As the increasing number of manned platforms deploying receiver arrays or  fixed/mobiled nodes in distributed underwater sensor networks,we are facing the scene of underwater big data.Due to the limitation of energy used,it is not realistically to process all the incoming data\cite{Yang2015Issues}.Now,machine learning technology is more and more mature, we could try to introduce some smart into our system,to extract task-relevent information,discover new patterns,construct a useful representation.It is convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
 \section{Machine Learning Based Data Sparse Representation}
 In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.So develop methods to represent the information present in metadata with a sparse format is very meaningful.
@@ -24,7 +24,7 @@ As maximum likelihood is a consistent estimator, the model is capable of represe
 
 \subsection{Regularization for neural networks}
 
-There are two main kind of regularization strategy for neural networks,one is weight-level regularization,another is neuron-level regularization with activation penalty.
+There are two main kind of regularization strategys for neural networks,one is weight-level regularization,another is neuron-level regularization with activation penalty.
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
 \end{equation}
@@ -39,12 +39,12 @@ When a useful sparse representation of any given data is learned,each datum will
 & s.t.{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\left\| {{W_i}^{(1)}} \right\|_2} \le C{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \forall {\kern 1pt} i = 1, \cdots ,M\\
 \end{split}
 \end{equation}
-The sparsity here not only indicates sparse data,but also indicates that the model features sparse. Thus,we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. In the equation, $M$ is the number of neurons in hidden layer.
+In practical application, we not only want the representation to be sparse,but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus,we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. In the equation, $M$ is the number of neurons in hidden layer.
 
 \section{Simulation and experimental results}
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
 In this section,we implement a simple FNN with just one hidden layer to learn source range directly from observed acoustic data,
-and compare the performance of the classifier with the traditional matching field processing method (Bartlett) in terms of simulation data and experimental data, respectively.In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the generalization of the classifier by training the model using data sampled under different ssp.
+and compare the performance of the classifier with the traditional matching field processing method (Bartlett) in terms of simulation data and experimental data, respectively.In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the tolerance of the classifier by training the model using data sampled under different ssp.
 
 Simulation environment is the widely studied SWell96Ex test,conducting in a 216m deep shallow waveguide environment.The ship proceeded northward at a speed of 2.5 m/s.
 
@@ -52,7 +52,7 @@ The source ship has two sound source, a deep source (J-15) and a shallow source 
 which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter Settings}
-In simulation part,acoustic data used to train and test the neural network is generated by kraken.Snapshot $N_{s}$ is 10,number of vertical array elements $L$ is 21,input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used),number of neurons in the output layer (number of classes) $K = 300$.We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$. Specifically,the cost function now is
+In simulation part,acoustic data used to train and test the neural network is generated by kraken.Snapshot $N_{s}$ is 10,number of vertical array elements $L$ is 21,input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used),there is an input data preprocessing here, actual input data is the normalized sample covariance matrices(CSDM) of measured pressure at each frequency. The number of neurons in the output layer (number of classes) $K = 300$.We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$. Specifically,the cost function now becomes
 \begin{equation}
 \begin{split}
 &\min {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }\\
@@ -70,12 +70,28 @@ Consistent with the simulation part,we divide the trajectory into 300 grids,25m 
 At the time of training, we took 9/10(2700)of samples as training set and another 1/10(300) as test set.
 
 \subsection{The Effect of Sparse Constraint Training}
-Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure,either all zero, or basic is not zero.In the meantime, the number of feature vectors reduced from 1500 to 140.In addition, it can be seen that the learned weights is related to the frequency,even at the same frequency, the the weight corresponding to real and imaginary parts is also different.
+The regularization degree on model affects the model error and average activation density of FNN's hidden layer. As the coefficient grows, the model error on training set and test set also grows, but slower on test set, which means 
+the regularization helps improving the performance on test data in some sense. The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence. 
+In Fig.2, we use the cross entropy equivalently.
+
+On the other hand, the regularization on neuron-level significantly reduces the average activation density, 
+The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for 
+us to train a sparse representation form data. 
+
+Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure,either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $ 
+for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency,even at the same frequency, the the weight corresponding 
+to real and imaginary parts is also different, there are bright and dark strip distribute along the data dimension.The data dimension is arranged according to the frequency relationship.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5}
 \caption{weights summaries in hidden layer(left:no constraint,right:with constraint).}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
+\includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
+\caption{Model error and Average-activation-density for different $\lambda $.}
 \end{figure}
 
 
