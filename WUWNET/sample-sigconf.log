@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  6 AUG 2017 14:51
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  7 AUG 2017 13:39
 entering extended mode
 **sample-sigconf.tex
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.tex
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(Q:\Academic\ZJU\WUWNET\sig-conf\acmart.cls
+("Q:\Academic\ZJU\Source Localization\WUWNET\acmart.cls"
 Document Class: acmart 2017/06/25 v1.41 Typesetting articles for Association of
  Computing Machinery
 (E:\software\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
@@ -551,7 +551,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 LaTeX Warning: Unused global option(s):
     [sigconf].
 
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.aux
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux"
 
 LaTeX Warning: Label `my-label' multiply defined.
 
@@ -622,8 +622,8 @@ LaTeX Info: Redefining \ref on input line 42.
 LaTeX Info: Redefining \pageref on input line 42.
 LaTeX Info: Redefining \nameref on input line 42.
 
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.out)
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.out)
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.out")
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.out")
 \@outlinefile=\write5
 
 (E:\software\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
@@ -683,8 +683,8 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (E:\software\CTEX\MiKTeX\tex\latex\microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-(Q:\Academic\ZJU\WUWNET\sig-conf\samplebody-conf.tex [1.1{E:/software/CTEX/User
-Data/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex" [1.1{E:/softw
+are/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 ]
 Underfull \vbox (badness 1852) has occurred while \output is active []
@@ -803,15 +803,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--142
 []\OT1/cmr/bx/n/9 Figure 5: |FN-N po-si-tion-ing per-for-mance
  []
 
-[3.3 <Q:/Academic/ZJU/WUWNET/sig-conf/figure/Weights_summaries_in_hidden_laye_s
-well_exp.png (PNG copy)> <Q:/Academic/ZJU/WUWNET/sig-conf/figure/Weights_summar
-ies_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5.png (PNG copy)> <Q:/Academic/ZJU/
-WUWNET/sig-conf/figure/Accuracy_on_Test_data_for_different_constraint_exp.png (
-PNG copy)> <Q:/Academic/ZJU/WUWNET/sig-conf/figure/hidden-Average-Density-on-Te
-st-data-for-different-constraint_exp.png (PNG copy)> <Q:/Academic/ZJU/WUWNET/si
-g-conf/figure/selected_16_features_real_part.png (PNG copy)> <Q:/Academic/ZJU/W
-UWNET/sig-conf/figure/selected_16_features_imag_part.png (PNG copy)> <Q:/Academ
-ic/ZJU/WUWNET/sig-conf/figure/ssp3.png (PNG copy)>]
+[3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hi
+dden_laye_swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
+/figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5.png (PNG co
+py)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_on_Test_data_f
+or_different_constraint_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localizatio
+n/WUWNET/figure/hidden-Average-Density-on-Test-data-for-different-constraint_ex
+p.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/selected_1
+6_features_real_part.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNE
+T/figure/selected_16_features_imag_part.png (PNG copy)> <Q:/Academic/ZJU/Source
+ Localization/WUWNET/figure/ssp3.png (PNG copy)>]
 <figure/Accuracy_to_SNR_Combined_vs_Single.png, id=133, 421.575pt x 316.18124pt
 >
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
@@ -828,19 +829,20 @@ Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
 ut line 162.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-(Q:\Academic\ZJU\WUWNET\sig-conf\comment.cut))
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.bbl) [4.4 <Q:/Academic/ZJU/WUWN
-ET/sig-conf/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png (PNG copy)> <Q:/Acad
-emic/ZJU/WUWNET/sig-conf/figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png (PNG copy)
-> <Q:/Academic/ZJU/WUWNET/sig-conf/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i
-906.png (PNG copy)> <Q:/Academic/ZJU/WUWNET/sig-conf/figure/Error_to_SNR_FNN_vs
-_Bartlett_MCE_i906.png (PNG copy)> <Q:/Academic/ZJU/WUWNET/sig-conf/figure/Accu
-racy_to_SNR_Combined_vs_Single.png (PNG copy)> <Q:/Academic/ZJU/WUWNET/sig-conf
+("Q:\Academic\ZJU\Source Localization\WUWNET\comment.cut"))
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.bbl") [4.4 <Q:/Acad
+emic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.
+png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Error_to_SNR
+_FNN_vs_Bartlett_MCE.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNE
+T/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png (PNG copy)> <Q:/Academic/
+ZJU/Source Localization/WUWNET/figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png
+ (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR
+_Combined_vs_Single.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
 /figure/Error_to_SNR_Combined_vs_Single.png (PNG copy)>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
 
-(Q:\Academic\ZJU\WUWNET\sig-conf\sample-sigconf.aux)
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 
@@ -858,7 +860,7 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  14155 strings out of 495354
- 217600 string characters out of 3183356
+ 217809 string characters out of 3183356
  395689 words of memory out of 3000000
  16784 multiletter control sequences out of 15000+200000
  17346 words of font info for 107 fonts, out of 3000000 for 9000
