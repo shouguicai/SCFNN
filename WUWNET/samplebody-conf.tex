@@ -112,11 +112,12 @@ to real and imaginary parts is also different, there are bright and dark strip d
 \caption{The learned sparse representation model.}
 \end{figure}
 
-Apart from being beneficial to feature selection,sparse constraint reduce the activation rate of neurons in the hidden layer without reduce accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is 11,which is greatly reduced,the activation rate is only 0.7{\%}.
-These mean the input 1323-dimension data can be represented by 140 feature vectors, averagely, each data sample can be represented by only 11 feature, as Fig.2 showns.To sum up, by using regularization strategy on neural networks level and weight-level of the FNN, we can get a sparse and low rank model, sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low.
+Apart from being beneficial to feature selection,sparse constraint can reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is 11,which is greatly reduced,the activation rate is only 0.7{\%}.
+These mean the input 1323-dimension data can be represented by only 140 feature vectors.Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns.The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse representation model is Illustrated in Fig.3. 
+A sparse vector can be formed by filtering the data measured in sensor nodes through the pretrained neuron networks. Decisions, such as target location can be made by further processing.
 
 \subsection{Comparison with traditional matching field processing method}
-As a reference,here we use Bartlett Processor to position the source position.There are two kinds of replica-field used in Bartlett Processor,one is calculated from model by kraken(noted as bartlett 2), another is from measurement data(noted as bartlett 1).
+As a reference,here we use Bartlett Processor to position the source position.There are two kinds of replica-field used in Bartlett Processor,one is calculated from model by kraken(noted as bartlett 2), another is from measurement data(noted as bartlett 1), same as the training data used in FNN.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -147,30 +148,31 @@ Methods       & FNN  & MCE   & Bartlett 1 & Bartlett 2 \\ \midrule
 \end{tabular}
 \end{table}
 
-The accuracy and absolute error of methods under different frequency is summed in table 1 and table 2.As we can see,whether it is single frequency or combination frequency,the accuracy of FNN is always better than Bartlett,and not worse than direct data match(noted as MCE).FNN is helpful in positioning problem.
+The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in single frequency or in combination frequency,the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), whcih is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse representation model is meaningful in positioning problem. 
 
 \subsection{The influences of ssp mismatch on FNN classifier}
-In the MFP, the model accuracy is heavily affected by the mismatch.Fig.5 gives the FNN positioning results in different degrees change of sound speed profile. Here, snapshot is 10, SNR is 5dB.
+In the MFP method, the model accuracy is heavily affected by the mismatch problem. Fig.5 gives the FNN positioning results by simulatuons in different degrees change of sound speed profiles. Here, snapshot is 10 and snr is 5dB.
 \begin{figure}
 \includegraphics[width=6cm,height=5cm]{figure/ssp3}
-\caption{plot of sound speed profile.}
+\caption{plot of sound speed profiles.}
 \end{figure}
-Comparing to optimized-ssp,the i905-ssp has only a very small change,within 0.5m/s at the same depth.The change in i906-ssp is much significant,whic can be seen from the shape in Fig.4.
+Comparing to optimized-ssp,the i905-ssp has only a very small change,within 0.5m/s at the same depth.The change in i906-ssp is much significant,which can be seen from the shape in Fig.4.
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906}
-\caption{FNN positioning performance curve(frequency:109,232,385Hz).}
+\caption{FNN positioning performance curve on simulation data
+(frequency:109,232,385Hz).}
 \end{figure}
 
-Fig.5 plots the performance curves for FNN, Bartlett, MCE by 1000 times Monte Carlo simulations.When the change in ssp is relatively small, FNN positioning best,MCE second and Bartlett worst.When the shape of ssp change,the accuracy
-order unchanged,but the absolute error of FNN becomes bigger than MCE.
+ The performance curves for FNN, Bartlett, MCE is ploted by 1000 times Monte Carlo simulation in Fig.5. When the change in ssp is relatively small(the up two sub figures), FNN positioning best, MCE second and Bartlett worst. 
+ When the shape of ssp change(the down two figures), the accuracy order unchanged, but the absolute error of FNN becomes bigger than MCE.
 
 
 \subsection{%Co-training using data collected from different ssp
 Increase model tolerance by mixed data training}
-The simulation results show that train the model by data collected from different ssp can significantly improve the tolerance of the classifier,which means FNN can learn weigths over a set of changing ssp.This is an interesting and useful discovery.
+The simulation results show that training the model using data collected from different ssp can significantly improve the tolerance of the classifier,which means FNN can learn weigths over a set of changing ssp.This is an interesting and useful discovery.
 
 %\begin{figure}
 %\includegraphics[width=4cm,height=3cm]{figure/combinevssingle_lef}
@@ -178,12 +180,12 @@ The simulation results show that train the model by data collected from differen
 %\caption{Comparison of mixed data training and single data training .}
 %\end{figure}
 
-In Fig.6, i906{*} is little changed from i906,for the sake of testing.Although the accuracy for i905 has a little glissade compared with single data training,the performance for i906 imporved.In general,the trained FNN classifier works well on both two different shape ssp.
+As dicussed in section 3.4, the FNN is also sensitive to ssp mismatch, but still perform better than Bartlett. When the environment ssp has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding some data collected form i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training, the performance for i906 imporved. In general, the trained FNN classifier works well on both two different shape ssp.Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optiminized, then the model is tested on ssp i905, rests is similar.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_Combined_vs_Single}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_Combined_vs_Single}
-\caption{FNN positioning performance curve.}
+\caption{FNN positioning performance curve on simulation data.}
 \end{figure}
 
 \section{Conclusions}
