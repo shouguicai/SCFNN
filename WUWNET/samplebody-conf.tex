@@ -10,7 +10,7 @@ We want to have a method that can achieve the performace as good as optimal solu
 Now, machine learning technology is more and more mature. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
-\section{Machine Learning Based Data Sparsity Representation}
+\section{Machine Learning Based Data Sparse Representation}
 %In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly. 
 
 In this section,we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format.
@@ -40,7 +40,7 @@ There are two main kind of regularization strategies for neural networks, one is
 where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
 the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
-\subsection{Learn useful sparsity representations from data}
+\subsection{Learn useful sparse representations from data}
 In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
@@ -89,7 +89,7 @@ Experimental data gets from SWell96Ex Event S5, we use the receive sound pressur
 Consistent with the simulation part, we divide the trajectory into 300 grids, 25m each. We set 1 second as a snapshot and get 3000 sample-covariance matrix (SCM), the sample-covariance matrix is averaged at every two snapshots.
 At the time of training, we took 9/10(2700)of samples as training set and another 1/10(300) as test set.
 
-\subsection{The Effect of Sparsity Constraint Training}
+\subsection{The Effect of Sparse Constraint Training}
 The regularization degree on model affects the model error and average activation density of FNN's hidden layer. As the coefficient grows, the model error on training set and test set also grows, but slower on test set, which means
 the regularization helps improving the performance on test data in some sense. The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
 In Fig.2, we use the cross entropy equivalently.
@@ -98,7 +98,7 @@ On the other hand, the regularization on neuron-level significantly reduces the 
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
 us to train a sparse representation form data.
 
-Compared to the case of training without sparsity constraints, sparsity constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
+Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
 for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
@@ -107,7 +107,7 @@ to real and imaginary parts is also different, we can see bright and dark strip 
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). Sparsity constraint
+\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
 training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
 \end{figure}
 
@@ -133,11 +133,11 @@ significantly reduces the average activation density without much cost in model 
 
 \begin{figure}
 \includegraphics[width=8cm]{figure/sparse_represention_model}
-\caption{The learned sparsity representation model.The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
+\caption{The learned sparse representation model.The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
 \end{figure}
 
-Apart from being beneficial to feature selection, sparsity constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
-These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparsity representation model is Illustrated in Fig.3.
+Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
+These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse representation model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
 \subsection{Comparison with conventional matched-field processing method}
@@ -172,7 +172,7 @@ Methods       & FNN  & MCE   & Bartlett 1 & Bartlett 2 \\ \midrule
 \end{tabular}
 \end{table}
 
-The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparsity representation model is meaningful in positioning problem.
+The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse representation model is meaningful in positioning problem.
 
 \subsection{The influences of ssp mismatch on FNN classifier}
 In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
@@ -216,8 +216,9 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 \section{Conclusions}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 From the view of information theory, the objective of signal processing is to exact specific task-relevant information from data.
-It is attractive for us to use machine learning based methods, to learn new patterns from data and construct a useful sparsity representation model.
-Results on SWell96Ex experimental data show neural networks can help selecting feature vectors. Then the underwater networks will be able to use the least possible amount of resource to store and transfer the data by using the pre-trained sparsity representation model. At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works. 
+It is attractive for us to use machine learning based methods, to learn new patterns from data and construct a useful sparse representation model.
+Results on SWell96Ex experimental data show neural networks can help selecting feature vectors. 
+Then the underwater networks will be able to use the least possible amount of resource to store and transfer the data by using the pre-trained model. At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works. 
 
 \begin{acks}
 The work is supported by ...
