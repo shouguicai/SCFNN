@@ -191,9 +191,14 @@ Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.
 }
 \end{figure}
 
- The performance curves for FNN, Bartlett, MCE is plotted by 1000 times Monte Carlo simulation in Fig.5. When the change in ssp is relatively small(the up two sub figures), FNN positioning best, MCE second and Bartlett worst.
- When the shape of ssp change(the down two figures), the accuracy order unchanged, but the absolute error of FNN becomes bigger than MCE.
+The performance curves for FNN, Bartlett, MCE is plotted by 1000 times Monte Carlo simulation in Fig.5. When the change in ssp is relatively small(the up two sub figures), FNN positioning best, MCE second and Bartlett worst.
+When the shape of ssp change(the down two figures), the accuracy order unchanged, but the absolute error of FNN becomes bigger than MCE.
 
+\begin{figure}
+\includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_Combined_vs_Single}
+\includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_Combined_vs_Single}
+\caption{FNN positioning performance curve on simulation data. FNN model tolerance can be by significantly improved by mixed data training}
+\end{figure}
 
 \subsection{%Co-training using data collected from different ssp
 Increase model tolerance by mixed data training}
@@ -207,18 +212,12 @@ The simulation results show that training the model using data collected from di
 
 As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but still performs better than Bartlett. When the environment ssp has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding some data collected form i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape ssp. Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optimized, then the model is tested on ssp i905, rests is similar.
 
-\begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_Combined_vs_Single}
-\includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_Combined_vs_Single}
-\caption{FNN positioning performance curve on simulation data. FNN model tolerance can be by significantly improved by mixed data training}
-\end{figure}
-
 \section{Conclusions}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
-From the view of information theory, the objective of signal processing is to exact specific task-relevant information from data.
-It is attractive for us to use machine learning based methods, to learn new patterns from data and construct a useful sparse representation model.
-Results on SWell96Ex experimental data show neural networks can help selecting feature vectors. 
-Then the underwater networks will be able to use the least possible amount of resource to store and transfer the data by using the pre-trained model. At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works. 
+Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from data.
+It is attractive to see machine learning based methods, can learn a set of good features from data and help constructing a useful sparse representation model.
+Results on SWell96Ex experimental data show that the pre-trained model can significantly reduce the amount of resource to store and transfer the data, which is very meaningful in underwater networks. Furthermore, comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by mixed data training.
+At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works. 
 
 \begin{acks}
 The work is supported by ...
