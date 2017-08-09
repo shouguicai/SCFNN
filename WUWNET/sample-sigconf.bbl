@@ -1,74 +1,119 @@
-%%% -*-BibTeX-*-
-%%% Do NOT edit. File created by BibTeX with style
-%%% ACM-Reference-Format-Journals [18-Jan-2012].
+\begin{thebibliography}{10}
 
-\begin{thebibliography}{00}
+\bibitem{roan2009distributed}
+Michael~J Roan and Elizabeth Hoppe.
+\newblock Distributed underwater source location estimation using a multiarray
+  network.
+\newblock In {\em OCEANS 2009-EUROPE}, pages 1--4. IEEE, 2009.
 
-%%% ====================================================================
-%%% NOTE TO THE USER: you can override these defaults by providing
-%%% customized versions of any of these macros before the \bibliography
-%%% command.  Each of them MUST provide its own final punctuation,
-%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
-%%% do not use final punctuation, in order to avoid confusing it with
-%%% the Web address.
-%%%
-%%% To suppress output of a particular field, define its macro to expand
-%%% to an empty string, or better, \unskip, like this:
-%%%
-%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
-%%%
-%%% \def \showDOI #1{\unskip}           % plain TeX syntax
-%%%
-%%% ====================================================================
+\bibitem{erling2007performance}
+Josh~G Erling, Michael~J Roan, and Mark~R Gramann.
+\newblock Performance bounds for multisource parameter estimation using a
+  multiarray network.
+\newblock {\em IEEE Transactions on Signal Processing}, 55(10):4791--4799,
+  2007.
 
-\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
-\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
-\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
-\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
-\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
-\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
-\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
-\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
-\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
-% The following commands are used for tagged output and should be
-% invisible to TeX
-\providecommand\bibfield[2]{#2}
-\providecommand\bibinfo[2]{#2}
-\providecommand\natexlab[1]{#1}
-\providecommand\showeprint[2][]{arXiv:#2}
+\bibitem{tenney1984distributed}
+Robert~R Tenney and John~R Delaney.
+\newblock A distributed aeroacoustic tracking algorithm.
+\newblock In {\em American Control Conference}, number~21, pages 1440--1450,
+  1984.
 
-\bibitem[\protect\citeauthoryear{Goodfellow, Bengio, and Courville}{Goodfellow
-  et~al\mbox{.}}{2016}]%
-        {goodfellow2016deep}
-\bibfield{author}{\bibinfo{person}{Ian Goodfellow}, \bibinfo{person}{Yoshua
-  Bengio}, {and} \bibinfo{person}{Aaron Courville}.}
-  \bibinfo{year}{2016}\natexlab{}.
-\newblock \bibinfo{booktitle}{{\em Deep learning}}.
-\newblock \bibinfo{publisher}{MIT press}.
-\newblock
+\bibitem{bar1995multitarget}
+Yaakov Bar-Shalom and Xiao-Rong Li.
+\newblock {\em Multitarget-multisensor tracking: principles and techniques},
+  volume~19.
+\newblock YBs London, UK:, 1995.
 
+\bibitem{ristic2001influence}
+Branko Ristic, Sanjeev Arulampalam, and Christian Musso.
+\newblock The influence of communication bandwidth on target tracking with
+  angle only measurements from two platforms.
+\newblock {\em Signal Processing}, 81(9):1801--1811, 2001.
 
-\bibitem[\protect\citeauthoryear{Niu, Gerstoft, and Reeves}{Niu
-  et~al\mbox{.}}{2017}]%
-        {niu2017source}
-\bibfield{author}{\bibinfo{person}{Haiqiang Niu}, \bibinfo{person}{Peter
-  Gerstoft}, {and} \bibinfo{person}{Emma Reeves}.}
-  \bibinfo{year}{2017}\natexlab{}.
-\newblock \showarticletitle{Source localization in an ocean waveguide using
-  supervised machine learning}.
-\newblock \bibinfo{journal}{{\em arXiv preprint arXiv:1701.08431\/}}
-  (\bibinfo{year}{2017}).
-\newblock
+\bibitem{kaplan2001bearings}
+Lance~M Kaplan, Peter Molnar, and Qiang Le.
+\newblock Bearings-only target localization for an acoustical unattended ground
+  sensor network.
+\newblock In {\em Proc. SPIE AeroSense}, 2001.
 
+\bibitem{schweppe1968sensor}
+Fe~Schweppe.
+\newblock Sensor-array data processing for multiple-signal sources.
+\newblock {\em IEEE Transactions on Information Theory}, 14(2):294--305, 1968.
 
-\bibitem[\protect\citeauthoryear{Yang}{Yang}{2015}]%
-        {Yang2015Issues}
-\bibfield{author}{\bibinfo{person}{T.~C Yang}.}
-  \bibinfo{year}{2015}\natexlab{}.
-\newblock \showarticletitle{Issues in Underwater Acoustic Signal Processing in
-  the Era of Big Data}.
-\newblock  (\bibinfo{year}{2015}).
-\newblock
+\bibitem{wax1985decentralized}
+Mati Wax and Thomas Kailath.
+\newblock Decentralized processing in sensor arrays.
+\newblock {\em IEEE transactions on acoustics, speech, and signal processing},
+  33(5):1123--1129, 1985.
 
+\bibitem{tolstoy1993matched}
+Alexandra Tolstoy.
+\newblock {\em Matched field processing for underwater acoustics}.
+\newblock World Scientific, 1993.
+
+\bibitem{baggeroer1988matched}
+Arthur~B Baggeroer, WA~Kuperman, and Henrik Schmidt.
+\newblock Matched field processing: Source localization in correlated noise as
+  an optimum parameter estimation problem.
+\newblock {\em The Journal of the Acoustical Society of America},
+  83(2):571--587, 1988.
+
+\bibitem{baggeroer1993overview}
+Arthur~B Baggeroer, William~A Kuperman, and Peter~N Mikhalevsky.
+\newblock An overview of matched field methods in ocean acoustics.
+\newblock {\em IEEE Journal of Oceanic Engineering}, 18(4):401--424, 1993.
+
+\bibitem{nichols2015cross}
+Brendan Nichols and Karim~G Sabra.
+\newblock Cross-coherent vector sensor processing for spatially distributed
+  glider networks.
+\newblock {\em The Journal of the Acoustical Society of America},
+  138(3):EL329--EL335, 2015.
+
+\bibitem{tollefsen2017multiple}
+Dag Tollefsen, Peter Gerstoft, and William~S Hodgkiss.
+\newblock Multiple-array passive acoustic source localization in shallow water.
+\newblock {\em The Journal of the Acoustical Society of America},
+  141(3):1501--1513, 2017.
+
+\bibitem{Yang2015Issues}
+T.~C Yang.
+\newblock Issues in underwater acoustic signal processing in the era of big
+  data.
+\newblock 2015.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep learning}.
+\newblock MIT press, 2016.
+
+\bibitem{niu2017source}
+Haiqiang Niu, Peter Gerstoft, and Emma Reeves.
+\newblock Source localization in an ocean waveguide using supervised machine
+  learning.
+\newblock {\em arXiv preprint arXiv:1701.08431}, 2017.
+
+\bibitem{tolstoy1989sensitivity}
+A~Tolstoy.
+\newblock Sensitivity of matched field processing to sound-speed profile
+  mismatch for vertical arrays in a deep water pacific environment.
+\newblock {\em The Journal of the Acoustical Society of America},
+  85(6):2394--2404, 1989.
+
+\bibitem{feuillade1989environmental}
+C~Feuillade, DR~Del~Balzo, and Mary~M Rowe.
+\newblock Environmental mismatch in shallow-water matched-field processing:
+  Geoacoustic parameter variability.
+\newblock {\em The Journal of the Acoustical Society of America},
+  85(6):2354--2364, 1989.
+
+\bibitem{del1988effects}
+Donald~R Del~Balzo, Christopher Feuillade, and Mary~M Rowe.
+\newblock Effects of water-depth mismatch on matched-field localization in
+  shallow water.
+\newblock {\em The Journal of the Acoustical Society of America},
+  83(6):2180--2185, 1988.
 
 \end{thebibliography}

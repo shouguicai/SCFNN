@@ -1,0 +1,61 @@
+"Source Localization With Distributed Sensor Arrays and Partial Spatial Coherence"
+- Distributed Sensor Arrays
+- an array of arrays
+- Fig.1 
+- narrowband and a wideband
+## A standard approach:
+	- bearing estimations at individual arrays
+	- communication to the fusion center
+	- localization at fusion center
+
+	but accuracy will be worse than the optimal solution, 
+	the optimal solution requires high communication bandwidth and high processing complexity.
+
+	[ref] A distributed aeroacoustic tracking algorithm
+		  Multitarget-Multisensor Tracking: Principles and Techniques
+		  Target tracking with bearings-only measurements
+		  The influence of communication bandwidth on target tracking with angle only measurements from two platforms
+		  Bearings-only target localization for an acoustical unattended ground sensor network.
+
+
+"Distributed Underwater Source Location Estimation Using A MultiArray Network"
+- There is increased interest in networking arrays of sensors for source localization
+
+- Some networks that have been studied are:
+ > single arrays
+ > a sparse distribution of sensors
+ > a large array that has been divided into subarrays
+
+ networked with only one arrary(先是这个), mutiarray network（将来会讨论这个）,
+ distributedd network with only single sensors on the arrary
+
+- distributed network of sensor arrays 
+
+"Performance Bounds for Multisource Parameter Estimation Using a Multiarray Network"
+- Networked sensors are increasingly being used to
+perform tasks such as detection, source localization, and tracking
+- networked arrays
+- source observed by a multiarray network
+- Fig.1
+
+the problem of source localization for a single source using distributed sensor arrays was formulated at "Source Localization With Distributed Sensor Arrays and Partial Spatial Coherence" 
+
+"Decentralized Processing in Sensor Arrays"
+- passive sensor array processing
+- a new scheme for decentralized processing in passive sensor arrays based on communicating the sample-covariance matrices of the subarrays 
+- in this method each subarray communicates to the central processor
+its sample-covariance matrix, we go further, our method just communicate a sparse of scm to the fusion center
+- the optimal solution to this problem involves a centralized and coherent
+processing of all the sensor outputs (see Schweppe (1968) and Wax and Kailath (1983a)),  but in the case of large arrays,  this centralized scheme is unattractive
+> accuracy improved, but this method  increase the communication load 
+
+- To alleviate the communication burden:
+ > one may trade off performance for communication load
+ >  data reduction, only a small number of parameters has to be communicated from every subarray. 
+
+ - communication load : triangulation scheme < Decentralized Processing in Sensor Arrays < centralized scheme
+ our fnn method must < Decentralized Processing in Sensor Arrays
+ - shown to provide better accuracy than that offered by the conventional mfp
+
+
+ "Multiple-array passive acoustic source localization in shallow water"

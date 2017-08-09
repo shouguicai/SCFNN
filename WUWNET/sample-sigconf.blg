@@ -1,10 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: sample-sigconf.aux
-The style file: ACM-Reference-Format.bst
-Database file #1: sample-bibliography.bib
-Warning--empty address in goodfellow2016deep
-Warning--no number and no volume in niu2017source
-Warning--page numbers missing in both pages and numpages fields in niu2017source
-Warning--no journal in Yang2015Issues
-Warning--no number and no volume in Yang2015Issues
-Warning--page numbers missing in both pages and numpages fields in Yang2015Issues
-(There were 6 warnings)
+The style file: unsrt.bst
+Database file #1: acmart.bib
+Warning--there's a number but no series in tenney1984distributed
+Warning--empty journal in Yang2015Issues
+(There were 2 warnings)
