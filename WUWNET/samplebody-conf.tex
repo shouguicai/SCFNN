@@ -11,20 +11,20 @@ Now, machine learning technology is more and more mature. As models in machine l
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
 \section{Machine Learning Based Data Sparse Representation}
-In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly. So develop methods to represent the information present in metadata with a sparse format is very meaningful.
+%In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly. 
 
-In this section,we discuss an effective scheme using machine learning based methods.
+In this section,we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format.
 
 \subsection{Neural Networks Models and Function Approximation}
-As we known,neural networks models can be viewed as a mathematical function $f$. Taking feedforward neural network(FNN) as an example, they define a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feedforward networks are called networks because they are typically represented by composing together many different functions.We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
+As we known,neural networks models can be viewed as a mathematical function $f$. Taking feedforward neural network(FNN) as an example, they define a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feedforward networks are called networks because they are typically represented by composing together many different functions. We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
 $f(x) = f^{2}(f^{1}(x))$.
 
-FNN extend linear models to represent nonlinear transformed format $\phi(x)$ of input $x$. The transform function $\phi$ can be thinked as providing a set of features describing $x$, or as providing a new representation for x.The key problem here is how to choose the mapping $\phi$.
+FNN extend linear models to represent nonlinear transformed format $\phi(x)$ of input $x$. The transform function $\phi$ can be thinked as providing a set of features describing $x$, or as providing a new representation for x. The key problem here is how to choose the mapping $\phi$.
 
-The strategy of machine learning is to learn $\phi$.In a feedforward network,$\phi$ defines a hidden layer $h=\phi(x;w^{(1)})$,then the total model is $y=f(x;\theta)=hw^{(2)}$.
-obviously,We need to learn $\phi$ from a broad class of functions,and parameters $w$ mapping $\phi(x)$ to the desired output.
+The strategy of machine learning is to learn $\phi$. In a feedforward network, $\phi$ defines a hidden layer $h=\phi(x;w^{(1)})$, then the total model is $y=f(x;\theta)=hw^{(2)}$.
+Obviously, we need to learn $\phi$ from a broad class of functions, and parameters $w$ mapping $\phi(x)$ to the desired output.
 
-In most cases,our parametric model defines a distribution $p(y|x;\theta)$.Simply, we can use the principle of maximum likelihood to learn parameters in model.
+In most cases, our parametric model defines a distribution $p(y|x;\theta)$. Simply, we can use the principle of maximum likelihood to learn parameters in model.
 \begin{equation}
 J(\theta ) =  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x)
 \end{equation}
@@ -33,15 +33,15 @@ As maximum likelihood is a consistent estimator, the model is capable of represe
 
 \subsection{Regularization for neural networks}
 
-There are two main kind of regularization strategies for neural networks,one is weight-level regularization,another is neuron-level regularization with activation penalty.
+There are two main kind of regularization strategies for neural networks, one is weight-level regularization, another is neuron-level regularization with activation penalty.
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
 \end{equation}
-where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units,$\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
-the norm penalty term.Weight decay term penalize the size of the model parameters,while,the activation penalty term encouraging their activations to be sparse.
+where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
+the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
 \subsection{Learn useful sparse representations from data}
-In practical applications, we not only want the representation to be sparse,but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus,we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
+In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
 &\tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt}  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x){\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {\left\| h \right\|_1}\\
@@ -49,10 +49,10 @@ In practical applications, we not only want the representation to be sparse,but 
 \end{split}
 \end{equation}
 In the equation, $M$ is the number of neurons in hidden layer.
-When a useful sparse representation of any given data is learned,each datum will then be encoded as a sparse code,thus we can use the least possible amount of resource to store or transfer the data.
+When a useful sparse representation of any given data is learned, each datum will then be encoded as a sparse code, thus we can use the least possible amount of resource to store or transfer the data.
 
-Problem here is to learn basis functions $\phi(x)$ that make the given data can be represented sparsely.
-As the neuron networks do, we use a linear model with nonlinear function to fit
+What we need to do here is learning a set of basis functions $\phi(x)$ that make the given data can be represented sparsely.
+As the neuron networks do, we use a linear model with nonlinear function to fit the basis functions.
 \begin{equation}
 h = g(Wx + b)
 \end{equation}
@@ -61,16 +61,15 @@ $b$ is the parameters needed to learned.
 
 \section{Simulation and experimental results}
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
-In this section,we implement a simple FNN with just one hidden layer to learn source range directly from observed acoustic data,
-and compare the performance of the classifier with the traditional matching field processing method (Bartlett) in terms of simulation data and experimental data, respectively.In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the tolerance of the classifier by training the model using data sampled under different ssp.
+In this section, we implement a simple FNN with just one hidden layer to learn source range directly from observed acoustic data,
+and compare the performance of the classifier with the conventional matched-field processing method (Bartlett) in terms of simulation data and experimental data, respectively. In addition, we briefly discuss the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier and improve the tolerance of the classifier by training the model using data sampled under different ssp.
 
-Simulation environment is the widely studied SWell96Ex test,conducting in a 216m deep shallow waveguide environment.The ship proceeded northward at a speed of 2.5 m/s.
+Simulation environment is the widely studied SWell96Ex test, conducting in a 216m deep shallow waveguide environment. The ship proceeded northward at a speed of 2.5 m/s.
 
-The source ship has two sound source, a deep source (J-15) and a shallow source (J-13).In all the simulations, we used the shallow sound source,
-which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
+During the experiment, the source ship has two sound source, a deep source (J-15) and a shallow source (J-13). In all the simulations, we used the shallow sound source, which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter Settings}
-In simulation part,acoustic data used to train and test the neural network is generated by kraken.Snapshot $N_{s}$ is 10,number of vertical array elements $L$ is 21, input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used),there is an input data preprocessing here, actual input data is the normalized sample-covariance matrices of measured pressure at each frequency. The number of neurons in the output layer (number of classes) $K = 300$. We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$. Specifically,the cost function now becomes
+In simulation part, acoustic data used to train and test the neural network is generated by kraken. Snapshot $N_{s}$ is 10, number of vertical array elements $L$ is 21, input layer neurons $D$ of FNN is $L^{2} \times N_{fre}$(number of frequency used), there is an input data preprocessing here, actual input data is the normalized sample-covariance matrices of measured pressure at each frequency. The number of neurons in the output layer (number of classes) $K = 300$. We just give the same amount of dimensions the original data are encoded in to provide enough dimensions to learn over-complete features at first,which means neurons in hidden layer $M = D$. Specifically,the cost function now becomes
 %\begin{equation}
 %\begin{split}
 %&\min {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }\\
@@ -80,14 +79,14 @@ In simulation part,acoustic data used to train and test the neural network is ge
 \begin{equation}
 {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }
 \end{equation}
-where $t_{nk}$ and $y_{nk}$ are predictive and real probability of sample data $x$ belongs to class $k$ separately.Moreover we will choose $C=1$ here.
-For the sake of learning speed ,we use the $ReLU$ activation in hidden layer and use the $softmax$
+where $t_{nk}$ and $y_{nk}$ are predictive and real probability of sample data $x$ belongs to class $k$ separately. Moreover we will choose $C=1$ here.
+For the sake of learning speed, we use the $ReLU$ activation in hidden layer and use the $softmax$
 function in the output layer because this case is a multiple class problem.
-The training set is 3000 samples of uniform sampling between 1.82\--8.65km,test set is another 300 data samples sampling from the same range.The noise in the simulation is set to complex gaussian white noise.
+The training set is 3000 samples of uniform sampling between 1.82\--8.65km, test set is another 300 data samples sampling from the same range. The noise in the simulation is set to complex gaussian white noise.
 
-Experimental data gets from SWell96Ex Event S5,we use the receive sound pressure of vertical line array(VLA) to train our neural network.The array recorded a total of 75 min of data,In order to facilitate processing, we took 0\--50min data as a training set.
+Experimental data gets from SWell96Ex Event S5, we use the receive sound pressure of vertical line array(VLA) to train our neural network. The array recorded a total of 75 min of data. In order to facilitate processing, we took 0\--50min data as a training set.
 
-Consistent with the simulation part,we divide the trajectory into 300 grids,25m each.We set 1 second as a snapshot and get 3000 sample-covariance matrix (SCM),the sample covariance matrix is averaged at every two snapshots.
+Consistent with the simulation part, we divide the trajectory into 300 grids, 25m each. We set 1 second as a snapshot and get 3000 sample-covariance matrix (SCM), the sample-covariance matrix is averaged at every two snapshots.
 At the time of training, we took 9/10(2700)of samples as training set and another 1/10(300) as test set.
 
 \subsection{The Effect of Sparse Constraint Training}
@@ -99,9 +98,9 @@ On the other hand, the regularization on neuron-level significantly reduces the 
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
 us to train a sparse representation form data.
 
-Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure,either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
-for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency,even at the same frequency, the the weight corresponding
-to real and imaginary parts is also different, there are bright and dark strip distribute along the data dimension.The data dimension is arranged according to the frequency relationship.
+Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
+for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
+to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
@@ -137,12 +136,12 @@ significantly reduces the average activation density without much cost in model 
 \caption{The learned sparse representation model.The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
 \end{figure}
 
-Apart from being beneficial to feature selection,sparse constraint can reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is 11,which is greatly reduced,the activation rate is only 0.7{\%}.
-These mean the input 1323-dimension data can be represented by only 140 feature vectors.Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns.The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse representation model is Illustrated in Fig.3.
-A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing.
+Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
+These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse representation model is Illustrated in Fig.3.
+A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
-\subsection{Comparison with conventional matching field processing method}
-As a reference,here we use Bartlett Processor to position the source position.There are two kinds of replica-field used in Bartlett Processor,one is calculated from model by kraken(noted as bartlett 2), another is from measurement data(noted as bartlett 1), same as the training data used in FNN.
+\subsection{Comparison with conventional matched-field processing method}
+As a comparison, here we use Bartlett Processor to position the source position. There are two kinds of replica-field used in Bartlett Processor, one is calculated from model by kraken(noted as bartlett 2), another is from measurement data(noted as bartlett 1), same as the training data used in FNN.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
@@ -173,7 +172,7 @@ Methods       & FNN  & MCE   & Bartlett 1 & Bartlett 2 \\ \midrule
 \end{tabular}
 \end{table}
 
-The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband,the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse representation model is meaningful in positioning problem.
+The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse representation model is meaningful in positioning problem.
 
 \subsection{The influences of ssp mismatch on FNN classifier}
 In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
@@ -181,7 +180,7 @@ In the MFP method, the model accuracy is heavily affected by the mismatch proble
 \includegraphics[width=6cm,height=5cm]{figure/ssp3}
 \caption{Plots of sound speed profiles.}
 \end{figure}
-Comparing to optimized-ssp,the i905-ssp has only a very small change,within 0.5m/s at the same depth.The change in i906-ssp is much significant,which can be seen from the shape in Fig.4.
+Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}
@@ -198,7 +197,7 @@ Comparing to optimized-ssp,the i905-ssp has only a very small change,within 0.5m
 
 \subsection{%Co-training using data collected from different ssp
 Increase model tolerance by mixed data training}
-The simulation results show that training the model using data collected from different ssp can significantly improve the tolerance of the classifier,which means FNN can learn weights over a set of changing ssp. This is an attractive discovery.
+The simulation results show that training the model using data collected from different ssp can significantly improve the tolerance of the classifier, which means FNN can learn weights over a set of changing ssp. This is an attractive discovery.
 
 %\begin{figure}
 %\includegraphics[width=4cm,height=3cm]{figure/combinevssingle_lef}
@@ -206,7 +205,7 @@ The simulation results show that training the model using data collected from di
 %\caption{Comparison of mixed data training and single data training .}
 %\end{figure}
 
-As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but still performs better than Bartlett. When the environment ssp has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding some data collected form i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape ssp.Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optimized, then the model is tested on ssp i905, rests is similar.
+As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but still performs better than Bartlett. When the environment ssp has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding some data collected form i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape ssp. Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optimized, then the model is tested on ssp i905, rests is similar.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_Combined_vs_Single}
@@ -218,7 +217,7 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 From the view of information theory, the objective of signal processing is to exact specific task-relevant information from data.
 How to exact the relevant information from measured data is an important issue.Machine learning may be able to provide ideas for this issue, because of its strong ability to learn and characterize.
-In this paper,we develop a method to learn sparse representation from data based on neural networks.At present, we only discuss the situation of a single linear array, the situation for multi-array will be discussed in future.
+In this paper, we develop a method to learn sparse representation from data based on neural networks. At present, we only discuss the situation of a single linear array, the situation for multi-array will be discussed in future.
 Verification on SWell96Ex experimental data shows this method can help select feature vectors and extract task-related information contained in the signal. The pre-trained sparse representation model can help the underwater networks use the least possible amount of resource to store or transfer the data. Compared to the traditional MFP method, the neural network trained model have more ability to resist sound speed profile mismatch and can fine-tune to a feature extractor conveniently.
 
 \begin{acks}
