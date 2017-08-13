@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  9 AUG 2017 22:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  13 AUG 2017 19:34
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -683,7 +683,7 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (E:\software\CTEX\MiKTeX\tex\latex\microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (1.10396pt too wide) in paragraph at lines 129--129
+Overfull \hbox (1.10396pt too wide) in paragraph at lines 132--132
 \OT1/cmr/m/n/9 (-20) Developing meth-od-s to ef-fec-tive-ly clean and re-duce t
 he amoun-
  []
@@ -757,10 +757,6 @@ e 135.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 147.
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 162.
-
 [3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hi
 dden_laye_swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
 /figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5.png (PNG co
@@ -768,10 +764,14 @@ py)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Cross_Entropy_on_SWellE
 x_S5_for_different_lambda.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/
 WUWNET/figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png (PN
 G copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/sparse_represention
-_model.png>] <figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
-File: figure/ssp3.png Graphic file (type png)
+_model.png>]
 
-<use figure/ssp3.png>
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 162.
+
+<figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
+File: figure/ssp3.png Graphic file (type png)
+ <use figure/ssp3.png>
 Package pdftex.def Info: figure/ssp3.png used on input line 180.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
@@ -839,11 +839,11 @@ Underfull \hbox (badness 1072) in paragraph at lines 64--67
  []
 
 ) [5.5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
 
 
 Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
@@ -851,18 +851,18 @@ Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `sample-sigconf.out':
-(rerunfilecheck)             Before: 28354EC138E80376FCA3420E16D46275;4951
-(rerunfilecheck)             After:  1150BC5FB2B6E345984810A5D5BCB91F;3559.
+(rerunfilecheck)             Before: 553631A646A37F41ABACAA233A1FCCD5;4815
+(rerunfilecheck)             After:  7B682811424D49D224F01BE4A9850336;3474.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14233 strings out of 495354
- 219304 string characters out of 3183356
+ 14235 strings out of 495354
+ 219316 string characters out of 3183356
  393689 words of memory out of 3000000
  16815 multiletter control sequences out of 15000+200000
- 18500 words of font info for 122 fonts, out of 3000000 for 9000
+ 18550 words of font info for 123 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,18n,94p,885b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
@@ -885,7 +885,7 @@ c/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
 EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/cm-super/sfrm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 623599 bytes).
+Output written on sample-sigconf.pdf (5 pages, 623369 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)

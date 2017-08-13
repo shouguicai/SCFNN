@@ -40,7 +40,8 @@
 
 
 \begin{document}
-\title{Data Based Sparse Learning for Underwater Sensor Array Networks
+\title{Neural Network Based sensor-array data Sparse coding for source localization
+%Data Based Sparse Learning for Underwater Sensor Array Networks
 %:comparing with traditional matching field processing and a simpl15551621555162155516215551621555162e try of mixed data training
 }
 %Representation
@@ -64,7 +65,7 @@
   \state{China}
   \postcode{43017-6221}
 }
-\email{wxu\@ zju.edu.cn}
+\email{wxu@zju.edu.cn}
 
 % The default list of authors is too long for headers}
 \renewcommand{\shortauthors}{Shougui Cai.}

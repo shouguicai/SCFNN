@@ -2,16 +2,16 @@
 Networked sensor arrays are being increasingly used in underwater source localization\cite{roan2009distributed}.
 No matter the network is consisted of multiples arrays, or distributed
 with only single sensors on the arrays, or just networked with only one array\cite{erling2007performance}, a standard approach is bearing estimations at individual arrays firstly, then communication to the fusion center and get the source location at the center\cite{tenney1984distributed,bar1995multitarget,ristic2001influence,kaplan2001bearings}. However, the accuracy will be worse than optimal solution，while the optimal solution involves a centralized and coherent processing of all sensor outputs\cite{schweppe1968sensor}. But this optimal solution is unattractive, specially in the case of large arrays. Due to the limitation of energy used, it is not realistically to process all the incoming data.
-In order to improve the accuracy, Wax and Thomas proposed a new scheme for decentralized processing based on communicating the sample-covariance matrices of the sub-arrays to the fusion center\cite{wax1985decentralized}. While, accuracy improved, but this method increase the communication load than the standard method. Communication is also a big challenge in underwater networks. Another kind of well studied method for source localization 
-is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently. 
+In order to improve the accuracy, Wax and Thomas proposed a new scheme for decentralized processing based on communicating the sample-covariance matrices of the sub-arrays to the fusion center\cite{wax1985decentralized}. While, accuracy improved, but this method increase the communication load than the standard method. Communication is also a big challenge in underwater networks. Another kind of well studied method for source localization
+is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently.
 
-As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}. 
-We want to have a method that can achieve the performace as good as optimal solution, but does not cost too much communication or energy. 
+As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}.
+We want to have a method that can achieve the performace as good as optimal solution, but does not cost too much communication or energy.
 Now, machine learning technology is more and more mature. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
-\section{Machine Learning Based Data Sparse Representation}
-%In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly. 
+\section{Neural Networks Based Sparse Coding}
+%In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.
 
 In this section,we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format.
 
@@ -40,7 +40,7 @@ There are two main kind of regularization strategies for neural networks, one is
 where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
 the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
-\subsection{Learn useful sparse representations from data}
+\subsection{Learn useful sparse coding model from data}
 In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
@@ -217,7 +217,7 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from measures.
 It is attractive to see machine learning based methods, can learn a set of good features from data and help constructing a useful sparse representation model.
 Results on SWell96Ex experiment show that the pre-trained model can significantly reduce the amount of resource to store and transfer the information to fusion center, which is very meaningful in underwater networks. Furthermore, comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by mixed data training.
-At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works. 
+At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works.
 
 \begin{acks}
 The work is supported by ...
