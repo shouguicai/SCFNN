@@ -1,7 +1,7 @@
 \section{Introduction}
 Networked sensor arrays are being increasingly used in underwater source localization\cite{roan2009distributed}.
 No matter the network is consisted of multiples arrays, or distributed
-with only single sensors on the arrays, or just networked with only one array\cite{erling2007performance}, a standard approach is bearing estimations at individual arrays firstly, then communication to the fusion center and get the source location at the center\cite{tenney1984distributed,bar1995multitarget,ristic2001influence,kaplan2001bearings}. However, the accuracy will be worse than optimal solution，while the optimal solution involves a centralized and coherent processing of all sensor outputs\cite{schweppe1968sensor}. But this optimal solution is unattractive, specially in the case of large arrays. Due to the limitation of energy used, it is not realistically to process all the incoming data.
+with only single sensors on the arrays, or just networked with only one array\cite{erling2007performance}, a standard approach is bearing estimations at individual arrays firstly, then communication to the fusion center and get the source location at the center\cite{tenney1984distributed,bar1995multitarget,ristic2001influence,kaplan2001bearings}. However, the accuracy will be worse than optimal solution, while the optimal solution involves a centralized and coherent processing of all sensor outputs\cite{schweppe1968sensor}. But this optimal solution is unattractive, specially in the case of large arrays. Due to the limitation of energy used, it is not realistically to process all the incoming data.
 In order to improve the accuracy, Wax and Thomas proposed a new scheme for decentralized processing based on communicating the sample-covariance matrices of the sub-arrays to the fusion center\cite{wax1985decentralized}. While, accuracy improved, but this method increase the communication load than the standard method. Communication is also a big challenge in underwater networks. Another kind of well studied method for source localization
 is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently.
 
@@ -10,7 +10,7 @@ We want to have a method that can achieve the performace as good as optimal solu
 Now, machine learning technology is more and more mature. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
-\section{Machine Learning Based Data Sparse Coding}
+\section{Neural Networks Based Sparse Coding}
 %In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.
 
 In this section,we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format.
@@ -40,7 +40,7 @@ There are two main kind of regularization strategies for neural networks, one is
 where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
 the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
-\subsection{Learn useful sparse representations from data}
+\subsection{Learn useful sparse coding model from data}
 In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
@@ -96,7 +96,7 @@ In Fig.2, we use the cross entropy equivalently.
 
 On the other hand, the regularization on neuron-level significantly reduces the average activation density,
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
-us to train a sparse representation form data.
+us to train a sparse representation from data.
 
 Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
 for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
@@ -137,7 +137,7 @@ significantly reduces the average activation density without much cost in model 
 \end{figure}
 
 Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
-These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse representation model is Illustrated in Fig.3.
+These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
 \subsection{Comparison with conventional matched-field processing method}
@@ -172,7 +172,7 @@ Methods       & FNN  & MCE   & Bartlett 1 & Bartlett 2 \\ \midrule
 \end{tabular}
 \end{table}
 
-The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse representation model is meaningful in positioning problem.
+The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether it is in a narrowband or a wideband, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), which is more obvious when it come s to the comparison of absolute mean error. Thus, the study of neuron networks based sparse coding model is meaningful in positioning problem.
 
 \subsection{The influences of ssp mismatch on FNN classifier}
 In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
@@ -215,7 +215,7 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 \section{Conclusions}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from measures.
-It is attractive to see machine learning based methods, can learn a set of good features from data and help constructing a useful sparse representation model.
+It is attractive to see machine learning based methods, can learn a set of good features from data and help constructing a useful sparse coding model.
 Results on SWell96Ex experiment show that the pre-trained model can significantly reduce the amount of resource to store and transfer the information to fusion center, which is very meaningful in underwater networks. Furthermore, comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by mixed data training.
 At present, we only discuss the situation of a single linear array, the situation for multi-arrays will be discussed in further works.
 

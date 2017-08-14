@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  13 AUG 2017 19:34
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 10:16
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -688,12 +688,8 @@ Overfull \hbox (1.10396pt too wide) in paragraph at lines 132--132
 he amoun-
  []
 
-("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex"
-Missing character: There is no ï in font cmr9!
-Missing character: There is no ¼ in font cmr9!
-Missing character: There is no Œ in font cmr9!
- [1.1{E:/software/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}
-}
+("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex" [1.1{E:/softw
+are/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 ]
 
@@ -757,6 +753,10 @@ e 135.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 147.
 
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 162.
+
 [3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hi
 dden_laye_swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
 /figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5.png (PNG co
@@ -764,14 +764,10 @@ py)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Cross_Entropy_on_SWellE
 x_S5_for_different_lambda.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/
 WUWNET/figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png (PN
 G copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/sparse_represention
-_model.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 162.
-
-<figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
+_model.png>] <figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
 File: figure/ssp3.png Graphic file (type png)
- <use figure/ssp3.png>
+
+<use figure/ssp3.png>
 Package pdftex.def Info: figure/ssp3.png used on input line 180.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
@@ -858,11 +854,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14235 strings out of 495354
- 219316 string characters out of 3183356
+ 14239 strings out of 495354
+ 219344 string characters out of 3183356
  393689 words of memory out of 3000000
  16815 multiletter control sequences out of 15000+200000
- 18550 words of font info for 123 fonts, out of 3000000 for 9000
+ 18651 words of font info for 125 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,18n,94p,885b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
@@ -885,7 +881,7 @@ c/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
 EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/cm-super/sfrm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 623369 bytes).
+Output written on sample-sigconf.pdf (5 pages, 622379 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  53 named destinations out of 1000 (max. 500000)
