@@ -6,7 +6,7 @@ In order to improve the accuracy, Wax and Thomas proposed a new scheme for decen
 is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently.
 
 As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}.
-We want to have a method that can achieve the performace as good as optimal solution, but does not cost too much communication or energy.
+We want to have a method that can achieve the performance as good as optimal solution, but does not cost too much communication or energy.
 Now, machine learning technology is more and more mature. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
@@ -104,7 +104,7 @@ to real and imaginary parts is also different, we can see bright and dark strip 
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
 \caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
@@ -137,7 +137,7 @@ significantly reduces the average activation density without much cost in model 
 \end{figure}
 
 Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
-These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Evean more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
+These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Even more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
 \subsection{Comparison with conventional matched-field processing method}

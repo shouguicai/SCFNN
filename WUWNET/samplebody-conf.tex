@@ -98,13 +98,13 @@ On the other hand, the regularization on neuron-level significantly reduces the 
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
 us to train a sparse representation from data.
 
-Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
-for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
+Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=2.1 \times 10^{-5} $
+for example, the number of feature vectors reduced from 1500 to 740, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp_sc_3dot5_e_neg_5}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
 \caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
@@ -136,8 +136,8 @@ significantly reduces the average activation density without much cost in model 
 \caption{The learned sparse representation model.The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
 \end{figure}
 
-Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
-These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Even more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
+Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 2.1e-5, the average activation neuron number is just 16, which is greatly reduced, the activation rate is only 1.1{\%}.
+These mean, in this example, the input 1323-elements SCM  data can be represented by only 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
 \subsection{Comparison with conventional matched-field processing method}
