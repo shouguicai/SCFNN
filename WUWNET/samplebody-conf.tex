@@ -88,6 +88,15 @@ For the sake of learning speed, we use the $ReLU$ activation in hidden layer and
 function in the output layer because this case is a multiple class problem.
 The training set is 3000 samples of uniform sampling between 1.82\--8.65km, test set is another 300 data samples sampling from the same range. The noise in the simulation is set to complex gaussian white noise.
 
+\begin{figure}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
+%\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
+%\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
+\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
+training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
+\end{figure}
+
 Experimental data gets from SWell96Ex Event S5, we use the receive sound pressure of vertical line array(VLA) to train our neural network. The array recorded a total of 75 min of data. In order to facilitate processing, we took 0\--50min data as a training set.
 
 Consistent with the simulation part, we divide the trajectory into 300 grids, 25m each. We set 1 second as a snapshot and get 3000 sample-covariance matrix (SCM), the sample-covariance matrix is averaged at every two snapshots.
@@ -105,15 +114,6 @@ us to train a sparse representation from data.
 Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=2.1 \times 10^{-5} $
 for example, the number of feature vectors reduced from 1500 to 740, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
-
-\begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
-%\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
-%\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
-training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
-\end{figure}
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
@@ -180,11 +180,12 @@ The accuracy and absolute mean error of different methods under different freque
 
 \subsection{The influences of ssp mismatch on FNN classifier}
 In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
+Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
 \begin{figure}
 \includegraphics[width=6cm,height=5cm]{figure/ssp3}
 \caption{Plots of sound speed profiles.}
 \end{figure}
-Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
+
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 20:07
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 20:19
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -704,7 +704,7 @@ File: figure/Weights_summaries_in_hidden_laye_swell_exp.png Graphic file (type
 png)
  <use figure/Weights_summaries_in_hidden_laye_swell_exp.png>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_laye_swell_exp.png 
-used on input line 110.
+used on input line 92.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png, 
@@ -715,7 +715,7 @@ png Graphic file (type png)
 <use figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.p
 ng>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_layer_swell_exp_lam
-bda_2_dot_1e_neg_5.png used on input line 111.
+bda_2_dot_1e_neg_5.png used on input line 93.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png, id=138, 421.575pt
@@ -750,9 +750,6 @@ Package pdftex.def Info: figure/sparse_represention_model.png used on input lin
 e 139.
 (pdftex.def)             Requested size: 227.62204pt x 103.75008pt.
 
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
-
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 151.
@@ -772,7 +769,7 @@ LaTeX Warning: No positions in optional float specifier.
 <figure/ssp3.png, id=150, 421.575pt x 316.18124pt>
 File: figure/ssp3.png Graphic file (type png)
  <use figure/ssp3.png>
-Package pdftex.def Info: figure/ssp3.png used on input line 184.
+Package pdftex.def Info: figure/ssp3.png used on input line 185.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
 <figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=151, 421.575pt x 316.18124p
@@ -780,7 +777,7 @@ t>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png used on
- input line 189.
+ input line 190.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=152, 421.575pt x 316.18124pt>
@@ -788,7 +785,7 @@ File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
 
 <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png used on in
-put line 190.
+put line 191.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=153, 421.575pt x 316.1
@@ -797,7 +794,7 @@ File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type pn
 g)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png us
-ed on input line 191.
+ed on input line 192.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=154, 421.575pt x 316.1812
@@ -805,7 +802,7 @@ ed on input line 191.
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type png)
  <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png used 
-on input line 192.
+on input line 193.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Accuracy_to_SNR_Combined_vs_Single.png, id=155, 421.575pt x 316.18124pt
@@ -813,7 +810,7 @@ on input line 192.
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_Combined_vs_Single.png used on 
-input line 202.
+input line 203.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Error_to_SNR_Combined_vs_Single.png, id=156, 421.575pt x 316.18124pt>
@@ -821,7 +818,7 @@ File: figure/Error_to_SNR_Combined_vs_Single.png Graphic file (type png)
 
 <use figure/Error_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
-ut line 203.
+ut line 204.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
  [4.4 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/ssp3.png (PNG copy)> <
 Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR_FNN_vs_Bartle
@@ -888,7 +885,7 @@ c/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
 EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/cm-super/sfrm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 684157 bytes).
+Output written on sample-sigconf.pdf (5 pages, 684188 bytes).
 PDF statistics:
  282 PDF objects out of 1000 (max. 8388607)
  56 named destinations out of 1000 (max. 500000)
