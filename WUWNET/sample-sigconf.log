@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 14:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 20:07
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -695,68 +695,67 @@ are/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 80.
+(amsmath)                 on input line 84.
 
 [2.2]
-<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=133, 421.575pt x 316
+<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=136, 421.575pt x 316
 .18124pt>
 File: figure/Weights_summaries_in_hidden_laye_swell_exp.png Graphic file (type 
 png)
  <use figure/Weights_summaries_in_hidden_laye_swell_exp.png>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_laye_swell_exp.png 
-used on input line 106.
+used on input line 110.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png, 
-id=134, 421.575pt x 316.18124pt>
+id=137, 421.575pt x 316.18124pt>
 File: figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.
 png Graphic file (type png)
 
 <use figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.p
 ng>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_layer_swell_exp_lam
-bda_2_dot_1e_neg_5.png used on input line 107.
+bda_2_dot_1e_neg_5.png used on input line 111.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png, id=135, 421.575pt
+<figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png, id=138, 421.575pt
  x 316.18124pt>
 File: figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png Graphic file 
 (type png)
 
 <use figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Cross_Entropy_on_SWellEx_S5_for_different_lambd
-a.png used on input line 115.
+a.png used on input line 119.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=136, 
+<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=139, 
 421.575pt x 316.18124pt>
 File: figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png Grap
 hic file (type png)
 
 <use figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Hidden_Average_Density_on_SWellEx_S5_for_differ
-ent_lambda.png used on input line 116.
+ent_lambda.png used on input line 120.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-Underfull \hbox (badness 2547) in paragraph at lines 118--118
+Underfull \hbox (badness 2547) in paragraph at lines 122--122
 []\OT1/cmr/bx/n/9 Figure 2: |Mod-el er-ror and Average-activation-
  []
 
-<figure/sparse_represention_model.png, id=137, 485.56406pt x 221.32687pt>
+<figure/sparse_represention_model.png, id=140, 485.56406pt x 221.32687pt>
 File: figure/sparse_represention_model.png Graphic file (type png)
 
 <use figure/sparse_represention_model.png>
 Package pdftex.def Info: figure/sparse_represention_model.png used on input lin
-e 135.
+e 139.
 (pdftex.def)             Requested size: 227.62204pt x 103.75008pt.
 
+Underfull \vbox (badness 1270) has occurred while \output is active []
+
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 147.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 162.
+               Default added (so using `tbp') on input line 151.
 
 [3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hi
 dden_laye_swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
@@ -765,60 +764,64 @@ PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Cross_Entropy_on_
 SWellEx_S5_for_different_lambda.png (PNG copy)> <Q:/Academic/ZJU/Source Localiz
 ation/WUWNET/figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.p
 ng (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/sparse_repres
-ention_model.png>] <figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
-File: figure/ssp3.png Graphic file (type png)
+ention_model.png>]
 
-<use figure/ssp3.png>
-Package pdftex.def Info: figure/ssp3.png used on input line 180.
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 166.
+
+<figure/ssp3.png, id=150, 421.575pt x 316.18124pt>
+File: figure/ssp3.png Graphic file (type png)
+ <use figure/ssp3.png>
+Package pdftex.def Info: figure/ssp3.png used on input line 184.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=148, 421.575pt x 316.18124p
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=151, 421.575pt x 316.18124p
 t>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png used on
- input line 185.
+ input line 189.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=149, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=152, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
 
 <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png used on in
-put line 186.
+put line 190.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=150, 421.575pt x 316.1
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=153, 421.575pt x 316.1
 8124pt>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type pn
 g)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png us
-ed on input line 187.
+ed on input line 191.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=151, 421.575pt x 316.1812
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=154, 421.575pt x 316.1812
 4pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type png)
  <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png used 
-on input line 188.
+on input line 192.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=152, 421.575pt x 316.18124pt
+<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=155, 421.575pt x 316.18124pt
 >
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_Combined_vs_Single.png used on 
-input line 198.
+input line 202.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_Combined_vs_Single.png, id=153, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_Combined_vs_Single.png, id=156, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_Combined_vs_Single.png Graphic file (type png)
 
 <use figure/Error_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
-ut line 199.
+ut line 203.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
  [4.4 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/ssp3.png (PNG copy)> <
 Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR_FNN_vs_Bartle
@@ -831,6 +834,9 @@ _to_SNR_Combined_vs_Single.png (PNG copy)> <Q:/Academic/ZJU/Source Localization
 /WUWNET/figure/Error_to_SNR_Combined_vs_Single.png (PNG copy)>]
 ("Q:\Academic\ZJU\Source Localization\WUWNET\comment.cut"))
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.bbl"
+Underfull \vbox (badness 1997) has occurred while \output is active []
+
+
 Underfull \hbox (badness 1072) in paragraph at lines 64--67
 []\OT1/cmr/m/n/7 (+20) Arthur B Bag-geroer, William A Ku-per-man, and Pe-ter N
  []
@@ -855,13 +861,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14239 strings out of 495354
- 219374 string characters out of 3183356
- 393689 words of memory out of 3000000
- 16815 multiletter control sequences out of 15000+200000
- 18651 words of font info for 125 fonts, out of 3000000 for 9000
+ 14259 strings out of 495354
+ 219717 string characters out of 3183356
+ 394689 words of memory out of 3000000
+ 16824 multiletter control sequences out of 15000+200000
+ 18981 words of font info for 129 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,18n,94p,885b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,18n,94p,908b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
 re/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/software/CTEX/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><E:/software/CTEX/MiKTeX/fonts/type
@@ -882,9 +888,9 @@ c/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
 EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/cm-super/sfrm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 682081 bytes).
+Output written on sample-sigconf.pdf (5 pages, 684157 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 53 named destinations out of 1000 (max. 500000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 56 named destinations out of 1000 (max. 500000)
  22213 words of extra memory for PDF output out of 24883 (max. 10000000)
 

@@ -84,16 +84,35 @@ T.~C Yang.
   data.
 \newblock 2015.
 
-\bibitem{goodfellow2016deep}
-Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
-\newblock {\em Deep learning}.
-\newblock MIT press, 2016.
+\bibitem{maccato1989neural}
+A~Maccato and RJP de~Figueii-edo.
+\newblock A neural network based framework for classification of oceanic
+  acoustic signals.
+\newblock In {\em OCEANS'89. Proceedings}, volume~4, pages 1118--1123. IEEE,
+  1989.
+
+\bibitem{ghosh1992neural}
+Joydeep Ghosh, Larry Deuser, and Steven~D Beck.
+\newblock A neural network based hybrid system for detection, characterization,
+  and classification of short-duration oceanic signals.
+\newblock {\em IEEE Journal of Oceanic Engineering}, 17(4):351--363, 1992.
+
+\bibitem{steinberg1991neural}
+Ben~Zion Steinberg, Mark~J Beran, Steven~H Chin, and James~H Howard~Jr.
+\newblock A neural network approach to source localization.
+\newblock {\em The Journal of the Acoustical Society of America},
+  90(4):2081--2090, 1991.
 
 \bibitem{niu2017source}
 Haiqiang Niu, Peter Gerstoft, and Emma Reeves.
 \newblock Source localization in an ocean waveguide using supervised machine
   learning.
 \newblock {\em arXiv preprint arXiv:1701.08431}, 2017.
+
+\bibitem{goodfellow2016deep}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep learning}.
+\newblock MIT press, 2016.
 
 \bibitem{tolstoy1989sensitivity}
 A~Tolstoy.

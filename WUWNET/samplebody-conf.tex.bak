@@ -7,13 +7,13 @@ is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,b
 
 As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}.
 We want to have a method that can achieve the performance as good as optimal solution, but does not cost too much communication or energy.
-Now, machine learning technology is more and more mature. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
+Now, machine learning technology is more and more mature and the corresponding embedded devices are easy to deploy. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
 It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
 
 \section{Neural Networks Based Sparse Coding}
 %In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.
 
-In this section,we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format.
+In this section, we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format, and use this 
 
 \subsection{Neural Networks Models and Function Approximation}
 As we known,neural networks models can be viewed as a mathematical function $f$. Taking feedforward neural network(FNN) as an example, they define a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feedforward networks are called networks because they are typically represented by composing together many different functions. We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
@@ -98,8 +98,8 @@ On the other hand, the regularization on neuron-level significantly reduces the 
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
 us to train a sparse representation from data.
 
-Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=3.5 \times 10^{-5} $
-for example, the number of feature vectors reduced from 1500 to 140, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
+Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=2.1 \times 10^{-5} $
+for example, the number of feature vectors reduced from 1500 to 740, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
 \begin{figure}
@@ -136,8 +136,8 @@ significantly reduces the average activation density without much cost in model 
 \caption{The learned sparse representation model.The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
 \end{figure}
 
-Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 3.5e-5, the average activation neuron number is just 11, which is greatly reduced, the activation rate is only 0.7{\%}.
-These mean, in this example, the input 1323-elements SCM  data can be represented by only 140 feature vectors. Even more, averagely, each data sample can be represented by only 11 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
+Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 2.1e-5, the average activation neuron number is just 16, which is greatly reduced, the activation rate is only 1.1{\%}.
+These mean, in this example, the input 1323-elements SCM  data space can be represented by 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained neuron networks. Decisions, such as target location can be made by further processing in fusion data.
 
 \subsection{Comparison with conventional matched-field processing method}

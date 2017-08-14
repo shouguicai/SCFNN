@@ -76,7 +76,7 @@ Sparse Neural Networks Based Source localization for Underwater Networks % Array
 \begin{abstract}
 Developing methods to effectively clean and reduce the amount of data at sensor level is very meaningful for conveniently sharing and transferring information in underwater networks, due to the limitation of bandwidth and power supply. In this paper, we view this issue from the perspective of machine learning
 and get a sparse coding model by training the feedforward neural networks.
-Results on SWellEx96 experiment show that the learned feature space can explain a given 1323-elements sample-covariance matrices with only 11 basis functions, averagely.
+Results on SWellEx96 experiment show that the learned feature space can explain a given 1323-elements sample-covariance matrices with only 16 basis functions, averagely.
 Simulations show that the neural network model has more ability to resist sound speed profile mismatch, comparing with conventional matched-field processing method.
 \end{abstract}
 
@@ -118,7 +118,7 @@ Simulations show that the neural network model has more ability to resist sound 
 % We no longer use \terms command
 %\terms{Theory}
 
-\keywords{Array signal processing,machine learning,sparse representation,source localization}
+\keywords{Array signal processing,machine learning,sparse coding,source localization}
 
 %\acmBadgeR{artifacts_available}
 
