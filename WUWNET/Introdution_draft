@@ -59,3 +59,62 @@ processing of all the sensor outputs (see Schweppe (1968) and Wax and Kailath (1
 
 
  "Multiple-array passive acoustic source localization in shallow water"
+
+# introduction
+ Networked sensor arrays are being increasingly used in underwater source localization\cite{roan2009distributed}.
+No matter the network is consisted of multiples arrays, or distributed
+with only single sensors on the arrays, or just networked with only one array\cite{erling2007performance}, a standard approach is bearing estimations at individual arrays firstly, then communication to the fusion center and get the source location at the center\cite{tenney1984distributed,bar1995multitarget,ristic2001influence,kaplan2001bearings}. However, the accuracy will be worse than optimal solution, while the optimal solution involves a centralized and coherent processing of all sensor outputs\cite{schweppe1968sensor}. But this optimal solution is unattractive, specially in the case of large arrays. Due to the limitation of energy used, it is not realistically to process all the incoming data.
+In order to improve the accuracy, Wax and Thomas proposed a new scheme for decentralized processing based on communicating the sample-covariance matrices of the sub-arrays to the fusion center\cite{wax1985decentralized}. While, accuracy improved, but this method increase the communication load than the standard method. Communication is also a big challenge in underwater networks. Another kind of well studied method for source localization
+is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently.
+
+As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}.
+We want to have a method that can achieve the performance as good as optimal solution, but does not cost too much communication or energy.
+Now, machine learning technology is more and more mature and the corresponding embedded devices are easy to deploy. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
+It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
+
+
+
+ - why machine learning?
+learn from example, do not require a good a priori information,
+learn to perform a required calculation through training,
+mfp is sensitive to mismatch problem, can not be ...
+mfp is a popular method in underwater acoustics, the replica field is generated
+by a realistic physical model, require a pretty good knowledge of environment
+learn features from data, can be used for unknown environments
+
+
+to extract task-relevant information, discover new
+patterns and construct a useful representation. It will be very
+convenient for us to share and transfer information between
+diﬀerent platforms once the data can be reduced to small
+useful fnite sets.
+
+
+ - what Niu did?
+ assume there exist a deterministic relationship between ship range and sample-covriance matrix, the relationship is in general unknown, 
+ may be discovered using machine learning methods,
+
+ demonstrate the potential of machine learning for underwater source localization
+
+ suggest that the problem of sound source location in marine waveguides can be considered as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data
+
+ posed the localization as a supervised learning problem and solved by the feed-forward neural networks
+
+indicate that fnn can achieve a good prediction performace if source localization is solved as a classification problem
+
+ discuss the effect of varying the FNN parameters
+
+ - what i do
+
+ In this paper,we reproduce Niu's work on SWell96 experimental data. Furthermore,we add the sparse constraint to the learning function to help select the feature vectors and compare the performance with the traditional MFP method.An fascinating find is that we can use co-training to improve the ability of models to resist sound speed profile mismatch.
+
+ also a three layer model, same as Niu, use the normalized SCMs as input to the model
+
+
+
+ investigated by simulations
+
+ data is simulated using kraken with ... environment 
+
+ - difference between i and Niu
+there are several difference between my work and Niu's

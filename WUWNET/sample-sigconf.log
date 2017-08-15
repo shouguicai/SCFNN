@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  14 AUG 2017 20:19
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  15 AUG 2017 23:18
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -683,76 +683,91 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (E:\software\CTEX\MiKTeX\tex\latex\microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (1.10396pt too wide) in paragraph at lines 132--132
-\OT1/cmr/m/n/9 (-20) Developing meth-od-s to ef-fec-tive-ly clean and re-duce t
-he amoun-
- []
 
-("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex" [1.1{E:/softw
-are/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 138.
+
+("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex"
+Underfull \vbox (badness 5302) has occurred while \output is active []
+
+ [1.1{E:/software/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}
+}
 
 ]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 84.
+(amsmath)                 on input line 63.
 
-[2.2]
-<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=136, 421.575pt x 316
-.18124pt>
+
+<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=98, 421.575pt x 316.
+18124pt>
 File: figure/Weights_summaries_in_hidden_laye_swell_exp.png Graphic file (type 
 png)
  <use figure/Weights_summaries_in_hidden_laye_swell_exp.png>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_laye_swell_exp.png 
-used on input line 92.
+used on input line 97.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png, 
-id=137, 421.575pt x 316.18124pt>
+id=99, 421.575pt x 316.18124pt>
 File: figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.
 png Graphic file (type png)
 
 <use figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.p
 ng>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_layer_swell_exp_lam
-bda_2_dot_1e_neg_5.png used on input line 93.
+bda_2_dot_1e_neg_5.png used on input line 98.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png, id=138, 421.575pt
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+ [2.2]
+<figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png, id=118, 421.575pt
  x 316.18124pt>
 File: figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png Graphic file 
 (type png)
 
 <use figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Cross_Entropy_on_SWellEx_S5_for_different_lambd
-a.png used on input line 119.
+a.png used on input line 124.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=139, 
+<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=119, 
 421.575pt x 316.18124pt>
 File: figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png Grap
 hic file (type png)
 
 <use figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Hidden_Average_Density_on_SWellEx_S5_for_differ
-ent_lambda.png used on input line 120.
+ent_lambda.png used on input line 125.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-Underfull \hbox (badness 2547) in paragraph at lines 122--122
+Underfull \hbox (badness 2547) in paragraph at lines 127--127
 []\OT1/cmr/bx/n/9 Figure 2: |Mod-el er-ror and Average-activation-
  []
 
-<figure/sparse_represention_model.png, id=140, 485.56406pt x 221.32687pt>
+<figure/sparse_represention_model.png, id=120, 485.56406pt x 221.32687pt>
 File: figure/sparse_represention_model.png Graphic file (type png)
 
 <use figure/sparse_represention_model.png>
 Package pdftex.def Info: figure/sparse_represention_model.png used on input lin
-e 139.
+e 144.
 (pdftex.def)             Requested size: 227.62204pt x 103.75008pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 151.
+               Default added (so using `tbp') on input line 156.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 171.
+
+
+Package Fancyhdr Warning: \headheight is too small (13.0pt): 
+ Make it at least 20.55003pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hi
 dden_laye_swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
@@ -761,64 +776,60 @@ PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Cross_Entropy_on_
 SWellEx_S5_for_different_lambda.png (PNG copy)> <Q:/Academic/ZJU/Source Localiz
 ation/WUWNET/figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.p
 ng (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/sparse_repres
-ention_model.png>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 166.
-
-<figure/ssp3.png, id=150, 421.575pt x 316.18124pt>
+ention_model.png>] <figure/ssp3.png, id=131, 421.575pt x 316.18124pt>
 File: figure/ssp3.png Graphic file (type png)
- <use figure/ssp3.png>
-Package pdftex.def Info: figure/ssp3.png used on input line 185.
+
+<use figure/ssp3.png>
+Package pdftex.def Info: figure/ssp3.png used on input line 190.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=151, 421.575pt x 316.18124p
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=132, 421.575pt x 316.18124p
 t>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png used on
- input line 190.
+ input line 195.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=152, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=133, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
 
 <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png used on in
-put line 191.
+put line 196.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=153, 421.575pt x 316.1
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=134, 421.575pt x 316.1
 8124pt>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type pn
 g)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png us
-ed on input line 192.
+ed on input line 197.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=154, 421.575pt x 316.1812
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=135, 421.575pt x 316.1812
 4pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type png)
  <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png used 
-on input line 193.
+on input line 198.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=155, 421.575pt x 316.18124pt
+<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=136, 421.575pt x 316.18124pt
 >
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_Combined_vs_Single.png used on 
-input line 203.
+input line 208.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_Combined_vs_Single.png, id=156, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_Combined_vs_Single.png, id=137, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_Combined_vs_Single.png Graphic file (type png)
 
 <use figure/Error_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
-ut line 204.
+ut line 209.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
  [4.4 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/ssp3.png (PNG copy)> <
 Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR_FNN_vs_Bartle
@@ -830,20 +841,15 @@ ademic/ZJU/Source Localization/WUWNET/figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i
 _to_SNR_Combined_vs_Single.png (PNG copy)> <Q:/Academic/ZJU/Source Localization
 /WUWNET/figure/Error_to_SNR_Combined_vs_Single.png (PNG copy)>]
 ("Q:\Academic\ZJU\Source Localization\WUWNET\comment.cut"))
-("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.bbl"
-Underfull \vbox (badness 1997) has occurred while \output is active []
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.bbl") [5.5
 
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 147.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 147.
 
-Underfull \hbox (badness 1072) in paragraph at lines 64--67
-[]\OT1/cmr/m/n/7 (+20) Arthur B Bag-geroer, William A Ku-per-man, and Pe-ter N
- []
-
-) [5.5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
- ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 147.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 147.
 
 
 Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
@@ -851,20 +857,20 @@ Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `sample-sigconf.out':
-(rerunfilecheck)             Before: 553631A646A37F41ABACAA233A1FCCD5;4815
-(rerunfilecheck)             After:  7B682811424D49D224F01BE4A9850336;3474.
+(rerunfilecheck)             Before: 21760458BEE8A0ED842612DC6B45867F;4935
+(rerunfilecheck)             After:  0A377AEE64A4F6FABAA97D0A881C3DC8;3549.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14259 strings out of 495354
- 219717 string characters out of 3183356
- 394689 words of memory out of 3000000
- 16824 multiletter control sequences out of 15000+200000
- 18981 words of font info for 129 fonts, out of 3000000 for 9000
+ 14164 strings out of 495354
+ 217856 string characters out of 3183356
+ 395689 words of memory out of 3000000
+ 16777 multiletter control sequences out of 15000+200000
+ 17673 words of font info for 112 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,18n,94p,908b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,19n,94p,896b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
 re/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/software/CTEX/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><E:/software/CTEX/MiKTeX/fonts/type
@@ -885,9 +891,9 @@ c/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm
 EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/cm-super/sfrm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 684188 bytes).
+Output written on sample-sigconf.pdf (5 pages, 673286 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
  22213 words of extra memory for PDF output out of 24883 (max. 10000000)
 

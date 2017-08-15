@@ -41,7 +41,9 @@
 
 \begin{document}
 \title{
-Sparse Neural Networks Based Source localization for Underwater Networks % Array
+Matched-field source localization using sparsely-coded \\machine learning and data-model mixed training
+%Neural Networks Based single-array passive source localization in shallow water
+%Sparse Neural Networks Based Source localization for Underwater Networks % Array
 %Neural Networks Based sensor-array data Sparse coding for Source Localization
 %Data Based Sparse Learning for Underwater Sensor Array Networks
 %:comparing with traditional matching field processing and a simpl15551621555162155516215551621555162e try of mixed data training
@@ -74,10 +76,13 @@ Sparse Neural Networks Based Source localization for Underwater Networks % Array
 
 
 \begin{abstract}
-Developing methods to effectively clean and reduce the amount of data at sensor level is very meaningful for conveniently sharing and transferring information in underwater networks, due to the limitation of bandwidth and power supply. In this paper, we view this issue from the perspective of machine learning
-and get a sparse coding model by training the feedforward neural networks in the application of source localization.
-Results on SWellEx96 experiment show that the learned feature space can averagely explain a given 1323-elements sample-covariance matrices with only 16 basis functions, and is helpful to achieve a good positioning performance with further processing.
-Simulations show that the neural networks model has more ability to resist sound speed profile mismatch, comparing with conventional matched-field processing method.
+%Developing methods to effectively clean and reduce the amount of data at sensor level is very meaningful for conveniently sharing and transferring information in underwater networks, due to the limitation of bandwidth and power supply.
+Matched-field processing performs well only when the ocean environment is accurately modeled, due to its sensitivity to
+the mismatch problem. In this paper, we view the source localization as a machine learning problem and get a localization
+prediction model by training a sparsely-coded feedforward neural network.
+Results on SWellEx96 experiment show that the learned model can achieve a good positioning performance in
+source range estimation and has more ability to resist sound speed profile mismatch when trained by mixed environment model data,
+comparing with conventional matched-field processing method.
 \end{abstract}
 
 %
@@ -118,7 +123,8 @@ Simulations show that the neural networks model has more ability to resist sound
 % We no longer use \terms command
 %\terms{Theory}
 
-\keywords{Array signal processing,machine learning,sparse coding,source localization}
+\keywords{Machine learning,%sparse coding,
+source localization}
 
 %\acmBadgeR{artifacts_available}
 

@@ -1,19 +1,17 @@
 \section{Introduction}
-Networked sensor arrays are being increasingly used in underwater source localization\cite{roan2009distributed}.
-No matter the network is consisted of multiples arrays, or distributed
-with only single sensors on the arrays, or just networked with only one array\cite{erling2007performance}, a standard approach is bearing estimations at individual arrays firstly, then communication to the fusion center and get the source location at the center\cite{tenney1984distributed,bar1995multitarget,ristic2001influence,kaplan2001bearings}. However, the accuracy will be worse than optimal solution, while the optimal solution involves a centralized and coherent processing of all sensor outputs\cite{schweppe1968sensor}. But this optimal solution is unattractive, specially in the case of large arrays. Due to the limitation of energy used, it is not realistically to process all the incoming data.
-In order to improve the accuracy, Wax and Thomas proposed a new scheme for decentralized processing based on communicating the sample-covariance matrices of the sub-arrays to the fusion center\cite{wax1985decentralized}. While, accuracy improved, but this method increase the communication load than the standard method. Communication is also a big challenge in underwater networks. Another kind of well studied method for source localization
-is matched-field processing (MFP)\cite{tolstoy1993matched,baggeroer1988matched,baggeroer1993overview}, but it mostly works for the situation of a single array. Multiple arrays based mfp is an on-going research\cite{nichols2015cross,tollefsen2017multiple}. Meanwhile, MFP method also needs to process all data, coherently or incoherently.
+Matched-field processing is a popular used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments.
+While, machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a priori information.
+A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
+Niu assumes there existing a deterministic relationship between ship range and sample-covriance matrix and approximated this relationship by the feed-forward neural networks(FNN).
+The algorithm performs well on the Noise09 experimental data, which suggests that FNN can achieve a good prediction performace if source localization is solved as a classification problem.
+In Niu's work, the neural networks used is dense and the trained model is also sensitive to the mismatch problem. Dense neural networks can learn a over-complete
+representation of input data but need much storage and computation.
 
-As the increasing number of manned platforms deploying receiver arrays or fixed/mobiled nodes in distributed underwater sensor networks, we are facing the scene of underwater big data\cite{Yang2015Issues}.
-We want to have a method that can achieve the performance as good as optimal solution, but does not cost too much communication or energy.
-Now, machine learning technology is more and more mature and the corresponding embedded devices are easy to deploy. As models in machine learning area usually have strong learning and representation ability, we could try to introduce some smart into our system, to extract task-relevant information, discover new patterns and construct a useful representation.
-It will be very convenient for us to share and transfer information between different platforms once the data can be reduced to small useful finite sets.
+In this paper, based on Niu's work, we find that the sparse neural networks can  explain a given data with quite few basis functions without much performamce loss. and the model tolerance can be significantly improved by using data-model mixed training. Our algorithm was tested on SWell96 experimental and simulated data.
 
-\section{Neural Networks Based Sparse Coding}
-%In Underwater Networks,we will get a lot of data. What we really care about,is not the signal itself,but the information contained in the siganl.Meanwhile,the communication for underwater sensors is costly.
 
-In this section, we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format, and use this 
+\section{Neural Networks Based Source Localization}
+In this section, we discuss an effective scheme using machine learning based methods to represent the information present in measured data with a sparse format. The transferred sparse coding is used for further source localization.
 
 \subsection{Neural Networks Models and Function Approximation}
 As we known,neural networks models can be viewed as a mathematical function $f$. Taking feedforward neural network(FNN) as an example, they define a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feedforward networks are called networks because they are typically represented by composing together many different functions. We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
@@ -40,7 +38,7 @@ There are two main kind of regularization strategies for neural networks, one is
 where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
 the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
-\subsection{Learn useful sparse coding model from data}
+\subsection{Training the neural networks with sparse Constraint}
 In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
@@ -58,6 +56,9 @@ h = g(Wx + b)
 \end{equation}
 where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$ is the measures, $W$ and
 $b$ is the parameters needed to learned.
+
+\subsection{Source localization prediction}
+After the model parameters trained in section 2.3, the position distribution probability can be predicted, the result output is mapped to the source localization.
 
 \section{Simulation and experimental results}
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
@@ -79,10 +80,19 @@ In simulation part, acoustic data used to train and test the neural network is g
 \begin{equation}
 {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }
 \end{equation}
-where $t_{nk}$ and $y_{nk}$ are predictive and real probability of sample data $x$ belongs to class $k$ separately. Moreover we will choose $C=1$ here.
+where $t_{nk}$ and $y_{nk}$ are real and predictive probability of sample data $x$ belongs to class $k$ separately. Moreover we will choose $C=1$ here.
 For the sake of learning speed, we use the $ReLU$ activation in hidden layer and use the $softmax$
 function in the output layer because this case is a multiple class problem.
 The training set is 3000 samples of uniform sampling between 1.82\--8.65km, test set is another 300 data samples sampling from the same range. The noise in the simulation is set to complex gaussian white noise.
+
+\begin{figure}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
+\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
+%\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
+%\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
+\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
+training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
+\end{figure}
 
 Experimental data gets from SWell96Ex Event S5, we use the receive sound pressure of vertical line array(VLA) to train our neural network. The array recorded a total of 75 min of data. In order to facilitate processing, we took 0\--50min data as a training set.
 
@@ -101,15 +111,6 @@ us to train a sparse representation from data.
 Compared to the case of training without sparse constraints, sparse constraint makes the weight coefficient in the hidden layer show the group structure, either all zero, or basic is not zero. Take the case $\lambda=2.1 \times 10^{-5} $
 for example, the number of feature vectors reduced from 1500 to 740, as shown in Fig.1. In addition, it can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the the weight corresponding
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
-
-\begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
-\includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
-%\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
-%\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). sparse constraint
-training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
-\end{figure}
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
@@ -176,11 +177,12 @@ The accuracy and absolute mean error of different methods under different freque
 
 \subsection{The influences of ssp mismatch on FNN classifier}
 In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
+Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
 \begin{figure}
 \includegraphics[width=6cm,height=5cm]{figure/ssp3}
 \caption{Plots of sound speed profiles.}
 \end{figure}
-Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
+
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}
