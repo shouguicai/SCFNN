@@ -69,12 +69,12 @@ where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$
 % \begin{equation}
 % position = \mathop {argmax}\limits_k p({y_k}|x)
 % \end{equation}
-% Source position is 
+% Source position is
 
 \section{Simulation and experimental results}
 In this section, same as Niu's work\cite{niu2017source}, we implement a simple FNN with just one hidden layer to learn source range directly from SWellEx96 acoustic data, and compare the performance of the classifier with the conventional matched-field processing method (Bartlett) in terms of simulation data and experimental data, respectively. In addition, the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier is investigated by simulations. We improve the tolerance of the classifier by training the model using data sampled under different ssp.
 
-Simulation environment is the widely studied SWell96Ex test, conducting in a 216m deep shallow waveguide environment. 
+Simulation environment is the widely studied SWell96Ex test, conducting in a 216m deep shallow waveguide environment.
 During the experiment, the source ship has two sound source, a deep source (J-15) and a shallow source (J-13). In all the simulations, we used the shallow sound source, which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter settings}
@@ -108,9 +108,9 @@ Consistent with the simulation part, we divide the trajectory into 300 grids, 25
 At the time of training, we took 9/10(2700)of samples as training set and another 1/10(300) as test set.
 
 \subsection{The effect of sparse constraint training}
-The regularization degree on model affects the model error and average activation density of FNN's hidden layer. As the coefficient grows, the model error on training set and test set also grows, but slower on test set, which means
-the regularization helps improving the performance on test data in some sense. The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
-In Fig.2, we use the cross entropy equivalently.
+The regularization degree on model affects the model accuracy and average activation density of FNN's hidden layer. As the coefficient grows, the model accuracy on training set and test set also drops, but slower on test set. When the coefficient is too big, the model accuracy on training set becomes much lower than test set, which indicates under-fitting.
+%The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
+%In Fig.2, we use the cross entropy equivalently.
 
 On the other hand, the regularization on neuron-level significantly reduces the average activation density,
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
@@ -121,10 +121,11 @@ for example, the number of feature vectors reduced from 1500 to 740, as shown in
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
 \begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
+\includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_SWellEx_S5_for_different_lambda}
+%\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
 \includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
-\caption{Model error and Average-activation-density for different $\lambda $.  Regularization on neuron-level
-significantly reduces the average activation density without much cost in model error.}
+\caption{Model accuracy and Average-activation-density for different $\lambda $.  Regularization on neuron-level
+significantly reduces the average activation density without much loss in model accuracy.}
 \end{figure}
 
 
@@ -146,7 +147,7 @@ significantly reduces the average activation density without much cost in model 
 \end{figure}
 
 Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 2.1e-5, the average activation neuron number is just 16, which is greatly reduced, the activation rate is only 1.1{\%}.
-These mean, in this example, the input 1323-elements SCM  data space can be represented by 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
+These mean, in this example, the input 1323-elements SCM  data space can be represented by 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 shows. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained sparsely-coded neuron networks. Decisions, such as target location can be made by further processing.
 
 \subsection{Comparison with conventional matched-field processing method}
@@ -225,7 +226,7 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 \section{Conclusions}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 %Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from measures.
-It is attractive to see that neural networks trained with sparse constraint learns a set of features with specific structures and can help construct a sparsely-coded neural network, which reduce the number of features needed to explain a given measured data. Comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by data-model mixed training. It deserves more effort to apply more machine learning models on ocean acoustic source localization. 
+It is attractive to see that neural networks trained with sparse constraint learns a set of features with specific structures and can help construct a sparsely-coded neural network, which reduce the number of features needed to explain a given measured data. Comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by data-model mixed training. It deserves more effort to apply more machine learning models on ocean acoustic source localization.
 
 \begin{acks}
 The work is supported by ...
