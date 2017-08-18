@@ -76,13 +76,13 @@ Matched-field source localization using sparsely-coded \\machine learning and da
 
 
 \begin{abstract}
-%Developing methods to effectively clean and reduce the amount of data at sensor level is very meaningful for conveniently sharing and transferring information in underwater networks, due to the limitation of bandwidth and power supply.
-Source localization is a basic task in ocean acoustics. The popularly used matched-field processing performs well only when the ocean environment is accurately modeled, due to its sensitivity to
-the mismatch problem. In this paper, source localization is view as a machine learning problem and a localization
-prediction model was learned by training a sparsely-coded feed-forward neural network.
-Results on SWellEx96 experiment show that the learned model can achieve a good positioning performance in
-source range estimation and has more ability to resist sound speed profile mismatch when trained by mixed environment model data,
-compared with Bartlett processer. Machine learning based methods have a good potential in underwater source localization.
+Source localization is a basic problem in ocean acoustics. The matched-field processing (MFP) is a popularly used approach to solve this problem and there have been many researches on it. However, MFP is sensitivity to the mismatch problem and performs well only when the ocean environment is accurately known.
+Machine learning learns inference directly from observation and can be
+designed to learn a generic model suitable for different scenarios.
+In this paper, source localization is view as a machine learning problem and a
+prediction model was learned by training a sparsely-coded feed-forward neural network with mixed environment model data. Sparsely-coded network is applied for preventing the model from over-learning.
+Results on SWellEx96 experiment show that the learned model can achieve good positioning performances in source range estimation for varying sound speed profiles.
+Machine learning models are more tolerant and have potential advantages in underwater source localization, compared with conventional MFP method.
 \end{abstract}
 
 %
@@ -123,8 +123,7 @@ compared with Bartlett processer. Machine learning based methods have a good pot
 % We no longer use \terms command
 %\terms{Theory}
 
-\keywords{Machine learning,%sparse coding,
-source localization}
+\keywords{Machine learning, source localization}
 
 %\acmBadgeR{artifacts_available}
 

@@ -1,6 +1,6 @@
 \section{Introduction}
 Matched-field processing is a frequently used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments\cite{baggeroer1993overview}.
-Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a priori information. We can introduce machine learning to underwater acoustics and help
+Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a prior information. We can introduce machine learning to underwater acoustics and help
 improving the performance of conventional methods.
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
 In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix and approximated this relationship by the feed-forward neural networks(FNN).
@@ -9,7 +9,6 @@ In Niu's work, the neural networks used is dense and the trained model is also s
 representation of input data but need much storage and computation.
 
 Based on Niu's work, this paper trains the feed-forward neural networks with sparse constraint and use data-model mixed training to improve the model tolerance. The model was tested on SWell96 experimental and simulated data.
-
 
 \section{Neural Networks Based Source Localization}
 In this section, we discuss how to establish a source localization prediction model using neural networks and how to learn parameters in the model.
@@ -99,8 +98,8 @@ The training set is 3000 samples sampled uniformly between range 1.82\--8.65km, 
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). Sparse constraint
-training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
+\caption{Weights summaries in hidden layer(left: no constraint, right: with constraint). Sparse constraint
+training makes the weight coefficient show the group structure, either all zero, or basic is not zero.}
 \end{figure}
 
 Experimental data was got from SWell96Ex Event S5 vertical line array(VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50min data was took as a training set.
@@ -223,7 +222,7 @@ The simulation results show that training the model using data collected from di
 
 As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but still performs better than Bartlett. When the environment ssp has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding some data collected from i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training case, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape ssp. Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optimized, then the model is tested on ssp i905, rests are similar.
 
-\section{Conclusions}
+\section{Conclusion}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 %Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from measures.
 %It is attractive to see that neural networks model trained with sparse constraint learns a set of features with specific structures and can help construct a sparsely-coded neural network, which reduces the number of features needed to explain a given measured data. Comparing with Bartlett matched-field processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by data-model mixed training. It deserves more effort to apply more machine learning models on ocean acoustic source localization.

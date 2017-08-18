@@ -1,3 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: sample-sigconf.aux
 The style file: unsrt.bst
 Database file #1: acmart.bib
+Repeated entry---line 264 of file acmart.bib
+ : @article{baggeroer1988matched
+ :                              ,
+I'm skipping whatever remains of this entry
+(There was 1 error message)

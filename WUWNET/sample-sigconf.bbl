@@ -1,15 +1,71 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bucker1976use}
+Homer~P Bucker.
+\newblock Use of calculated sound fields and matched-field detection to locate
+  sound sources in shallow water.
+\newblock {\em The Journal of the Acoustical Society of America},
+  59(2):368--373, 1976.
+
+\bibitem{baggeroer1988matched}
+Arthur~B Baggeroer, WA~Kuperman, and Henrik Schmidt.
+\newblock Matched field processing: Source localization in correlated noise as
+  an optimum parameter estimation problem.
+\newblock {\em The Journal of the Acoustical Society of America},
+  83(2):571--587, 1988.
 
 \bibitem{baggeroer1993overview}
 Arthur~B Baggeroer, William~A Kuperman, and Peter~N Mikhalevsky.
 \newblock An overview of matched field methods in ocean acoustics.
 \newblock {\em IEEE Journal of Oceanic Engineering}, 18(4):401--424, 1993.
 
+\bibitem{tolstoy1989sensitivity}
+A~Tolstoy.
+\newblock Sensitivity of matched field processing to sound-speed profile
+  mismatch for vertical arrays in a deep water pacific environment.
+\newblock {\em The Journal of the Acoustical Society of America},
+  85(6):2394--2404, 1989.
+
+\bibitem{del1988effects}
+Donald~R Del~Balzo, Christopher Feuillade, and Mary~M Rowe.
+\newblock Effects of water-depth mismatch on matched-field localization in
+  shallow water.
+\newblock {\em The Journal of the Acoustical Society of America},
+  83(6):2180--2185, 1988.
+
+\bibitem{thode2012automated}
+Aaron~M Thode, Katherine~H Kim, Susanna~B Blackwell, Charles~R Greene~Jr,
+  Christopher~S Nations, Trent~L McDonald, and A~Michael Macrander.
+\newblock Automated detection and localization of bowhead whale sounds in the
+  presence of seismic airgun surveys.
+\newblock {\em The Journal of the Acoustical Society of America},
+  131(5):3726--3747, 2012.
+
+\bibitem{steinberg1991neural}
+Ben~Zion Steinberg, Mark~J Beran, Steven~H Chin, and James~H Howard~Jr.
+\newblock A neural network approach to source localization.
+\newblock {\em The Journal of the Acoustical Society of America},
+  90(4):2081--2090, 1991.
+
+\bibitem{ozard1991artificial}
+John~M Ozard, Pierre Zakarauskas, and Peter Ko.
+\newblock An artificial neural network for range and depth discrimination in
+  matched field processing.
+\newblock {\em The Journal of the Acoustical Society of America},
+  90(5):2658--2663, 1991.
+
 \bibitem{niu2017source}
 Haiqiang Niu, Peter Gerstoft, and Emma Reeves.
 \newblock Source localization in an ocean waveguide using supervised machine
   learning.
 \newblock {\em arXiv preprint arXiv:1701.08431}, 2017.
+
+\bibitem{feuillade1989environmental}
+C~Feuillade, DR~Del~Balzo, and Mary~M Rowe.
+\newblock Environmental mismatch in shallow-water matched-field processing:
+  Geoacoustic parameter variability.
+\newblock {\em The Journal of the Acoustical Society of America},
+  85(6):2354--2364, 1989.
 
 \bibitem{goodfellow2016deep}
 Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
@@ -20,26 +76,5 @@ Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 Christopher~M Bishop.
 \newblock {\em Pattern recognition and machine learning}.
 \newblock springer, 2006.
-
-\bibitem{tolstoy1989sensitivity}
-A~Tolstoy.
-\newblock Sensitivity of matched field processing to sound-speed profile
-  mismatch for vertical arrays in a deep water pacific environment.
-\newblock {\em The Journal of the Acoustical Society of America},
-  85(6):2394--2404, 1989.
-
-\bibitem{feuillade1989environmental}
-C~Feuillade, DR~Del~Balzo, and Mary~M Rowe.
-\newblock Environmental mismatch in shallow-water matched-field processing:
-  Geoacoustic parameter variability.
-\newblock {\em The Journal of the Acoustical Society of America},
-  85(6):2354--2364, 1989.
-
-\bibitem{del1988effects}
-Donald~R Del~Balzo, Christopher Feuillade, and Mary~M Rowe.
-\newblock Effects of water-depth mismatch on matched-field localization in
-  shallow water.
-\newblock {\em The Journal of the Acoustical Society of America},
-  83(6):2180--2185, 1988.
 
 \end{thebibliography}

@@ -1,0 +1,96 @@
+# Abstract
+Source localization is a basic problem in ocean acoustics. The matched-field processing(MFP) is a popularly used approach to solve this prolem and there are many researches on it. However, MFP is sensitivity to the mismatch problem and performs well only when the ocean environment is accurately known. 
+Machine learning learns inference directly from observation and can be 
+designed to learn a generic model suitable for different scenarios.
+In this paper, source localization is view as a machine learning problem and a
+prediction model was learned by training a sparsely-coded feed-forward neural network with mixed environment model data. Sparsely-coded network is applied for preventing the model from over-learning.
+Results on SWellEx96 experiment show that the learned model can achieve a good positioning performance in source range estimation for varying sound speed profiles(ssp).
+Machine learning based models are more tolerant and have potential advantages in underwater source localization, compared with conventional MFP method.
+
+
+# Introduction
+
+
+Matched-field processing is a frequently used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments\cite{baggeroer1993overview}.
+Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a prior information. We can introduce machine learning to underwater acoustics and help
+improving the performance of conventional methods.
+
+A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
+In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix and approximated this relationship by the feed-forward neural networks(FNN).
+The model performs well on the Noise09 experimental data, which suggests that FNN can achieve a good prediction performance if source localization is solved as a classification problem.
+
+In Niu's work, the neural networks used is dense and the trained model is also sensitive to the mismatch problem. While, dense neural networks can learn a over-complete
+representation of input data but need much storage and computation.
+
+Based on Niu's work, this paper trains the feed-forward neural networks with sparse constraint and use data-model mixed training to improve the model tolerance. The model was tested on SWell96 experimental and simulated data.
+
+We can introduce machine learning to underwater acoustics and help
+improving the tolerance of conventional methods.
+
+Bartlett ambiguity surfaces typically are incoherently
+averaged across frequency when performing matched-field
+processing on a broadband source\cite{baggeroer1988matched}
+
+the case under mismatch case, ...
+
+strongly affected by ssp mismatch...
+
+we examine two different degrees of error in the knowledge of the sound-speed profile large errors
+(significant chang in shape)to slight errors(within 0.5m/s at the same depth)
+We consider the effects of such errors on postioning performace
+
+The sound-speed profile in the water layer is the most important parameter needed to be known accurately.\cite{feuillade1989environmental} 
+
+and the MFP performance is strongly affected by ssp mismatch
+
+The model performs well on the Noise09 experimental data, which suggests that FNN can achieve a good prediction performance if source localization is solved as a classification problem.
+
+
+This paper learns a generic model that performs well in different ssp cases.
+
+## new
+Matched-field processing (MFP) is a common technique used for source localization in an acoustic
+wave-guide\cite{bucker1976use,baggeroer1988matched,baggeroer1993overview}. 
+MFP localization matches measured acoustic pressure field data on an arrary of sensors with a replica field computed by a numerical propagation model for an assumed source range and depth. The processor output is maximumat at the true source range and depth. However, MFP requires a pretty good knowledge of environment, significant errors in the environment model can be introduced into the 
+depth and range localization predictions.\cite{tolstoy1989sensitivity,del1988effects}
+
+Machine learning methods can implement a required calculation through learning form examples and do not require a good a prior information. A well designed network can learn a generic model that works in different kinds of scenarios. This is meaningful for underwater acoustics. We could improve the tolerance of conventional methods by introducing machine learning methods.
+
+Machine learning  methods have obtained success in many areas, such as speech recognition, natural language processing and image processing. There are also applications in underwater acoustics. Previous works had use artificial neural networks to classify whale sounds, locate targets area and discriminate depth. 
+A notable recent example of using machine learning methods in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}. It seems there is no discussion on how using machine learning to help solve the mismatch problem in ocean acoustics.
+
+In this paper, the source localization problem is viewed from a machine learning 
+framework. As the ssp in the water layer is the most important parameter needed to be known accurately\cite{feuillade1989environmental}, we primary focus on the ssp
+mismatch problem. 
+Two different degrees of error (a large one and a slight one) in the knowledge of the sound-speed profile were chose to train and test the model.
+The large errors has significant chang in shape, while the slight one just has small shift (within 0.5m/s at the same depth) in sound speed.
+Effects of such errors on postioning performace for various methods, including Bartlett matched-field processing, matched-covariance estimation and feed-forward neural networks based method, are compared.
+Treating different sound speed profiles as different application scenes, a generic model was learned by data-model mixed training. The trained model was tested on 
+varying ssp.
+In Niu's work\cite{niu2017source}, he used a dense neural networks that performs well on Noise09 experimental data, which verified that FNN can achieve a good prediction performance when source localization is solved as a classification problem. However, as the author said, the FNN classifier will be overfitting and gpredictes poorly when the SNR of training data is low. To overcome this problem, 
+a sparsely-coded neural networks was used in this paper. Our models were trained and tested on SWell96 experimental or simulated data.
+
+
+
+
+# 
+
+Based on Niu's work, this paper trains the feed-forward neural networks with sparse constraint and use data-model mixed training to improve the model tolerance. The model was tested on SWell96 experimental and simulated data.
+
+
+In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix and approximated this relationship by the feed-forward neural networks(FNN).
+
+
+# Section 2: theory part
+
+# Section 3.5
+
+# Conclusion
+
+It is attractive to see that the sparsely-code neural networks model predicts accurately on source localization,
+as well as the dense neural networks do, but needs fewer basis functions to span the data space.
+Combined with data-model mixed training, the model tolerance can be obviously increased,
+and performs better in  sound speed profile mismatch case than bartlett matched-field processing method.
+This paper primarily focus on the fine-tune for feed-forward neural networks.
+It deserves more efforts to apply complicated machine learning methods on ocean
+acoustic source localization.
