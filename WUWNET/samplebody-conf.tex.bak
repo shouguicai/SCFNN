@@ -1,8 +1,8 @@
 \section{Introduction}
-Matched-field processing is a popular used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments.
+Matched-field processing is a popular used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments\cite{baggeroer1993overview}.
 While, machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a priori information.
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
-Niu assumes there existing a deterministic relationship between ship range and sample-covriance matrix and approximated this relationship by the feed-forward neural networks(FNN).
+Niu assumed there existing a deterministic relationship between ship range and sample-covriance matrix and approximated this relationship by the feed-forward neural networks(FNN).
 The algorithm performs well on the Noise09 experimental data, which suggests that FNN can achieve a good prediction performace if source localization is solved as a classification problem.
 In Niu's work, the neural networks used is dense and the trained model is also sensitive to the mismatch problem. Dense neural networks can learn a over-complete
 representation of input data but need much storage and computation.
@@ -11,7 +11,7 @@ In this paper, based on Niu's work, we train the feed-forward neural networks wi
 
 
 \section{Neural Networks Based Source Localization}
-In this section, we discuss how to establish a source localization prediction model using neural Networks and how to learn parameters in the model.
+In this section, we discuss how to establish a source localization prediction model using neural networks and how to learn parameters in the model.
 
 \subsection{Neural Networks Models and Function Approximation}
 As we known, neural networks models can be viewed as a mathematical function $f$. Taking feedforward neural network(FNN) as an example, it defines a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feedforward networks are called networks because they are typically represented by composing together many different functions. We might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
@@ -22,7 +22,7 @@ FNN extend linear models to represent nonlinear transformed format $\phi(x)$ of 
 The strategy of machine learning is to learn $\phi$. In a feedforward network, $\phi$ defines a hidden layer $h=\phi(x;w^{(1)})$, then the total model is $y=f(x;\theta)=hw^{(2)}$.
 Obviously, we need to learn $\phi$ from a broad class of functions, and parameters $w$ mapping $\phi(x)$ to the desired output.
 
-In most cases, our parametric model defines a distribution $p(y|x;\theta)$. Simply, we can use the principle of maximum likelihood to learn parameters in model.
+Simply, we can use the principle of maximum likelihood to learn parameters in model. In most cases, our parametric model defines a distribution $p(y|x;\theta)$.
 \begin{equation}
 J(\theta ) =  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x)
 \end{equation}
@@ -30,7 +30,7 @@ where the specific form of $p_{model}$ is defined by networks.
 As maximum likelihood is a consistent estimator, the model is capable of representing the training distribution.
 
 \subsection{Regularization for neural networks}
-
+Regularization can help solve over-fitting problem during the model training, but sometimes may cause under-fitting.
 There are two main kind of regularization strategies for neural networks, one is weight-level regularization, another is neuron-level regularization with activation penalty.
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
@@ -54,7 +54,7 @@ As the neuron networks do, we use a linear model with nonlinear function to fit 
 \begin{equation}
 h = g(W^{(1)}x + b^{(1)})
 \end{equation}
-Activations between hidden layer and output layer are connected by a linear combinations:
+Neurons between hidden layer and output layer are connected by a linear combination:
 \begin{equation}
 z = {W^{(2)T}}h + {b^{(2)}}
 \end{equation}
@@ -62,23 +62,23 @@ The output of the model is normalized by $softmax$ function, which is a common c
 \begin{equation}
 p({y_k}|x) = softmax {(z)_k} = {{\exp ({z_k})} \over {\sum\nolimits_j {\exp ({z_j})} }}
 \end{equation}
-where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$ is the measures, $p({y_k}|x)$ is the probability measured signal $x$ trasmitted from position $k$, $W$ and $b$ is the parameters needed to learned.
+where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$ is the measures, $p({y_k}|x)$ is the probability that measured signal $x$ transmitted from position $k$, $W$ and $b$ is the parameters needed to learned.
 
 % \subsection{Source localization prediction}
 % After the model parameters learned in section 2.3, the position distribution probability $y$ can be predicted for an unlabled data, the position label is mapped to the source localization.
 % \begin{equation}
 % position = \mathop {argmax}\limits_k p({y_k}|x)
 % \end{equation}
-% Source position is 
+% Source position is
 
 \section{Simulation and experimental results}
 In this section, same as Niu's work\cite{niu2017source}, we implement a simple FNN with just one hidden layer to learn source range directly from SWellEx96 acoustic data, and compare the performance of the classifier with the conventional matched-field processing method (Bartlett) in terms of simulation data and experimental data, respectively. In addition, the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier is investigated by simulations. We improve the tolerance of the classifier by training the model using data sampled under different ssp.
 
-Simulation environment is the widely studied SWell96Ex test, conducting in a 216m deep shallow waveguide environment. 
+Simulation environment is the widely studied SWell96Ex test, conducting in a 216m deep shallow waveguide environment.
 During the experiment, the source ship has two sound source, a deep source (J-15) and a shallow source (J-13). In all the simulations, we used the shallow sound source, which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter settings}
-In simulation part, acoustic data used to train and test the neural network is simulated using kraken with environment model.  We also use the normalized sample-covariance matrices of measured pressure at each frequency as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used). The number of neurons in the output layer (number of classes) $K = 300$. Simply, we set the number of neurons in hidden layer equal to the input layer, i.e. $M = D$. Fast	Fourier	transform duration is 1-seconds, Snapshot $N_{s}$ for constructing SCMs is 10. The number of vertical array elements $L$ is 21. Specifically, the cost function now becomes
+In simulation part, acoustic data used to train and test the neural network is simulated using kraken with environment model.  We also use the normalized sample-covariance matrices of measured pressure at each frequency as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used). The number of neurons in the output layer (number of classes) $K = 300$. Simply, we set the number of neurons in hidden layer equal to the input layer, i.e. $M = D$. Fast	Fourier	transform duration is 1-seconds, snapshot $N_{s}$ for constructing SCMs is 10. The number of vertical array elements $L$ is 21. Specifically, the cost function now becomes
 
 %\begin{equation}
 %\begin{split}
@@ -104,13 +104,13 @@ training makes the weight coefficient show the group structure,either all zero,o
 
 Experimental data gets from SWell96Ex Event S5 vertical line array(VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, we took 0\--50min data as a training set.
 
-Consistent with the simulation part, we divide the trajectory into 300 grids, 25m each. We set 1-second as a snapshot and get 3000 sample-covariance matrixs (SCMs), the sample-covariance matrix is averaged at every two snapshots.
+Consistent with the simulation part, we divide the trajectory into 300 grids, 25m each. We set 1-second as a snapshot and get 3000 sample-covariance matrix (SCM), the sample-covariance matrix is averaged at every two snapshots.
 At the time of training, we took 9/10(2700)of samples as training set and another 1/10(300) as test set.
 
 \subsection{The effect of sparse constraint training}
-The regularization degree on model affects the model error and average activation density of FNN's hidden layer. As the coefficient grows, the model error on training set and test set also grows, but slower on test set, which means
-the regularization helps improving the performance on test data in some sense. The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
-In Fig.2, we use the cross entropy equivalently.
+The regularization degree on model affects the model accuracy and average activation density of FNN's hidden layer. As the coefficient grows, the model accuracy on training set and test set also drops, but slower on test set. When the coefficient is too big, the model accuracy on training set becomes much lower than test set, which indicates under-fitting.
+%The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
+%In Fig.2, we use the cross entropy equivalently.
 
 On the other hand, the regularization on neuron-level significantly reduces the average activation density,
 The order of magnitude drops from $10^{3}$ to $10$, and keep it stably. This phenomenon is a good news for
@@ -121,10 +121,11 @@ for example, the number of feature vectors reduced from 1500 to 740, as shown in
 to real and imaginary parts is also different, we can see bright and dark strip distribute along the data dimension in Fig.1. The data dimension is arranged according to the frequency relationship when we plot the weights summaries in Fig.1.
 
 \begin{figure}
-\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
+\includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_SWellEx_S5_for_different_lambda}
+%\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
 \includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
-\caption{Model error and Average-activation-density for different $\lambda $.  Regularization on neuron-level
-significantly reduces the average activation density without much cost in model error.}
+\caption{Model accuracy and Average-activation-density for different $\lambda $.  Regularization on neuron-level
+significantly reduces the average activation density without much loss in model accuracy.}
 \end{figure}
 
 
@@ -146,7 +147,7 @@ significantly reduces the average activation density without much cost in model 
 \end{figure}
 
 Apart from being beneficial to feature selection, sparse constraint can also reduce the activation rate of neurons in the hidden layer, without significant reduction in accuracy. In our example, when the coefficient is 2.1e-5, the average activation neuron number is just 16, which is greatly reduced, the activation rate is only 1.1{\%}.
-These mean, in this example, the input 1323-elements SCM  data space can be represented by 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 showns. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
+These mean, in this example, the input 1323-elements SCM  data space can be represented by 740 feature vectors. Even more, averagely, each data sample can be represented by only 16 feature, as Fig.1 shows. The metadata is being compressed well. To sum up, by using regularization strategy on neural networks, we get a sparse and low rank model, where sparse means the transferred representation is sparse, low rank means the rank of learned weight matrix is low. The learned sparse coding model is Illustrated in Fig.3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained sparsely-coded neuron networks. Decisions, such as target location can be made by further processing.
 
 \subsection{Comparison with conventional matched-field processing method}
@@ -225,7 +226,7 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 \section{Conclusions}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
 %Due to the requirement for energy and computations, it is essential to develop methods to effectively exact specific task-relevant information from measures.
-It is attractive to see that neural networks trained with sparse constraint learns a set of features with specific structures and can help construct a sparsely-coded neural network, which reduce the number of features needed to explain a given measured data. Comparing with conventional matched-feld processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by data-model mixed training. It deserves more effort to apply more machine learning models on ocean acoustic source localization. 
+It is attractive to see that neural networks trained with sparse constraint learns a set of features with specific structures and can help construct a sparsely-coded neural network, which reduce the number of features needed to explain a given measured data. Comparing with Bartlett matched-field processing method, the neural network model performs better in mismatch cases, and it's tolerance can be obviously increased by data-model mixed training. It deserves more effort to apply more machine learning models on ocean acoustic source localization.
 
 \begin{acks}
 The work is supported by ...

@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{baggeroer1993overview}
+Arthur~B Baggeroer, William~A Kuperman, and Peter~N Mikhalevsky.
+\newblock An overview of matched field methods in ocean acoustics.
+\newblock {\em IEEE Journal of Oceanic Engineering}, 18(4):401--424, 1993.
+
 \bibitem{niu2017source}
 Haiqiang Niu, Peter Gerstoft, and Emma Reeves.
 \newblock Source localization in an ocean waveguide using supervised machine
