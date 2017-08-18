@@ -78,8 +78,8 @@ Matched-field source localization using sparsely-coded \\machine learning and da
 \begin{abstract}
 %Developing methods to effectively clean and reduce the amount of data at sensor level is very meaningful for conveniently sharing and transferring information in underwater networks, due to the limitation of bandwidth and power supply.
 Source localization is a basic task in ocean acoustics. The popularly used matched-field processing performs well only when the ocean environment is accurately modeled, due to its sensitivity to
-the mismatch problem. In this paper, we view source localization as a machine learning problem and get a localization
-prediction model by training a sparsely-coded feed-forward neural network.
+the mismatch problem. In this paper, source localization is view as a machine learning problem and a localization
+prediction model was learned by training a sparsely-coded feed-forward neural network.
 Results on SWellEx96 experiment show that the learned model can achieve a good positioning performance in
 source range estimation and has more ability to resist sound speed profile mismatch when trained by mixed environment model data,
 compared with Bartlett processer. Machine learning based methods have a good potential in underwater source localization.

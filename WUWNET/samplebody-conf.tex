@@ -1,6 +1,6 @@
 \section{Introduction}
 Matched-field processing is a frequently used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments\cite{baggeroer1993overview}.
-Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a priori information. We can introduce machine learning to underwater acoustics and help
+Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a prior information. We can introduce machine learning to underwater acoustics and help
 improving the performance of conventional methods.
 A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
 In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix and approximated this relationship by the feed-forward neural networks(FNN).
@@ -99,8 +99,8 @@ The training set is 3000 samples sampled uniformly between range 1.82\--8.65km, 
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left:no constraint,right:with constraint). Sparse constraint
-training makes the weight coefficient show the group structure,either all zero,or basic is not zero.}
+\caption{Weights summaries in hidden layer(left: no constraint, right: with constraint). Sparse constraint
+training makes the weight coefficient show the group structure, either all zero, or basic is not zero.}
 \end{figure}
 
 Experimental data was got from SWell96Ex Event S5 vertical line array(VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50min data was took as a training set.
