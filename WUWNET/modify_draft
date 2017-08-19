@@ -85,12 +85,64 @@ In his paper, Niu assumed there existing a deterministic relationship between sh
 
 # Section 3.5
 
-# Conclusion
+The simulation results show that training the model using
+data collected from different ssp can significantly improve
+the tolerance of the classifier, which means FNN can learn
+weights over a set of changing ssp.
+As discussed in section 3.4, the FNN is also sensitive to
+ssp mismatch, but still performs better than Bartlett. When
+the environment ssp has a big change in the shape(such as
+from ssp-optimized to i906), the performance of the estimator
+drops about 40% in accuracy. In this section, by adding data
+collected from i906-ssp, the positioning ability of FNN on
+i906*(which is little changed from i906,for the sake of testing)
+is as better as before. Although the accuracy for i905 has a
+little glissade compared with single data training case, the
+performance for i906 improved. In general, the trained FNN
+classifier works well on both two different shape ssp. Note
+that, the legend ’i905,combined’ means the model is trained
+by mixed data collected from ssp i906 and ssp optimized,
+then the model is tested on ssp i905, rests are similar.
 
-It is attractive to see that the sparsely-code neural networks model predicts accurately on source localization,
-as well as the dense neural networks do, but needs fewer basis functions to span the data space.
-Combined with data-model mixed training, the model tolerance can be obviously increased,
-and performs better in  sound speed profile mismatch case than bartlett matched-field processing method.
-This paper primarily focus on the fine-tune for feed-forward neural networks.
+
+
+
+
+
+# Conclusion
+It is attractive to see that the sparsely-code neural networks
+model predicts accurately on source localization, as well as
+the dense neural networks do, but needs fewer basis functions
+to span the data space. Combined with data-model mixed
+training, the model tolerance can be obviously increased, and
+performs better in sound speed profile mismatch case than
+Bartlett matched-field processing method. Machine learning
+methods have potential advantages in unstable underwater
+source localization. This paper primarily focus on the fine-
+tune for feed-forward neural networks. It deserves more efforts
+to apply complicated machine learning methods on ocean
+acoustic source localization.
+
+
+
+makes the weight coefficient show the group
+structure,
+
+## new
+
+It is attractive to see that the sparsely-code neural network efficiently prevents the model from over-learning and predicts accurately on source localization.
+Combined with data-model mixed training, the model tolerance is obviously increased, and performs well in sound speed profile mismatch case, whether  
+the degree of error in knowledgelarge is slight or large. 
+This is far superior to the Bartlett matched-field processing method.
+Machine learning methods have potential advantages in unstable underwater
+source localization.
+
+Comparing with dense neural networks, the sparsely-code neural network needs fewer basis functions to span the data space and can make the learned weight coefficient show group structure, which is beneficial to the feature selection.
+These mean the learned sparsely-code neural network model can be used not only to predict source localization, but also to describe acoustic pressure field data. This paper only utilizes the prodictive ability of model, the descriptive ability of model need to be further exploited.
+
+Besides, just two degrees of sound-speed profiles mismatch are used to 
+examine the data-model mixed training method in this paper, more discussion is needed.
+
+For the aspect of machine learning methods, this paper primarily focus on the fine-tune for feed-forward neural networks.
 It deserves more efforts to apply complicated machine learning methods on ocean
 acoustic source localization.

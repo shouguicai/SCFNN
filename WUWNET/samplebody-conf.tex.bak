@@ -1,35 +1,59 @@
 \section{Introduction}
-Matched-field processing is a frequently used method in underwater acoustics and requires a pretty good knowledge of environment, thus it is sensitive to the model mismatch and performs poorly in unstable and complicated ocean environments\cite{baggeroer1993overview}.
-Machine learning based methods can perform a required calculation through learning form examples directly and do not require a good a prior information. We can introduce machine learning to underwater acoustics and help
-improving the performance of conventional methods.
-A notable recent example of using machine learning method in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}.
-In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix and approximated this relationship by the feed-forward neural networks(FNN).
-The model performs well on the Noise09 experimental data, which suggests that FNN can achieve a good prediction performance if source localization is solved as a classification problem.
-In Niu's work, the neural networks used is dense and the trained model is also sensitive to the mismatch problem. While, dense neural networks can learn a over-complete
-representation of input data but need much storage and computation.
+Matched-field processing (MFP) is a common technique for source localization in an acoustic
+wave-guide\cite{bucker1976use,baggeroer1988matched,baggeroer1993overview}. 
+MFP localization matches measured acoustic pressure field data on an arrary of sensors with a replica field computed by a numerical propagation model for an assumed source range and depth. The processor output is maximum at the true source range and depth. However, MFP requires a pretty good knowledge of environment, which means significant errors in the environment model can be introduced into the 
+depth and range localization predictions.\cite{tolstoy1989sensitivity,del1988effects}
 
-Based on Niu's work, this paper trains the feed-forward neural networks with sparse constraint and use data-model mixed training to improve the model tolerance. The model was tested on SWell96 experimental and simulated data.
+Machine learning methods do not require a good a prior information and can implement a required calculation through learning from examples. A well designed structure can learn a generic model that works in different kinds of scenarios. This is meaningful for improving the tolerance of conventional methods by introducing machine learning methods into underwater acoustics.
+Machine learning  methods have obtained success in many areas, such as speech recognition, natural language processing and image processing. There are also applications in underwater acoustics. 
+Previous works had use artificial neural networks to classify whale sounds\cite{thode2012automated}, locate targets\cite{steinberg1991neural} area and discriminate depth\cite{ozard1991artificial}. 
+A notable recent example of using machine learning methods in underwater acoustic is the application of nonlinear classification to source localization\cite{niu2017source}. It seems there is no discussion on how using machine learning to help solve the mismatch problem in ocean acoustics.
 
-\section{Neural Networks Based Source Localization}
-In this section, we discuss how to establish a source localization prediction model using neural networks and how to learn parameters in the model.
+In this paper, the source localization problem is viewed within a machine learning 
+framework. As the sound-speed profiles (ssp) in the water layer is the most important parameter needed to be known accurately\cite{feuillade1989environmental}, we primary focus on the ssp
+mismatch problem. 
+Two different degrees of error (a large one and a slight one) in the knowledge of the sound-speed profile were chose to train and test the model.
+The large errors has significant chang in shape, while the slight one just has small shift (within 0.5m/s at the same depth) in sound speed.
+Effects of such errors on postioning performace for various methods, including Bartlett matched-field processing, matched-covariance estimation(MCE) and feed-forward neural networks based method (FNN), are compared.
+Treating different sound speed profiles as different application scenes, a generic model was learned by data-model mixed training, the trained model was tested on 
+varying ssp.
+In Niu's work\cite{niu2017source}, he used a dense neural networks to train his model, the model performs well on Noise09 experimental data, which verified that FNN can achieve a good prediction performance when source localization is solved as a classification problem. However, as he said, the FNN classifier will be overfitting and predictes poorly when the SNR of training data is low. In order to overcome this problem, 
+a sparsely-coded neural networks was used in this paper. Besides, our models were trained and tested on SWell96 experimental or simulated data.
 
-\subsection{Neural Networks Models and Function Approximation}
-As we known, neural networks models can be viewed as a mathematical function $f$. Taking feed-forward neural network(FNN) as an example, it defines a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which needed to be learned by a rule. Feed-forward networks are called networks because they are typically represented by composing together many different functions. There might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
+\section{Sparse Neural Networks Based Source Localization}
+In this section, we discuss how to establish a sparsely-coded neural networks for
+source localization prediction and how to train it with mixed data-mode.
+
+\subsection{Neural networks models and function approximation}
+As we known, neural networks models can be viewed as a mathematical function $f$. Taking feed-forward neural network(FNN) as an example, it defines a mapping ${{y}}=f(x;\theta )$ between input $x$ and output $y$ by parameter $\theta$, which is needed to be learned by a rule. Feed-forward networks are typically represented by composing together many different functions. There might have two function $f^{1}$, $f^{2}$ connected in a chain\cite{goodfellow2016deep}, to form
 $f(x) = f^{2}(f^{1}(x))$.
 
-FNN extend linear models to represent nonlinear transformed format $\phi(x)$ of input $x$. The transform function $\phi$ can be regarded as providing a set of features describing $x$, or as providing a new representation for x. The key problem here is how to choose the mapping $\phi$.
+\subsection{Source localization prediction model}
+In his paper, Niu assumed there existing a deterministic relationship between ship range and sample-covariance matrix (SCM)) and approximated this relationship by the FNN. Same as Niu did, we also use FNN to approximat the relationship between 
+SCM and source range.
 
-The strategy of machine learning is to learn $\phi$. In a feed-forward network, $\phi$ defines a hidden layer $h=\phi(x;w^{(1)})$, then the total model is $y=f(x;\theta)=hw^{(2)}$, where parameters $w$ mapping $\phi(x)$ to the desired output.
-Obviously, a criterion is needed to choose basis functions $\phi$ from a broad class of functions.
+FNN extends linear models to represent nonlinear transformed format $\phi(x)$ of input $x$. The transform function $\phi$ defines a hidden layer $h=\phi(x)$ and can be regarded as providing a set of features describing $x$, or as providing a new representation for $x$. The key problem here is how to choose the mapping $\phi$. As the neuron networks do, we use a linear combination with nonlinear function to fit the basis functions.
+\begin{equation}
+h = g(W^{(1)}x + b^{(1)})
+\end{equation}
 
-Simply, the principle of maximum likelihood can be used to learn parameters in model. In most cases, the parametric model defines a distribution $p(y|x;\theta)$.
+Neurons between hidden layer and output layer are mapped by a linear function:
+\begin{equation}
+z = {W^{(2)T}}h + {b^{(2)}}
+\end{equation}
+Then the output of the model is normalized by $softmax$ function, which is a common choice for multi-class classification task.\cite{bishop2006pattern}
+\begin{equation}
+p({y_k}|x) = softmax {(z)_k} = {{\exp ({z_k})} \over {\sum\nolimits_j {\exp ({z_j})} }}
+\end{equation}
+where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$ is the measures, $p({y_k}|x)$ is the probability that measured signal $x$ transmitted from position $k$, $W$ and $b$ is the parameters needed to learned.
+
+Obviously, a criterion is needed. In most cases, the parametric model defines a distribution $p(y|x;\theta)$ and we can simply use the principle of maximum likelihood to determine parameters in the model.
 \begin{equation}
 J(\theta ) =  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x)
 \end{equation}
-where the specific form of $p_{model}$ is defined by networks.
-As maximum likelihood is a consistent estimator, the model is capable of representing the training distribution.
+As maximum likelihood is a consistent estimator, the model is capable of representing the training data distribution.
 
-\subsection{Regularization for neural networks}
+\subsection{Training the model with sparse constraint and mixed data-model}
 Regularization can help solve over-fitting problem during the model training, but sometimes may cause under-fitting.
 There are two main kinds of regularization strategies for neural networks, one is weight-level regularization, another is neuron-level regularization with activation penalty.
 \begin{equation}
@@ -38,7 +62,6 @@ There are two main kinds of regularization strategies for neural networks, one i
 where $\Omega (\theta )$ is parameter norm penalty, $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that weight the relative contribution of
 the norm penalty term. Weight decay term penalize the size of the model parameters, while, the activation penalty term encouraging their activations to be sparse.
 
-\subsection{Training the neural networks with sparse constraint}
 In practical applications, we not only want the representation to be sparse, but also want the model features to be sparse, the latter saves the storage and calculation on sensor nodes. Thus, we use $L1$ norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights.
 \begin{equation}
 \begin{split}
@@ -49,43 +72,17 @@ In practical applications, we not only want the representation to be sparse, but
 In the equation, $M$ is the number of neurons in hidden layer.
 When a useful sparse representation of any given data is learned, each datum will then be encoded as a sparse code, thus the least possible amount of resource is used to store or transfer the data.
 
-What needed to be done here is learning a set of basis functions $\phi(x)$ that make the given data can be represented sparsely.
-As the neuron networks do, we use a linear model with nonlinear function to fit the basis functions.
-\begin{equation}
-h = g(W^{(1)}x + b^{(1)})
-\end{equation}
-Neurons between hidden layer and output layer are connected by a linear combination:
-\begin{equation}
-z = {W^{(2)T}}h + {b^{(2)}}
-\end{equation}
-The output of the model is normalized by $softmax$ function, which is a common choice for multi-class classification task\cite{bishop2006pattern}:
-\begin{equation}
-p({y_k}|x) = softmax {(z)_k} = {{\exp ({z_k})} \over {\sum\nolimits_j {\exp ({z_j})} }}
-\end{equation}
-where $g$ is the nonlinear function, $h$ is the the desired the sparse data, $x$ is the measures, $p({y_k}|x)$ is the probability that measured signal $x$ transmitted from position $k$, $W$ and $b$ is the parameters needed to learned.
-
-% \subsection{Source localization prediction}
-% After the model parameters learned in section 2.3, the position distribution probability $y$ can be predicted for an unlabled data, the position label is mapped to the source localization.
-% \begin{equation}
-% position = \mathop {argmax}\limits_k p({y_k}|x)
-% \end{equation}
-% Source position is
+Another strategy used in this paper is training the model with mixed data-model, which can increase the model tolerance. 
+When training the model, mixed data, i.e. ,the receive acoustic pressure data computed by various environment models, is combined as the training set. 
 
 \section{Simulation and experimental results}
-In this section, same as Niu's work\cite{niu2017source}, we implemented a simple FNN with just one hidden layer to learn source range directly from SWellEx96 acoustic data, and compare the performance of the classifier with the conventional matched-field processing method (Bartlett) in terms of simulation data and experimental data, respectively. In addition, the influence of sound speed profile(ssp) mismatch on the performance of FNN classifier is investigated by simulations. The tolerance of the classifier was improved by training the model using data sampled under different ssp.
+In this section, the source localization prediction model implemented above is used to learn source range directly from SWellEx96 acoustic data, and the performance of the classifier is compared with the conventional matched-field processing method (Bartlett) in terms of simulation data and experimental data, respectively. In addition, the influence of sound speed profile (ssp) mismatch on the performance of FNN classifier is investigated by simulations. The tolerance of the classifier was improved by training the model using data sampled under different ssp.
 
 Simulation environment is the widely studied SWell96Ex test, conducted in a 216m deep shallow waveguide environment.
-During the experiment, the source ship has two sound source, a deep source (J-15) and a shallow source (J-13). In all the simulations, the shallow sound source was used, which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
+During the experiment, the source ship has two sound source, a deep source (J-15) and a shallow source (J-13). In all the following simulations, the shallow sound source was used, which was towed at a depth of about 9m and transmitted 9 frequencies between 109Hz and 385Hz.
 
 \subsection{Parameter settings}
 In simulation part, acoustic data used to train and test the neural network was simulated using kraken with environment model.  We also use the normalized sample-covariance matrices of measured pressure at each frequency as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used). The number of neurons in the output layer (number of classes) $K = 300$. Simply, the number of neurons in hidden layer was set to be equal to the input layer, i.e. $M = D$. Fast	Fourier	transform duration is 1-seconds, snapshot $N_{s}$ for constructing SCMs is 10. The number of vertical array elements $L$ is 21. Specifically, the cost function now becomes
-
-%\begin{equation}
-%\begin{split}
-%&\min {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }\\
-%& s.t.{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\left\| {{W_i}^{(1)}} \right\|_2} \le C{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \forall {\kern 1pt} i = 1, \cdots ,M\\
-%\end{split}
-%\end{equation}
 \begin{equation}
 {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }
 \end{equation}
@@ -98,11 +95,11 @@ The training set is 3000 samples sampled uniformly between range 1.82\--8.65km, 
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5}
 %\includegraphics[width=4cm,height=3cm]{figure/Weights_abs_summaries_in_hidden_layer_sc3dot5e_nag_5_swell_140}
 %\includegraphics[width=4cm,height=3cm]{figure/Norm_distributing_of_the_features_sc3dot5e_nag_5_swell}
-\caption{Weights summaries in hidden layer(left: no constraint, right: with constraint). Sparse constraint
+\caption{Weights summaries in hidden layer (left: no constraint, right: with constraint). Sparse constraint
 training makes the weight coefficient show the group structure, either all zero, or basic is not zero.}
 \end{figure}
 
-Experimental data was got from SWell96Ex Event S5 vertical line array(VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50min data was took as a training set.
+Experimental data was got from SWell96Ex Event S5 vertical line array (VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50min data was took as a training set.
 
 Consistent with the simulation part, the trajectory was divided into 300 grids, 25m each. The snapshot was set as 1-second 3000 sample-covariance matrix (SCM) would be got, the sample-covariance matrix was averaged at every two snapshots.
 At the time of training, 9/10(2700)of samples were took as training set and another 1/10(300) as test set.
@@ -229,7 +226,8 @@ As discussed in section 3.4, the FNN is also sensitive to ssp mismatch, but stil
 It is attractive to see that the sparsely-code neural networks model predicts accurately on source localization,
 as well as the dense neural networks do, but needs fewer basis functions to span the data space.
 Combined with data-model mixed training, the model tolerance can be obviously increased,
-and performs better in  sound speed profile mismatch case than bartlett matched-field processing method.
+and performs better in sound speed profile mismatch case than Bartlett matched-field processing method.
+Machine learning methods have potential advantages in unstable underwater source localization.
 This paper primarily focus on the fine-tune for feed-forward neural networks.
 It deserves more efforts to apply complicated machine learning methods on ocean
 acoustic source localization.
