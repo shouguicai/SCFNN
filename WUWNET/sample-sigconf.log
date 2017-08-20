@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.8.15)  20 AUG 2017 11:31
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.8.15)  20 AUG 2017 11:42
 entering extended mode
 **sample-sigconf.tex
 (D:\研究生\Academic\ZJU\WUWNET\sample-sigconf.tex
@@ -702,7 +702,7 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                 on input line 46.
 
 [2.2]
-<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=124, 421.575pt x 316
+<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=128, 421.575pt x 316
 .18124pt>
 File: figure/Weights_summaries_in_hidden_laye_swell_exp.png Graphic file (type 
 png)
@@ -712,7 +712,7 @@ used on input line 98.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
 <figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png, 
-id=125, 421.575pt x 316.18124pt>
+id=129, 421.575pt x 316.18124pt>
 File: figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.
 png Graphic file (type png)
 
@@ -721,38 +721,38 @@ ng>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_layer_swell_exp_lam
 bda_2_dot_1e_neg_5.png used on input line 99.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
- <figure/environment.png, id=126, 532.23843pt x 420.82219pt>
+ <figure/environment.png, id=130, 532.23843pt x 420.82219pt>
 File: figure/environment.png Graphic file (type png)
 
 <use figure/environment.png>
-Package pdftex.def Info: figure/environment.png used on input line 107.
+Package pdftex.def Info: figure/environment.png used on input line 106.
 (pdftex.def)             Requested size: 227.62204pt x 179.96756pt.
 
-<figure/Accuracy_on_SWellEx_S5_for_different_lambda.png, id=128, 421.575pt x 31
+<figure/Accuracy_on_SWellEx_S5_for_different_lambda.png, id=132, 421.575pt x 31
 6.18124pt>
 File: figure/Accuracy_on_SWellEx_S5_for_different_lambda.png Graphic file (type
  png)
  <use figure/Accuracy_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Accuracy_on_SWellEx_S5_for_different_lambda.png
- used on input line 130.
+ used on input line 128.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=129, 
+<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=133, 
 421.575pt x 316.18124pt>
 File: figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png Grap
 hic file (type png)
 
 <use figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Hidden_Average_Density_on_SWellEx_S5_for_differ
-ent_lambda.png used on input line 132.
+ent_lambda.png used on input line 130.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/sparse_represention_model.png, id=130, 485.56406pt x 221.32687pt>
+<figure/sparse_represention_model.png, id=134, 485.56406pt x 221.32687pt>
 File: figure/sparse_represention_model.png Graphic file (type png)
 
 <use figure/sparse_represention_model.png>
 Package pdftex.def Info: figure/sparse_represention_model.png used on input lin
-e 151.
+e 149.
 (pdftex.def)             Requested size: 227.62204pt x 103.75008pt.
 
 
@@ -767,66 +767,69 @@ aries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png (PNG copy)> <D:/研�
 �生/Academic/ZJU/WUWNET/figure/environment.png>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 164.
+               Default added (so using `tbp') on input line 162.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 179.
+               Default added (so using `tbp') on input line 177.
 
-<figure/ssp3.png, id=143, 421.575pt x 316.18124pt>
+<figure/ssp3.png, id=147, 421.575pt x 316.18124pt>
 File: figure/ssp3.png Graphic file (type png)
  <use figure/ssp3.png>
-Package pdftex.def Info: figure/ssp3.png used on input line 199.
+Package pdftex.def Info: figure/ssp3.png used on input line 197.
 (pdftex.def)             Requested size: 170.71764pt x 142.26576pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=144, 421.575pt x 316.18124p
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=148, 421.575pt x 316.18124p
 t>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png used on
- input line 204.
+ input line 202.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=145, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=149, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
 
 <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png used on in
-put line 205.
+put line 203.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=146, 421.575pt x 316.1
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=150, 421.575pt x 316.1
 8124pt>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type pn
 g)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png us
-ed on input line 206.
+ed on input line 204.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=147, 421.575pt x 316.1812
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=151, 421.575pt x 316.1812
 4pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type png)
  <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png used 
-on input line 207.
+on input line 205.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=148, 421.575pt x 316.18124pt
+<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=152, 421.575pt x 316.18124pt
 >
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_Combined_vs_Single.png used on 
-input line 217.
+input line 214.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
 
-<figure/Error_to_SNR_Combined_vs_Single.png, id=149, 421.575pt x 316.18124pt>
+<figure/Error_to_SNR_Combined_vs_Single.png, id=153, 421.575pt x 316.18124pt>
 File: figure/Error_to_SNR_Combined_vs_Single.png Graphic file (type png)
 
 <use figure/Error_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
-ut line 218.
+ut line 215.
 (pdftex.def)             Requested size: 113.80746pt x 85.35559pt.
+
+Underfull \vbox (badness 3690) has occurred while \output is active []
+
  [4.4 <D:/研究生/Academic/ZJU/WUWNET/figure/Accuracy_on_SWellEx_S5_for_diffe
 rent_lambda.png (PNG copy)> <D:/研究生/Academic/ZJU/WUWNET/figure/Hidden_Ave
 rage_Density_on_SWellEx_S5_for_different_lambda.png (PNG copy)> <D:/研究生/A
@@ -860,20 +863,20 @@ Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `sample-sigconf.out':
-(rerunfilecheck)             Before: C2172674A69FD6B771BEC7F7730630D2;4952
+(rerunfilecheck)             Before: 87FC616950E25E7C45352D311C065AE2;5119
 (rerunfilecheck)             After:  F2C6F267B0A4462FA71BE13E1E6B5EA0;3673.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14174 strings out of 495354
- 218059 string characters out of 3183355
+ 14175 strings out of 495354
+ 218072 string characters out of 3183355
  393689 words of memory out of 3000000
- 16783 multiletter control sequences out of 15000+200000
+ 16784 multiletter control sequences out of 15000+200000
  15226 words of font info for 107 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,19n,94p,923b,532s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,19n,94p,900b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
 re/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><E:/software/CTEX/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><E:/software/CTEX/MiKTeX/fonts/type
@@ -890,9 +893,9 @@ EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy9.pfb><E:/software/CTEX/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmti7.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/cm-super/s
 frm0700.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (6 pages, 681491 bytes).
+Output written on sample-sigconf.pdf (6 pages, 681889 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
+ 262 PDF objects out of 1000 (max. 8388607)
  51 named destinations out of 1000 (max. 500000)
- 15554 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 15562 words of extra memory for PDF output out of 17280 (max. 10000000)
 

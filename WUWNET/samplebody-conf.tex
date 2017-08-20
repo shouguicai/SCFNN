@@ -102,12 +102,10 @@ The training set contains 3000 samples sampled uniformly with 1.82\--8.65km in r
 \caption{Weights summary in hidden layer (left: no constraint, right: with constraint). Sparse constraint
 training makes the weight coefficients show group structure, either all zero, or basic is not zero.}
 \end{figure}
-
 \begin{figure}
 \includegraphics[width=8cm]{figure/environment}
-\caption{Environment.}
+\caption{Environment. An impressively detailed model for SWellEx-96 experiment.}
 \end{figure}
-
 Experimental data is got from SWell96Ex Event S5 vertical line array (VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50 min data is took as a training set.
 
 Consistent with the simulation part, the trajectory was divided into 300 grids, 25 m each in range. The snapshot is set as 1-second and 3000 acoustic pressure data would be got. Each SCM is averaged at every two snapshots, 2700 of the samples are took as the training set and the remainder as test set.
@@ -209,7 +207,6 @@ Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.
  FNN is also sensitive to SSP mismatch, but still performs better than MFP.
 }
 \end{figure}
-
 The performance curves for FNN, Bartlett and MCE are plotted by 1000 times Monte Carlo simulation. When the change in SSP is relatively small (the up two sub figures), FNN positioning best, followed by MCE and Bartlett worst.
 When the shape of SSP change (the down two figures), the accuracy order unchanged, but the absolute mean error of FNN becomes bigger than MCE. In conclusion, FNN is also but less sensitive to SSP mismatch than Bartlett.
 
