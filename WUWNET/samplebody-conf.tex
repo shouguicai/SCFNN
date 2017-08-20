@@ -63,7 +63,7 @@ where the $\Omega (\theta )$ is weight decay term and $\Omega (h)$ is penalty on
 the two penalty term. Weight decay term penalizes the size of the model parameters, while, the activation penalty term encourages their activations to be sparse and makes the neural network to be sparsely coded.
 A sparsely-coded neural network encodes each input data as a sparse code firstly, and then accomplish the specific task with further processing.
 
-In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function modified as below,
+In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the $L_{2}$-norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function modified as below,
 \begin{equation}
 \begin{split}
 &\tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt}  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x){\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {\left\| h \right\|_1}\\
