@@ -17,7 +17,7 @@ The large one has significant change in shape, while the slight one just has sma
 Effects of such errors on positioning performance for various methods, including Bartlett matched-field processing, matched-covariance estimation (MCE) and feed-forward neural networks based method (FNN), are compared.
 Treat different SSPs as different application scenes, and then a generic model is learned by data-model mixed training, the trained model is tested on
 different SSPs.
-In Niu's work\cite{niu2017source}, he used a dense neural networks to train his model, the model performs well on the data of Noise09 experiment, which verified that FNN can achieve a good prediction performance when source localization is solved as a classification problem. However, as he said, the FNN classifier will be over-fitting and predict poorly when the SNR of training data is low. In order to overcome this problem,
+In Niu's work\cite{niu2017source}, he used a dense neural networks to train his model, the model performs well on the data of Noise09 experiment, which verified that FNN can achieve a good prediction performance when source localization is solved as a classification problem. However, as he said, the FNN classifier will be over-fitting when the SNR of training data is low, i.e. the model accuracy on training set is much lower than test set, and will predict poorly. In order to overcome this problem,
 a sparsely-coded neural network is used in this paper. Besides, our models are trained and tested on SWell96 experimental and simulated data.
 
 \section{Sparse Neural Networks Based Source Localization}
@@ -58,7 +58,7 @@ As maximum likelihood is a consistent estimation, the model is capable of repres
 %Regularization can help solve over-fitting problem during the model training.
 %but sometimes may cause under-fitting.
 %There are two main kinds of regularization strategies for neural networks, one is weight-level regularization, another is neuron-level regularization with activation penalty
-Two main kinds of regularization strategies for neural networks, including weight-level regularization and neuron-level regularization with activation penalty, can help us to solve the over-fitting problem during the model training\cite{goodfellow2016deep},
+Two main kinds of regularization methods for neural networks, including weight-level regularization and neuron-level regularization with activation penalty, can help us to solve the over-fitting problem during the model training\cite{goodfellow2016deep},
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
 \end{equation}
@@ -85,18 +85,14 @@ Simulation environment is the widely studied SWell96Ex test, conducted in a shal
 During the experiment, two moving sound sources are deployed in field, including a deep source (J-15) and a shallow source (J-13). In all of the following simulations, the shallow sound source is used, which was towed about 9 m in depth and emitted with 9 frequencies between 109 Hz and 385 Hz.
 
 \subsection{Parameter settings}
-In simulation part, acoustic data used to train and test the neural network was simulated using kraken\cite{porter1992kraken} with environment model.  We use the normalized SCMs of measured pressure at each frequency as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used) and the number of neurons in the output layer (number of classes) is $K = 300$. Simply, the number of neurons in hidden layer is set to be equal to the input layer, i.e. $M = D$. Fast	Fourier	transform (FFT) duration is 1-seconds, snapshot $N_{s}$ for constructing SCMs for input data preprocessing is 10. The number of vertical array elements $L$ is 21, the specific deployment parameters is shown in Fig. 1.
-\begin{figure}
-\includegraphics[width=6cm,height=4cm]{figure/environment}
-\caption{Test environment diagram.}
-\end{figure}
+In simulation part, acoustic data used to train and test the neural network was simulated using kraken\cite{porter1992kraken} with environment model.  We use the normalized SCMs of measured pressure at each frequency as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used) and the number of neurons in the output layer (number of classes) is $K = 300$. Simply, the number of neurons in hidden layer is set to be equal to the input layer, i.e. $M = D$. Fast	Fourier	transform (FFT) duration is 1-seconds, snapshot $N_{s}$ for constructing SCMs for input data preprocessing is 10. The number of vertical array elements $L$ is 21, the specific deployment parameters is shown in Fig. 2.
 The objective function now becomes
 \begin{equation}
 {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }
 \end{equation}
-where $t_{nk}$ and $y_{nk}$ are real and predictive probability of sample data $x$ belongs to class $k$ separately. We choose $C=1$ here.
-For the sake of learning speed and sparsity of hidden neurons, $ReLU$ activation was applied in hidden layer.
-The training set is 3000 samples sampled uniformly between range 1.82\--8.65km, test set is another 300 data sampled from the same range. The noise in the simulations is all set to be complex gaussian white noise.
+where $t_{nk}$ and $y_{nk}$ are the practical and the predictive probabilities of the sample data $x$ belonging to the $k$-$th$ class separately and we choose $C=1$ here.
+For the sake of learning speed and sparsity of hidden neurons, $ReLU$ activation\cite{goodfellow2016deep} was applied in hidden layer.
+The training set contains 3000 samples sampled uniformly with 1.82\--8.65km in range,the test set is another 300 data sampled with the same range. The noise in the simulations is all set to be complex gaussian white noise.
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
@@ -106,35 +102,35 @@ The training set is 3000 samples sampled uniformly between range 1.82\--8.65km, 
 \caption{Weights summary in hidden layer (left: no constraint, right: with constraint). Sparse constraint
 training makes the weight coefficients show group structure, either all zero, or basic is not zero.}
 \end{figure}
+\begin{figure}
+\includegraphics[width=8cm]{figure/environment}
+\caption{Environment. An impressively detailed \\environment model for SWellEx-96 experiment.}
+\end{figure}
+Experimental data is got from SWell96Ex Event S5 vertical line array (VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50 min data is took as a training set.
 
-Experimental data is got from SWell96Ex Event S5 vertical line array (VLA) . The array recorded a total of 75 min of data. In order to facilitate processing, 0\--50min data is took as a training set.
-
-Consistent with the simulation part, the trajectory was divided into 300 grids, 25m each. The snapshot was set as 1-second 3000 sample-covariance matrix (SCM) would be got, the sample-covariance matrix was averaged at every two snapshots.
-At the time of training, 9/10(2700)of samples were took as training set and another 1/10(300) as test set.
+Consistent with the simulation part, the trajectory was divided into 300 grids, 25 m each in range. The snapshot is set as 1-second and 3000 acoustic pressure data would be got. Each SCM is averaged at every two snapshots, 2700 of the samples are took as the training set and the remainder as test set.
 
 \subsection{The effect of sparse constraint training}
-Sparsely-coded network efficiently prevents the model from over-learning, as no over-fitting occurs.
-Besides, the regularization degree on model affects the model accuracy and average activation density of FNN's hidden layer. As the coefficient grows, the model accuracy on training set and test set also drops, but are slower on test set. When the coefficient is too big, the model accuracy on training set becomes much lower than test set, which indicates under-fitting.
+Sparsely-coded network efficiently prevents the model from over-learning, i.e. no over-fitting occurs.
+Besides, the regularization degree on model affects the model accuracy and average activation density of FNN's hidden layer. As the coefficient grows, the model accuracy on training set and test set also drops, drops fastly on the training set, while slower on the test set. When the coefficient is too big, the model accuracy on training set becomes much lower than test set, which indicates under-fitting.
 A good constraint ratio $\lambda$ is chosen by testing in this paper.
 %The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
 %In Fig.2, we use the cross entropy equivalently.
 
 On the other hand, the regularization on neuron-level significantly reduces the average activation density.
-The order of magnitude drops from $10^{3}$ to $10$, and keep it stable. This is good for us to train a sparsely-coded neural network.
+The order of magnitude drops from $10^{3}$ to $10$, which keeps stable. This is good for us to train a sparsely-coded neural network.
 
 Compared to the case of training without sparse constraints, sparsely-coded neural network makes the weight coefficient in the hidden layer show group structure, the element of weight vector is either all zero, or basic is not zero.
-In our model, we choose $\lambda=2.1 \times 10^{-5} $, the number of feature vectors in hidden layer reduces from 1500 to 740, as shown in Fig.1. It can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the weight corresponding
-to real and imaginary parts is also different, as we can see bright and dark strips can be seen distributed along the data dimension in Fig.1. ( When we plot the weights summaries, the data dimension is arranged according to the frequency relationship from 109Hz to 385Hz.)
+In our model, we choose $\lambda=2.1 \times 10^{-5} $, the number of feature vectors in hidden layer reduces from 1500 to 740, as shown in Fig. 1. It can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the weight corresponding
+to real and imaginary parts is also different, as we can see bright and dark strips can be seen distributed along the data dimension in Fig. 1. (when we plot the weights summaries, the data dimension is arranged according to the frequency relationship from 109 Hz to 385 Hz.)
 
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_SWellEx_S5_for_different_lambda}
 %\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
 \includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
-\caption{Model accuracy and Average-activation-density for different $\lambda $.  Regularization on neuron-level
-significantly reduces the average activation density without much loss in model accuracy.}
+\caption{Model accuracy and Average-activation-density for different $\lambda $. Regularization on neuron-level
+significantly reduces the average activation density and achieves good model accuracy. The model is trained on SWell96Ex-S5 experimental data.}
 \end{figure}
-
-
 %\begin{figure}
 %\includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_Test_data_for_different_constraint_exp}
 %\includegraphics[width=4cm,height=3cm]{figure/hidden-Average-Density-on-Test-data-for-different-constraint_exp}
@@ -151,18 +147,16 @@ significantly reduces the average activation density without much loss in model 
 \includegraphics[width=8cm]{figure/sparse_represention_model}
 \caption{The learned sparse representation model. The learned feature space spans data(scm) space likelihood that few basis functions $\phi$ explain a given data.}
 \end{figure}
-
 Apart from being beneficial to feature selection, sparse constraint also reduces the activation rate of neurons in the hidden layer. In our model, i.e. the coefficient is 2.1e-5, the average activation neuron number is just 16, which is greatly reduced, the activation rate is only 1.1{\%}.
-This means, the input 1323-elements SCM  data space can be spanned by the 740 feature vectors, and averagely, each data sample can be represented by only 16 feature. To sum up, by using regularization strategy on neural networks, a sparse and low rank model is builded, where sparse means the transferred representation is sparse and low rank means the rank of learned weight matrix is low. The learned sparse coding model is illustrated in Fig.3.
+This means, the input 1323-elements SCM data space can be spanned by the 740 feature vectors, and averagely, each data sample can be represented by only 16 feature. To sum up, by using regularization strategy on neural networks, a sparse and low rank model is builded, where the transferred representation is sparse and the rank of learned weight matrix is low. The learned sparse coding model is illustrated in Fig. 3.
 A sparse vector can be formed by filtering the data measured in sensor nodes through the pre-trained sparsely-coded neuron networks.
 This maybe useful for designing a decentralized source localization algorithm.%Decisions, such as target location can be made by further processing.
-
 \subsection{Comparison with conventional matched-field processing method}
-As a comparison, Bartlett processor is used here to positioning the ship source, as Niu did in his work. There are two main kinds of replica-field used in Bartlett processor, one is simulated by kraken (noted as bartlett 2), another is measurement data (noted as bartlett 1), same as the training data used in FNN.
+As a comparison, Bartlett processor is used here as a kind of MFP to positioning the source, as Niu did in his work. There are two main kinds of replica-field used in Bartlett processor, one is simulated by kraken (noted as bartlett 2), the other is measurement data (noted as bartlett 1), the same as the training data used in FNN.
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
-\caption{Localization accuracy of FNN and MFP on SWell96Ex-S5 data}
+\caption{Localization accuracy of FNN and MFP on SWell96Ex-S5 experimental data}
 \label{my-label}
 \begin{tabular}{@{}lllll@{}}
 \toprule
@@ -173,11 +167,10 @@ Methods       & FNN    & MCE    & Bartlett 1 & Bartlett 2 \\ \midrule
 109,232,385Hz & 99\%   & 99.7\% & 40.7\%     & 7.7\%      \\ \bottomrule
 \end{tabular}
 \end{table}
-
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
-\caption{Absolute mean error of FNN and MFP on SWell96Ex-S5 data(m)}
+\caption{Absolute mean error of FNN and MFP on SWell96Ex-S5 experimental data(m)}
 \label{my-label}
 \begin{tabular}{@{}lllll@{}}
 \toprule
@@ -188,18 +181,16 @@ Methods       & FNN  & MCE   & Bartlett 1 & Bartlett 2 \\ \midrule
 109,232,385Hz & 0.25 & 0.083 & 477.2      & 722.9      \\ \bottomrule
 \end{tabular}
 \end{table}
-
-The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether in single frequency or in multi-frequency, the accuracy of FNN is always better than Bartlett, and not worse than direct data match(noted as MCE), this is more obvious when it comes to the comparison of absolute mean error.
+The accuracy and absolute mean error of different methods under different frequency are summed in table 1 and table 2. As we can see, whether in single frequency or in multi-frequency, the accuracy of FNN is always better than Bartlett, and not worse than direct data match (noted as MCE), this is more obvious when it comes to the comparison of absolute mean error.
 The learned sparsely-coded neuron network works better than Bartlett processor in positioning problem.
-
 \subsection{The influences of SSP mismatch on FNN classifier}
-In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. Fig.5 gives the FNN positioning results by simulations in different degrees change of sound speed profiles. Here, snapshot is 10 and SNR is 5dB.
-Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig.4.
+In the MFP method, the model accuracy is heavily affected by the mismatch problem\cite{tolstoy1989sensitivity,feuillade1989environmental,del1988effects}. 
+%Fig. 5 gives the FNN positioning results by simulations in different degrees change of SSPs. Herein, the snapshot is 10 and the SNR is 5dB.
 \begin{figure}
-\includegraphics[width=6cm,height=5cm]{figure/ssp3}
-\caption{Plots of sound speed profiles.}
+\includegraphics[width=6cm]{figure/ssp3}
+\caption{Plots of sound speed profiles. The i906 has significant change in shape from the optimized, while the change in the i905 is slight.}
 \end{figure}
-
+%Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig. 4.
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}
@@ -209,10 +200,8 @@ Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.
  FNN is also sensitive to SSP mismatch, but still performs better than MFP.
 }
 \end{figure}
-
-The performance curves for FNN, Bartlett, MCE are plotted by 1000 times Monte Carlo simulation. When the change in SSP is relatively small(the up two sub figures), FNN positioning best, MCE second and Bartlett worst.
-When the shape of SSP change(the down two figures), the accuracy order unchanged, but the absolute error of FNN becomes bigger than MCE. FNN is also but less sensitive to SSP mismatch than Bartlett.
-
+The performance curves for FNN, Bartlett and MCE vs SNR are plotted by 1000 times Monte Carlo simulation. When the change in SSP is relatively small (the up two sub figures), FNN positioning best, followed by MCE and Bartlett worst.
+When the shape of SSP change (the down two figures), the accuracy order unchanged, but the absolute mean error of FNN becomes bigger than MCE. In conclusion, FNN is also but less sensitive to SSP mismatch than Bartlett.
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_Combined_vs_Single}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_Combined_vs_Single}
@@ -229,7 +218,7 @@ The simulation results show that training the model using data collected from di
 %\caption{Comparison of mixed data training and single data training .}
 %\end{figure}
 
-As discussed in section 3.4, the FNN is also sensitive to SSP mismatch, but still performs better than Bartlett. When the environment SSP has a big change in the shape(such as from ssp-optimized to i906), the performance of the estimator drops about 40\% in accuracy. In this section, by adding data collected from i906-ssp, the positioning ability of FNN on i906{*}(which is little changed from i906,for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training case, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape ssp. Note that, the legend 'i905,combined' means the model is trained by mixed data collected from ssp i906 and ssp optimized, then the model is tested on ssp i905, rest legends are similar.
+As discussed in section 3.4, the FNN is also sensitive to SSP mismatch, but still performs better than Bartlett. When the environment SSP has a big change in the shape (such as from ssp-optimized to ssp-i906), the performance of the estimator drops about 40\% in accuracy. By adding data collected from ssp-i906, the positioning ability of FNN on i906{*} (which is little changed from i906, for the sake of testing) is as better as before. Although the accuracy for i905 has a little glissade compared with single data training case, the performance for i906 improved. In general, the trained FNN classifier works well on both two different shape SSP. Note that, the legend `i905,combined' means the model is trained by mixed data collected from ssp-i906 and ssp-optimized, then the model is tested on ssp-i905, rest legends are similar.
 
 \section{Summary}
 %In a recent article\cite{niu2017source}, Niu considers the problem of sound source location in marine waveguides as a classification problem under the framework of machine learning,and verified the ideal on the Noise09 experimental data.
@@ -257,6 +246,6 @@ examine the method in this paper. How will the method perform on more degrees of
 For the aspect of machine learning methods, this paper simply use a fine-tuned feed-forward neural network,
 it deserves more efforts to apply more complicated machine learning methods, such as convolutional neural networks, recurrent neural networks or other deep neural networks on ocean acoustic source localization.
 
-\begin{acks}
-The work is supported by ...
-\end{acks}
+%\begin{acks}
+%The work is supported by ...
+%\end{acks}
