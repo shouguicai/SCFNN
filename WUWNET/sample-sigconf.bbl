@@ -77,4 +77,9 @@ Christopher~M Bishop.
 \newblock {\em Pattern recognition and machine learning}.
 \newblock springer, 2006.
 
+\bibitem{porter1992kraken}
+Michael~B Porter.
+\newblock The kraken normal mode program.
+\newblock Technical report, 1992.
+
 \end{thebibliography}
