@@ -59,18 +59,18 @@ A SCFNN can be easily got by adding sparsity constraint on networks and there ar
 \begin{equation}
 \tilde J(\theta ;X,y) = J(\theta ;X,y) + \alpha \Omega (\theta )+ \beta \Omega (h)
 \end{equation}
-where the $\Omega (\theta )$ is weight decay term and $\Omega (h)$ is penalty on the activations of the units, $\alpha$,$\beta$ are hyper parameters that control the relative contribution of
+where the $\Omega (\theta )$ is weight decay term and $\Omega (h)$ is penalty on the activations of the units, $\alpha$, $\beta$ are hyper parameters that control the relative contribution of
 the two penalty term. Weight decay term penalizes the size of the model parameters, while, the activation penalty term encourages their activations to be sparse and makes the neural network to be sparsely coded.
 A sparsely-coded neural network encodes each input data as a sparse code firstly, and then accomplish the specific task with further processing.
 
-In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the $L_{2}$-norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function modified as below,
+In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the $L_{2}$-norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function is modified as below,
 \begin{equation}
 \begin{split}
 &\tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt}  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x){\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {\left\| h \right\|_1}\\
 & s.t.{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\left\| {{W^{(1)}_i}} \right\|_2} \le C{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \forall {\kern 1pt} i = 1, \cdots ,M\\
 \end{split}
 \end{equation}
-where, $M$ is the number of the neurons in hidden layer, $C$ is the constraint coefficient,which does't matter much here, and we choose $C=1$ in our simulations.
+where, $M$ is the number of the neurons in hidden layer, $C$ is the constraint coefficient, which does't matter much here, and we choose $C=1$ in our simulations.
 
 \leftline{\emph{\textbf{B. Data-model mixed training}}}
 
@@ -81,19 +81,19 @@ when training the model, we can use the examples gathered form different mismatc
 Neural network models are easily to be over-learning, because of their powerful fitting ability and the noisy, discrepant data samples. Thus, sparsely-coded neural network is much more necessarily to be applied in data-model mixed training cases.
 
 \section{Simulation and experimental results}
-In this section, the SCFNN implemented above is used to learn the source range directly from the data of the SWellEx-96 experiment, and the performance of the classifier is compared with some other matched-field processing methods in terms of simulation data or experimental data, respectively. In addition, the influence of SSP mismatch on the performance of SCFNN classifier is investigated by simulations. In our application,the robustness of the classifier is improved by training the model using data sampled under different SSP.
+In this section, the SCFNN implemented above is used to learn the source range directly from the data of the SWellEx-96 experiment, and the performance of the classifier is compared with some other matched-field processing methods in terms of simulation data or experimental data, respectively. In addition, the influence of SSP mismatch on the performance of SCFNN classifier is investigated by simulations. In our application, the robustness of the classifier is improved by training the model using data sampled under different SSP.
 
 Simulation environment is the widely studied SWell96-Ex test, conducted in a shallow water waveguide environment with 216 m in depth.
 During the experiment, two moving sound sources are deployed in field, including a deep source (J-15) and a shallow source (J-13). In all of the following simulations, the shallow sound source is used, which was towed about 9 m in depth and emitted with 9 frequencies between 109 Hz and 385 Hz. The number of vertical array elements $L$ is 21, and other specific deployment parameters is shown in Fig. 2.
 
 \subsection{Parameter settings}
-In simulation part, acoustic data used to train and test the neural network is simulated using kraken\cite{porter1992kraken} with environment models. The normalized SCMs of measured pressure at each frequency is used as model input data. In input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used) and the number of neurons in the output layer (number of classes) is $K = 300$. Simply, the number of neurons in hidden layer is set to be equal to the input layer, i.e. $M = D$. During the input data preprocessing, fast fourier transform duration is 1-seconds and snapshot $N_{s}$ for constructing SCMs is 10.
+In simulation part, acoustic data used to train and test the neural network is simulated using kraken\cite{porter1992kraken} with environment models. The normalized SCMs of measured pressure at each frequency are used as the input data. In the input layer, number of neurons $D$ is $L^{2} \times N_{fre}$(number of frequency used) and the number of neurons in the output layer (number of classes) is $K = 300$. Simply, the number of neurons in the hidden layer is set to be equal to the input layer, i.e. $M = D$. During the input data preprocessing, fast fourier transform duration is 1-second and snapshot $N_{s}$ for constructing SCMs is 10.
 %The objective function now becomes
 %\begin{equation}
 %{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ - }}{{\rm{1}} \over N}\sum\limits_{n = 1}^N {\sum\limits_{k = 1}^K {{t_{nk}}\ln {y_{nk}}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {{\left\| h \right\|}_1}} }
 %\end{equation}
 %where $t_{nk}$ and $y_{nk}$ are the practical and the predictive probabilities of the sample data $x$ belonging to the $k$-$th$ class separately and we choose $C=1$ here.
-For the sake of learning speed and sparsity of hidden neurons, $ReLU$ activation\cite{goodfellow2016deep} is applied in hidden layer.
+For the sake of learning speed and sparsity of hidden neurons, $ReLU$ activation\cite{goodfellow2016deep} is applied.
 The training set contains 3000 samples sampled uniformly with 1.82\--8.65 km in range, the test set is another 300 data sampled with the same range. All of the noise in the simulations is set to be complex gaussian white noise.
 \begin{figure}
 \includegraphics[width=4cm,height=3cm]{figure/Weights_summaries_in_hidden_laye_swell_exp}
@@ -103,6 +103,7 @@ The training set contains 3000 samples sampled uniformly with 1.82\--8.65 km in 
 \caption{Weights summary in hidden layer (left: no constraint, right: with constraint). Sparse constraint
 training makes the weight coefficients show group structure, either all zero, or basic is not zero.}
 \end{figure}
+
 Experimental data is got from SWell96-Ex Event S5 vertical line array (VLA). The array recorded a total of 75 minutes data. In order to facilitate processing, 0\--50 min data is took as a training set.
 Consistent with the simulation part, the experimental trajectory was divided into 300 grids, 25 m each in range. The snapshot is also set as 1-second and finally 3000 SCMs would be got. Each SCM is averaged at every two snapshots, 2700 of the samples are took as the training set and the remainder as test set.
 \begin{figure}
@@ -117,7 +118,7 @@ and when the coefficient is too big, the model accuracy on training set becomes 
 The optimal coefficient $\lambda$ in this paper is manually chosen by testing.
 %The model error is defined as the dissimilarity between true probability distribution and estimated probability distribution, thus the Kullback-Leibler(KL) divergence.
 %In Fig.2, we use the cross entropy equivalently.
-On the other hand, as the coefficient grows, the order of magnitude on average activation drops from $10^{3}$ to $10$, and keeps stable. This is good for us to train a SCFNN.
+On the other hand, as the coefficient grows, the order of magnitude on average activation drops from $10^{3}$ to $10$, and keeps stable. This is good for us to train the SCFNN.
 
 Compared to the case of training without sparse constraints, SCFNN makes the weight coefficient in the hidden layer show group structure, i.e. the element of weight vector is either all zero, or basic is not zero.
 It can be seen that the relative size of learned weights in hidden layer is related to the frequency, as we can see bright and dark strips can be seen distributed along the data dimension (input data dimension arrangement is relative to frequency) in Fig. 1.
@@ -128,7 +129,7 @@ In our model, we choose $\lambda=2.1 \times 10^{-5} $, and the number of feature
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_on_SWellEx_S5_for_different_lambda}
 %\includegraphics[width=4cm,height=3cm]{figure/Cross_Entropy_on_SWellEx_S5_for_different_lambda}
 \includegraphics[width=4cm,height=3cm]{figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda}
-\caption{Model accuracy and Average-activation-density for different $\lambda $. Regularization on neuron-level
+\caption{Model accuracy and average activation density for different $\lambda $. Regularization on neuron-level
 significantly reduces the average activation density and achieves good model accuracy. The model is trained on SWell96Ex-S5 experimental data.}
 \end{figure}
 %\begin{figure}
@@ -191,7 +192,7 @@ In the MFP method, the model accuracy is heavily affected by the mismatch proble
 %Fig. 5 gives the FNN positioning results by simulations in different degrees change of SSPs. Herein, the snapshot is 10 and the SNR is 5dB.
 \begin{figure}
 \includegraphics[width=6cm]{figure/ssp4}
-\caption{Plots of sound speed profiles. The i906 has significant change in shape from the optimized, while the change in the i905 is slight. The i906{*} is little changed from i906, for the sake of testing.}
+\caption{Plots of sound speed profiles. The i906 has significant change in shape from the optimized, while the change in the i905 is slight. The i906{*} is slightly changed from i906, for the sake of testing.}
 \end{figure}
 %Comparing to optimized-ssp, the i905-ssp has only a very small change, within 0.5m/s at the same depth. The change in i906-ssp is much significant, which can be seen from the shape in Fig. 4.
 \begin{figure}
@@ -199,12 +200,12 @@ In the MFP method, the model accuracy is heavily affected by the mismatch proble
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE}
 \includegraphics[width=4cm,height=3cm]{figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906}
 \includegraphics[width=4cm,height=3cm]{figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906}
-\caption{FNN positioning performance curve on simulation data(frequency:109,232,385Hz).
+\caption{FNN positioning performance curve on simulation data (frequency:109,232,385Hz).
  FNN is also sensitive to SSP mismatch, but still performs better than Bartlett.
 }
 \end{figure}
 The performance curves for SCFNN, Bartlett and MCE vs SNR are plotted by 1000 times Monte Carlo simulation in Fig. 6. The snapshot here is 10.
-Simulation results show that when the change in SSP is relatively slight, SCFNN positioning best, followed by MCE and Bartlett worst and when the change is relatively large (existing shape varying), the accuracy order is unchanged, but the absolute mean error of SCFNN becomes bigger than MCE.
+Simulation results show that when the change in SSP is relatively slight, SCFNN positioning best, followed by MCE and Bartlett worst, and when the change is relatively large (existing shape varying), the accuracy order is unchanged, but the absolute mean error of SCFNN becomes bigger than MCE.
 This is maybe caused by the noisy training data.
 In conclusion, SCFNN is also sensitive to SSP mismatch, but still performs better than Bartlett and the performance of SCFNN is close to the MCE methods.
 \begin{figure}
@@ -234,10 +235,10 @@ Then, the influence of SSP mismatch on the SCFNN classifier is investigated by s
 It is attractive to see that the model robustness is significantly improved and the trained classifier performs well on varying SSP environments.
 
 Comparing with dense neural networks, the sparsely-code neural network needs fewer basis functions to span the data space and
-is beneficial to capture characteristic of data distributions, which will make the model be more descriptive.
+is beneficial to capture characteristic of data distributions, which will make the model to be more descriptive.
 % and is helpful to capture characteristic of data distributions.
 
-The discussion on applying machine learning methods for overcoming mismatch problem in underwater source localization is preliminary and only a fine-tuned FNN is used in this paper. Machine learning has potential advantages in unstable underwater acoustics, it deserves more efforts to research deeper.
+The discussions on applying machine learning methods to overcome mismatch problem in underwater source localization are preliminary and only a fine-tuned FNN is used in this paper. Machine learning has potential advantages in unstable underwater acoustics, it deserves more efforts to research deeper.
 
 %\begin{acks}
 %The work is supported by ...

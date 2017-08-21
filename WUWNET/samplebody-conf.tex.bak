@@ -63,14 +63,14 @@ where the $\Omega (\theta )$ is weight decay term and $\Omega (h)$ is penalty on
 the two penalty term. Weight decay term penalizes the size of the model parameters, while, the activation penalty term encourages their activations to be sparse and makes the neural network to be sparsely coded.
 A sparsely-coded neural network encodes each input data as a sparse code firstly, and then accomplish the specific task with further processing.
 
-In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function modified as below,
+In practical applications, we not only want the network to be sparse, but also want the model parameters to be sparse, the latter makes the model more interpretable. In this paper, we use $L_{1}$-norm to promote sparse neurons activations, and constrain the $L_{2}$-norm of each column of the weight matrix to prevent any one hidden unit from having very large weights. The objective function modified as below,
 \begin{equation}
 \begin{split}
 &\tilde J(\theta ){\kern 1pt} {\kern 1pt} {\kern 1pt} {\rm{ = }}{\kern 1pt} {\kern 1pt} {\kern 1pt}  - {E_{x,y \sim {p_{data}}}}\log {p_{model}}(y|x){\rm{ + }}{\kern 1pt} {\kern 1pt} \lambda {\left\| h \right\|_1}\\
 & s.t.{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\left\| {{W^{(1)}_i}} \right\|_2} \le C{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} \forall {\kern 1pt} i = 1, \cdots ,M\\
 \end{split}
 \end{equation}
-where, $M$ is the number of the neurons in hidden layer, $C$ is the constraint coefficient,which does't matter much here, and we choose $C=1$ in our simulations.
+where, $M$ is the number of the neurons in hidden layer, $C$ is the constraint coefficient, which does't matter much here, and we choose $C=1$ in our simulations.
 
 \leftline{\emph{\textbf{B. Data-model mixed training}}}
 
@@ -110,7 +110,7 @@ Consistent with the simulation part, the experimental trajectory was divided int
 \caption{Environment. An impressively detailed \\environment model for SWellEx-96 experiment.}
 \end{figure}
 \subsection{The effect of sparsity constraint training}
-As shown in Fig. 3, SCFNN efficiently prevents the model from over-learning, i.e. no over-fitting occurs.
+As shown in Fig. 3, the SCFNN efficiently prevents the model from over-learning, i.e. no over-fitting occurs.
 Besides, we can also find that the regularization degree on model affects the model accuracy and the average activation density of FNN's hidden layer. As the coefficient grows, the model accuracy on training set and test set also drops,
 %drops fastly on the training set, while slower on the test set.
 and when the coefficient is too big, the model accuracy on training set becomes much lower than test set, which indicates under-fitting.
@@ -120,7 +120,8 @@ The optimal coefficient $\lambda$ in this paper is manually chosen by testing.
 On the other hand, as the coefficient grows, the order of magnitude on average activation drops from $10^{3}$ to $10$, and keeps stable. This is good for us to train a SCFNN.
 
 Compared to the case of training without sparse constraints, SCFNN makes the weight coefficient in the hidden layer show group structure, i.e. the element of weight vector is either all zero, or basic is not zero.
-It can be seen that the relative size of learned weights is related to the frequency, and even at the same frequency, the weight corresponding to real and imaginary parts is also different, as we can see bright and dark strips can be seen distributed along the data dimension in Fig. 1. 
+It can be seen that the relative size of learned weights in hidden layer is related to the frequency, as we can see bright and dark strips can be seen distributed along the data dimension (input data dimension arrangement is relative to frequency) in Fig. 1.
+%and even at the same frequency, the weight corresponding to real and imaginary parts is also different, as we can see bright and dark strips can be seen distributed along the data dimension (input data dimension arrangement is relative to frequency) in Fig. 1.
 %(when we plot the weights summaries, the data dimension is arranged according to the frequency relationship from 109 Hz to 385 Hz.)
 In our model, we choose $\lambda=2.1 \times 10^{-5} $, and the number of feature vectors in hidden layer reduces from 1500 to 740, as shown in Fig. 1. At the same time, the average activation neuron number in hidden layer is just 16 and the activation rate is only 1.1{\%}.
 \begin{figure}
