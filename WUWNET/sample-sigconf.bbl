@@ -1,85 +1,84 @@
 \begin{thebibliography}{10}
 
 \bibitem{bucker1976use}
-Homer~P Bucker.
+{\sc Bucker, H.~P.}
 \newblock Use of calculated sound fields and matched-field detection to locate
   sound sources in shallow water.
-\newblock {\em The Journal of the Acoustical Society of America},
-  59(2):368--373, 1976.
+\newblock {\em The Journal of the Acoustical Society of America 59}, 2 (1976),
+  368--373.
 
 \bibitem{baggeroer1988matched}
-Arthur~B Baggeroer, WA~Kuperman, and Henrik Schmidt.
+{\sc Baggeroer, A.~B., Kuperman, W., and Schmidt, H.}
 \newblock Matched field processing: Source localization in correlated noise as
   an optimum parameter estimation problem.
-\newblock {\em The Journal of the Acoustical Society of America},
-  83(2):571--587, 1988.
+\newblock {\em The Journal of the Acoustical Society of America 83}, 2 (1988),
+  571--587.
 
 \bibitem{baggeroer1993overview}
-Arthur~B Baggeroer, William~A Kuperman, and Peter~N Mikhalevsky.
+{\sc Baggeroer, A.~B., Kuperman, W.~A., and Mikhalevsky, P.~N.}
 \newblock An overview of matched field methods in ocean acoustics.
-\newblock {\em IEEE Journal of Oceanic Engineering}, 18(4):401--424, 1993.
+\newblock {\em IEEE Journal of Oceanic Engineering 18}, 4 (1993), 401--424.
 
 \bibitem{tolstoy1989sensitivity}
-A~Tolstoy.
+{\sc Tolstoy, A.}
 \newblock Sensitivity of matched field processing to sound-speed profile
   mismatch for vertical arrays in a deep water pacific environment.
-\newblock {\em The Journal of the Acoustical Society of America},
-  85(6):2394--2404, 1989.
-
-\bibitem{del1988effects}
-Donald~R Del~Balzo, Christopher Feuillade, and Mary~M Rowe.
-\newblock Effects of water-depth mismatch on matched-field localization in
-  shallow water.
-\newblock {\em The Journal of the Acoustical Society of America},
-  83(6):2180--2185, 1988.
+\newblock {\em The Journal of the Acoustical Society of America 85}, 6 (1989),
+  2394--2404.
 
 \bibitem{thode2012automated}
-Aaron~M Thode, Katherine~H Kim, Susanna~B Blackwell, Charles~R Greene~Jr,
-  Christopher~S Nations, Trent~L McDonald, and A~Michael Macrander.
+{\sc Thode, A.~M., Kim, K.~H., Blackwell, S.~B., Greene~Jr, C.~R., Nations,
+  C.~S., McDonald, T.~L., and Macrander, A.~M.}
 \newblock Automated detection and localization of bowhead whale sounds in the
   presence of seismic airgun surveys.
-\newblock {\em The Journal of the Acoustical Society of America},
-  131(5):3726--3747, 2012.
+\newblock {\em The Journal of the Acoustical Society of America 131}, 5 (2012),
+  3726--3747.
 
 \bibitem{steinberg1991neural}
-Ben~Zion Steinberg, Mark~J Beran, Steven~H Chin, and James~H Howard~Jr.
+{\sc Steinberg, B.~Z., Beran, M.~J., Chin, S.~H., and Howard~Jr, J.~H.}
 \newblock A neural network approach to source localization.
-\newblock {\em The Journal of the Acoustical Society of America},
-  90(4):2081--2090, 1991.
+\newblock {\em The Journal of the Acoustical Society of America 90}, 4 (1991),
+  2081--2090.
 
 \bibitem{ozard1991artificial}
-John~M Ozard, Pierre Zakarauskas, and Peter Ko.
+{\sc Ozard, J.~M., Zakarauskas, P., and Ko, P.}
 \newblock An artificial neural network for range and depth discrimination in
   matched field processing.
-\newblock {\em The Journal of the Acoustical Society of America},
-  90(5):2658--2663, 1991.
+\newblock {\em The Journal of the Acoustical Society of America 90}, 5 (1991),
+  2658--2663.
 
 \bibitem{niu2017source}
-Haiqiang Niu, Peter Gerstoft, and Emma Reeves.
+{\sc Niu, H., Gerstoft, P., and Reeves, E.}
 \newblock Source localization in an ocean waveguide using supervised machine
   learning.
-\newblock {\em arXiv preprint arXiv:1701.08431}, 2017.
+\newblock {\em arXiv preprint arXiv:1701.08431\/} (2017).
 
 \bibitem{feuillade1989environmental}
-C~Feuillade, DR~Del~Balzo, and Mary~M Rowe.
+{\sc Feuillade, C., Del~Balzo, D., and Rowe, M.~M.}
 \newblock Environmental mismatch in shallow-water matched-field processing:
   Geoacoustic parameter variability.
-\newblock {\em The Journal of the Acoustical Society of America},
-  85(6):2354--2364, 1989.
+\newblock {\em The Journal of the Acoustical Society of America 85}, 6 (1989),
+  2354--2364.
+
+\bibitem{zhou2013matched}
+{\sc Zhou, Y., and Xu, W.}
+\newblock Matched-field source localization via statistical covariance
+  matching.
+\newblock In {\em Oceans-San Diego, 2013\/} (2013), IEEE, pp.~1--5.
 
 \bibitem{goodfellow2016deep}
-Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+{\sc Goodfellow, I., Bengio, Y., and Courville, A.}
 \newblock {\em Deep learning}.
 \newblock MIT press, 2016.
 
 \bibitem{bishop2006pattern}
-Christopher~M Bishop.
+{\sc Bishop, C.~M.}
 \newblock {\em Pattern recognition and machine learning}.
-\newblock springer, 2006.
+\newblock Springer, 2006.
 
 \bibitem{porter1992kraken}
-Michael~B Porter.
-\newblock The kraken normal mode program.
-\newblock Technical report, 1992.
+{\sc Porter, M.~B.}
+\newblock The {Kraken} normal mode program.
+\newblock Tech. rep., NAVAL RESEARCH LAB WASHINGTON DC, 1992.
 
 \end{thebibliography}

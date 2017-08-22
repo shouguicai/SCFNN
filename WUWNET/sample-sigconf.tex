@@ -13,6 +13,7 @@
 
 \usepackage{booktabs} % For formal tables
 \settopmatter{printacmref=false}
+\pagestyle{empty}
 % Copyright
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
@@ -41,7 +42,7 @@
 
 \begin{document}
 \title{
-Matched-field source localization using sparsely-coded \\machine learning and data-model mixed training
+Matched-field source localization using sparsely-coded \\neural network and data-model mixed training
 %Neural Networks Based single-array passive source localization in shallow water
 %Sparse Neural Networks Based Source localization for Underwater Networks % Array
 %Neural Networks Based sensor-array data Sparse coding for Source Localization
@@ -100,34 +101,21 @@ advantages in underwater source localization.
 %
 \begin{CCSXML}
 <ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
+<concept>
+<concept_id>10010147.10010257</concept_id>
+<concept_desc>Computing methodologies~Machine learning</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010405.10010432</concept_id>
+<concept_desc>Applied computing~Physical sciences and engineering</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
 </ccs2012>
 \end{CCSXML}
 
 \ccsdesc[500]{Applied computing~Physical sciences and engineering}
-%\ccsdesc[300]{Computer systems organization~Redundancy}
-%\ccsdesc{Computer systems organization~Robotics}
 \ccsdesc[500]{Computing methodologies~Machine learning}
-
 % We no longer use \terms command
 %\terms{Theory}
 
@@ -147,7 +135,7 @@ advantages in underwater source localization.
 \input{samplebody-conf}
 
 %\bibliographystyle{ACM-Reference-Format}
-\bibliographystyle{unsrt}
+\bibliographystyle{acmunsrt}
 %\bibliography{sample-bibliography}
 \bibliography{acmart}
 
