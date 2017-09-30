@@ -3,17 +3,19 @@
 %%%% As of March 2017, [siggraph] is no longer used. Please use sigconf (above) for SIGGRAPH conferences.
 
 %%%% Proceedings format for SIGPLAN conferences
-% \documentclass[sigplan, anonymous, review]{acmart}
+% \documentclass[sigplan,       anonymous, review]{acmart}
 
 %%%% Proceedings format for SIGCHI conferences
 % \documentclass[sigchi, review]{acmart}
 
 %%%% To use the SIGCHI extended abstract template, please visit
 % https://www.overleaf.com/read/zzzfqvkmrfzn
-
+\hypersetup{draft}
 \usepackage{booktabs} % For formal tables
+%\usepackage{graphicx} 
 \settopmatter{printacmref=false}
 \pagestyle{empty}
+
 % Copyright
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
@@ -136,6 +138,7 @@ advantages in underwater source localization.
 
 %\bibliographystyle{ACM-Reference-Format}
 \bibliographystyle{acmunsrt}
+%\bibliographystyle{unsrt}
 %\bibliography{sample-bibliography}
 \bibliography{acmart}
 

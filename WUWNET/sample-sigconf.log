@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  22 AUG 2017 16:23
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.6.3)  20 SEP 2017 18:10
 entering extended mode
 **sample-sigconf.tex
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.tex"
@@ -527,6 +527,8 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 
 Special comment 'acks' Excluding comment 'screenonly'
 Include comment 'printonly' Include comment 'anonsuppress')
+Package hyperref Info: Option `draft' set `true' on input line 13.
+
 (E:\software\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen141
@@ -547,7 +549,7 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count127
 \@thisrulewidth=\dimen153
 )
-Class acmart Info: Suppressing bibformat on input line 15.
+Class acmart Info: Suppressing bibformat on input line 16.
 
 
 LaTeX Warning: Unused global option(s):
@@ -561,39 +563,39 @@ LaTeX Warning: Label `my-label' multiply defined.
 LaTeX Warning: Label `my-label@cref' multiply defined.
 
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
  (E:\software\CTEX\MiKTeX\tex\latex\base\ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    ... okay on input line 45.
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
  (E:\software\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (E:\software\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Info: Redefining \microtypecontext on input line 43.
+LaTeX Info: Redefining \microtypecontext on input line 45.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -610,8 +612,11 @@ File: mt-cmr.cfg 2009/11/09 v2.0 microtype config. file: Computer Modern Roman
 )
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box34
-Package hyperref Info: Link coloring OFF on input line 43.
 
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring OFF on input line 45.
 (E:\software\CTEX\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -620,13 +625,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count128
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
-
-("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.out")
-("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.out")
-\@outlinefile=\write5
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
 
 (E:\software\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -687,7 +688,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 133.
+(hyperref)                removing `\\' on input line 135.
 
 ("Q:\Academic\ZJU\Source Localization\WUWNET\samplebody-conf.tex"
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -701,24 +702,24 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 45.
 
-[2.2] <figure/environment.png, id=129, 488.57532pt x 395.22656pt>
+[2.2] <figure/environment.png, id=31, 484.81125pt x 395.22656pt>
 File: figure/environment.png Graphic file (type png)
 
 <use figure/environment.png>
 Package pdftex.def Info: figure/environment.png used on input line 100.
-(pdftex.def)             Requested size: 170.71652pt x 138.09616pt.
+(pdftex.def)             Requested size: 170.71652pt x 139.16962pt.
 
-<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=131, 493.0922pt x 39
-8.23781pt>
+<figure/Weights_summaries_in_hidden_laye_swell_exp.png, id=33, 409.53pt x 368.8
+7813pt>
 File: figure/Weights_summaries_in_hidden_laye_swell_exp.png Graphic file (type 
 png)
  <use figure/Weights_summaries_in_hidden_laye_swell_exp.png>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_laye_swell_exp.png 
 used on input line 104.
-(pdftex.def)             Requested size: 113.80759pt x 91.04587pt.
+(pdftex.def)             Requested size: 113.81151pt x 91.04854pt.
 
 <figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png, 
-id=132, 493.845pt x 402.75468pt>
+id=34, 425.33907pt x 371.88937pt>
 File: figure/Weights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.
 png Graphic file (type png)
 
@@ -726,42 +727,41 @@ png Graphic file (type png)
 ng>
 Package pdftex.def Info: figure/Weights_summaries_in_hidden_layer_swell_exp_lam
 bda_2_dot_1e_neg_5.png used on input line 105.
-(pdftex.def)             Requested size: 113.80801pt x 91.04607pt.
+(pdftex.def)             Requested size: 113.81114pt x 91.04843pt.
 
-<figure/Accuracy_on_SWellEx_S5_for_different_lambda.png, id=133, 497.60907pt x 
-405.01312pt>
+<figure/Accuracy_on_SWellEx_S5_for_different_lambda.png, id=35, 450.18187pt x 4
+03.5075pt>
 File: figure/Accuracy_on_SWellEx_S5_for_different_lambda.png Graphic file (type
  png)
  <use figure/Accuracy_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Accuracy_on_SWellEx_S5_for_different_lambda.png
  used on input line 131.
-(pdftex.def)             Requested size: 113.80988pt x 91.04367pt.
+(pdftex.def)             Requested size: 113.80913pt x 91.05002pt.
 
-<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=134, 
-504.38437pt x 434.37282pt>
+<figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png, id=36, 4
+59.21562pt x 434.37282pt>
 File: figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png Grap
 hic file (type png)
 
 <use figure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png>
 Package pdftex.def Info: figure/Hidden_Average_Density_on_SWellEx_S5_for_differ
 ent_lambda.png used on input line 133.
-(pdftex.def)             Requested size: 113.80482pt x 91.04865pt.
+(pdftex.def)             Requested size: 113.80861pt x 91.04865pt.
 
-<figure/sparse_represention_model.png, id=135, 485.56406pt x 221.32687pt>
+<figure/sparse_represention_model.png, id=37, 483.30562pt x 193.47281pt>
 File: figure/sparse_represention_model.png Graphic file (type png)
 
 <use figure/sparse_represention_model.png>
 Package pdftex.def Info: figure/sparse_represention_model.png used on input lin
 e 149.
-(pdftex.def)             Requested size: 227.62204pt x 103.75008pt.
+(pdftex.def)             Requested size: 227.62204pt x 91.11821pt.
  [3.3 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/environment.png> <Q:/A
 cademic/ZJU/Source Localization/WUWNET/figure/Weights_summaries_in_hidden_laye_
-swell_exp.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/We
-ights_summaries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png (PNG copy)>
- <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_on_SWellEx_S5_for_
-different_lambda.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/fi
-gure/Hidden_Average_Density_on_SWellEx_S5_for_different_lambda.png (PNG copy)>]
-
+swell_exp.png> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Weights_summa
+ries_in_hidden_layer_swell_exp_lambda_2_dot_1e_neg_5.png> <Q:/Academic/ZJU/Sour
+ce Localization/WUWNET/figure/Accuracy_on_SWellEx_S5_for_different_lambda.png> 
+<Q:/Academic/ZJU/Source Localization/WUWNET/figure/Hidden_Average_Density_on_SW
+ellEx_S5_for_different_lambda.png>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 165.
@@ -770,101 +770,87 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 179.
 
-<figure/ssp4.png, id=147, 454.69875pt x 351.56343pt>
+<figure/ssp4.png, id=46, 417.05812pt x 338.01282pt>
 File: figure/ssp4.png Graphic file (type png)
  <use figure/ssp4.png>
 Package pdftex.def Info: figure/ssp4.png used on input line 212.
-(pdftex.def)             Requested size: 170.71652pt x 131.99689pt.
+(pdftex.def)             Requested size: 170.71652pt x 138.3592pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=148, 505.13719pt x 405.0131
-2pt>
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png, id=47, 462.22687pt x 389.20406
+pt>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.png used on
  input line 217.
-(pdftex.def)             Requested size: 113.80511pt x 91.04367pt.
+(pdftex.def)             Requested size: 113.80728pt x 91.04724pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=149, 502.87875pt x 405.76593pt
->
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png, id=48, 461.47406pt x 387.69844pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png Graphic file (type png)
- <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
+<use figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE.png used on in
 put line 218.
-(pdftex.def)             Requested size: 113.81041pt x 91.04573pt.
+(pdftex.def)             Requested size: 113.80501pt x 91.04407pt.
 
-<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=150, 499.11469pt x 404
-.26031pt>
+<figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=49, 459.96844pt x 389.
+20406pt>
 File: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type pn
 g)
  <use figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png us
 ed on input line 219.
-(pdftex.def)             Requested size: 113.81151pt x 91.04716pt.
+(pdftex.def)             Requested size: 113.8057pt x 91.04724pt.
 
-<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=151, 504.38437pt x 431.36
-156pt>
+<figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png, id=50, 459.96844pt x 389.204
+06pt>
 File: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png Graphic file (type png)
  <use figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png>
 Package pdftex.def Info: figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png used 
 on input line 220.
-(pdftex.def)             Requested size: 113.80482pt x 91.04276pt.
-Missing character: There is no ¡ in font cmr9!
-Missing character: There is no ® in font cmr9!
-Missing character: There is no ¡ in font cmr9!
-Missing character: There is no ¯ in font cmr9!
+(pdftex.def)             Requested size: 113.8057pt x 91.04724pt.
 
-<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=152, 497.60907pt x 403.5075p
+<figure/Accuracy_to_SNR_Combined_vs_Single.png, id=51, 459.96844pt x 394.47375p
 t>
 File: figure/Accuracy_to_SNR_Combined_vs_Single.png Graphic file (type png)
  <use figure/Accuracy_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Accuracy_to_SNR_Combined_vs_Single.png used on 
 input line 230.
-(pdftex.def)             Requested size: 113.80988pt x 91.05002pt.
+(pdftex.def)             Requested size: 113.8057pt x 91.04607pt.
 
-<figure/Error_to_SNR_Combined_vs_Single.png, id=153, 499.11469pt x 401.24907pt>
+<figure/Error_to_SNR_Combined_vs_Single.png, id=52, 460.72125pt x 395.22656pt>
 File: figure/Error_to_SNR_Combined_vs_Single.png Graphic file (type png)
+
 <use figure/Error_to_SNR_Combined_vs_Single.png>
 Package pdftex.def Info: figure/Error_to_SNR_Combined_vs_Single.png used on inp
 ut line 231.
-(pdftex.def)             Requested size: 113.81151pt x 91.04858pt.
+(pdftex.def)             Requested size: 113.80917pt x 91.04492pt.
  [4.4 <Q:/Academic/ZJU/Source Localization/WUWNET/figure/sparse_represention_mo
-del.png> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/ssp4.png (PNG copy)
->]
+del.png> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/ssp4.png>]
 ("Q:\Academic\ZJU\Source Localization\WUWNET\comment.cut"))
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.bbl") [5.5 <Q:/Acad
 emic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE.
-png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Error_to_SNR
-_FNN_vs_Bartlett_MCE.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNE
-T/figure/Accuracy_to_SNR_FNN_vs_Bartlett_MCE_i906.png (PNG copy)> <Q:/Academic/
-ZJU/Source Localization/WUWNET/figure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png
- (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_SNR
-_Combined_vs_Single.png (PNG copy)> <Q:/Academic/ZJU/Source Localization/WUWNET
-/figure/Error_to_SNR_Combined_vs_Single.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+png> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Error_to_SNR_FNN_vs_Bar
+tlett_MCE.png> <Q:/Academic/ZJU/Source Localization/WUWNET/figure/Accuracy_to_S
+NR_FNN_vs_Bartlett_MCE_i906.png> <Q:/Academic/ZJU/Source Localization/WUWNET/fi
+gure/Error_to_SNR_FNN_vs_Bartlett_MCE_i906.png> <Q:/Academic/ZJU/Source Localiz
+ation/WUWNET/figure/Accuracy_to_SNR_Combined_vs_Single.png> <Q:/Academic/ZJU/So
+urce Localization/WUWNET/figure/Error_to_SNR_Combined_vs_Single.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
 
 ("Q:\Academic\ZJU\Source Localization\WUWNET\sample-sigconf.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 145.
 
-
-Package rerunfilecheck Warning: File `sample-sigconf.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `sample-sigconf.out':
-(rerunfilecheck)             Before: A97EB53910505AC2661B338C5FC17BD3;5087
-(rerunfilecheck)             After:  1B467C7A6B6922BF2AF5B3610B459286;3650.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14193 strings out of 495354
- 218514 string characters out of 3183356
- 391689 words of memory out of 3000000
- 16788 multiletter control sequences out of 15000+200000
- 16413 words of font info for 114 fonts, out of 3000000 for 9000
+ 14124 strings out of 495354
+ 217313 string characters out of 3183356
+ 390687 words of memory out of 3000000
+ 16771 multiletter control sequences out of 15000+200000
+ 16532 words of font info for 116 fonts, out of 3000000 for 9000
  175 hyphenation exceptions out of 8191
  60i,19n,94p,735b,459s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/software/CTEX/MiKTeX/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<E:/softwa
@@ -885,9 +871,9 @@ X/fonts/type1/public/amsfonts/cm/cmsy6.pfb><E:/software/CTEX/MiKTeX/fonts/type1
 nts/cm/cmti7.pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmti9.
 pfb><E:/software/CTEX/MiKTeX/fonts/type1/public/cm-super/sfrm0700.pfb><E:/softw
 are/CTEX/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb>
-Output written on sample-sigconf.pdf (5 pages, 819749 bytes).
+Output written on sample-sigconf.pdf (5 pages, 708350 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
- 18122 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 18002 words of extra memory for PDF output out of 20736 (max. 10000000)
 
