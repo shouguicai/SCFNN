@@ -23,17 +23,15 @@ The output of FNN is the prediction of source range distribution.
 ## Network structure:
 The FNN used in our paper is a simple three layer model (input layer L1, hidden layer L2 and output layer L3). 
 
-The hidden layer is a linear combination with input layer and then transformed using an activation function f(·). 
-The ReLu (Rectified ['rektə.faɪ] Linear Units) function was chosen as the intermediate [.ɪntər'midiət] activation function for this neural network, function curve can been seen in Fig(b).
+The hidden layer is a linear combination with input layer and then transformed using an activation function f(·). ReLu (Rectified ['rektə.faɪ] Linear Units) function was chosen as the intermediate [.ɪntər'midiət] activation function for this neural network, function curve can been seen in Fig(b).
 
 Similarly, Neurons between the hidden layer and the output layer are mapped by a linear function,
 and is normalized by softmax function, which is a common choice for multi-class classification task.
 
 ## Input data preprocessing：
-The complex pressure at frequency f obtained by taking the DFT of the input pressure data at L sensors is denoted by p(f) = [p1(f), · · · , pL(f)]T . The sound pressure is modeled as source term S(f) multiply Green’s function g(f, r), then add with noise term n.
-To reduce the effect of the source amplitude |S(f)|, this complex pressure is normalized, and the sample covariance matrices (SCMs) are averaged over Ns snapshots to form the conjugate ['kɑndʒə.ɡeɪt] symmetric [sɪ'metrɪk] matrix.
+The sound pressure is modeled as source term S(f) multiply Green’s function g(f, r), then add with noise term n.
 
-Finally, the matrix C(f) are vectorized to form the real-valued input x of size L square.
+To reduce the effect of the source amplitude |S(f)|, this complex pressure is normalized, and the sample covariance matrices (SCMs) are averaged over Ns snapshots to form the conjugate ['kɑndʒə.ɡeɪt] symmetric [sɪ'metrɪk] matrix.
 
 Only the real and imaginary parts of the complex valued entries of diagonal [daɪ'æɡənəl] and upper triangular matrix in C(f) are used as input
 
@@ -45,25 +43,28 @@ In the classification problem, a set of source ranges is discretized [dɪ'skrit]
 Here, rk, r = 1,…,K are the source range classes.
 
 ## Training criterion：
-The weight matrix W ,V, b1 and b2 are the parameters to be learned. Obviously, a learning criterion [kraɪ'tɪrion] is needed. In our case, the parametric [ˌpærə'metrɪk] model defines a distribution of target location, and we can simply use the principle of maximum likelihood to determine the parameters in this model.
+The weight matrix W ,V and bias vector b1, b2 are the parameters to be learned. In our case, the parametric [ˌpærə'metrɪk] model defines a distribution of target location, and we can simply use the principle of maximum likelihood to determine the parameters in this model.
+
 The first term in E(w) is the cross-entropy, equivalently [ɪk'wɪvələntlɪ] the negative log-likelihood, between the true/desired distribution and the model predict distribution.
-The second and third term are the sparsity constraints  [kən'streɪnt] on neural networks.
+
+The second and third term are the sparsity constraints [kən'streɪnt] on neural networks.
+
 In this paper, we use L1-norm to promote sparse neurons activations, and constrain the L2-norm of each row of the weight matrix V to prevent any one hidden unit from having very large weights. Thus, the neural network is sparsely coded, we named it as SCFNN.
 
-As the maximum likelihood criterion [kraɪ'tɪrion] is consistent, the model is capable of representing the training data distribution.
-
 By minimizing this criteria [kraɪ'tɪriən], we can learn the model weights from training data and finally get a source localization prediction model.
+
+As the maximum likelihood criterion [kraɪ'tɪrion] is consistent, the model is capable of representing the training data distribution.
 
 ## Definition of model accuracy：
 The model accuracy is defined as the percentage of accurately predicted samples.
 In this equation, tn is the label of data xn (x subscript ['sʌbskrɪpt] n ). The upper case N is the number of test numbers.
 
 ## Simulation environment：
-The proposed SCFNN is trained and tested on the widely studied SWell96-Ex test, conducted in a shallow water waveguide environment with depth of 216 m. 
+Here are two picture introduced SWell96-Ex test, conducted in a shallow water waveguide environment with depth of 216 m. 
 
 During the experiment, two moving sound sources are deployed in field, including a deep source (J-15) and a shallow source (J-13). In all of our discussions, the shallow sound source is used, which was towed about 9 m in depth and emitted with 9 frequencies between 109 Hz and 385 Hz. The frequency we used in our paper is 109,232,385Hz. The number of vertical array elements is 21, other specific deployment parameters are shown in Fig. (a).
 
-During the experiment, the source ship (R/V Sproul) started its track south of all of the arrays and proceeded northward at a speed of 5 knots (2.5 m/s), as Fig. (b) shows.
+The source ship (R/V Sproul) started its track south of all of the arrays and proceeded northward at a speed of 5 knots (2.5 m/s), as Fig. (b) shows.
 
 ## Performance comparison：
 In this part, the proposed model is tested on experimental data, and compared with two methods denoted as Bartlett and MCE, Bartlett use the measured pressure to match with a replica field computed by a numerical propagation model, while, MCE matches the covariance. Note that, there are two kinds of replica-field used in the Bartlett processor, one is simulated by Kraken (noted as Bartlett 2), the other is the measurement data (noted as Bartlett 1), same as the training data used in SCFNN.
@@ -85,7 +86,7 @@ When the change is relatively large (with shape varying), the accuracy order is 
 
 Compared with the performance on ssp-i905, we can see that, when the environment SSP has a big change in shape, the SCFNN performs poorly, and the accuracy drops about 40%. 
 
-SCFNN is also sensitive to SSP mismatch, but still performs better than Bartlett and the performance of SCFNN is close to the MCE method.
+We can say that, SCFNN is also sensitive to SSP mismatch, but still performs better than Bartlett and the performance of SCFNN is close to the MCE method.
 
 ## Data-model mixed training：
 As neural networks are strong enough to learn regular pattern ['pætərn] over a set of changing scenarios [səˈnɛrioʊ], when training the network, we can use the examples gathered from diﬀerent mismatch scenarios to make the network be robust to mismatch.
