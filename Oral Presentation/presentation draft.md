@@ -34,7 +34,7 @@ Only the real and imaginary parts of the complex valued entries of diagonal [da�
 Preprocessing the data according to these equations ensures that the Green’s function is used for localization.
 
 ## Source range mapping：
-In the classification problem, a set of source ranges is discretized [dɪ'skrit] into K bins, r1, ..., rK, of equal width [wɪtθ] ∆r.
+In this probelm, a set of source ranges is discretized [dɪ'skrit] into K bins, r1, ..., rK, of equal width [wɪtθ] ∆r.
 
 Here, rk, r = 1,…,K are the source range classes.
 
@@ -53,14 +53,18 @@ As the maximum likelihood criterion [kraɪ'tɪrion] is consistent, the model is 
 
 ## Definition of model accuracy：
 The model accuracy is defined as the percentage of accurately predicted samples.
-In this equation, tn is the label of data xn (x subscript ['sʌbskrɪpt] n ). The upper case N is the number of test numbers.
+In this equation, tn is the label of data xn (x subscript ['sʌbskrɪpt] n ). The upper case N is the number of test samples.
 
 ## Simulation environment：
 Here are two picture introduced SWell96-Ex test, conducted in a shallow water waveguide environment with depth of 216 m. 
 
-During the experiment, two moving sound sources are deployed in field, including a deep source (J-15) and a shallow source (J-13). In all of our discussions, the shallow sound source is used, which was towed about 9 m in depth and emitted with 9 frequencies between 109 Hz and 385 Hz. The frequency we used in our paper is 109,232,385Hz. The number of vertical array elements is 21, other specific deployment parameters are shown in Fig. (a).
+During the experiment, two moving sound sources are deployed in field, including a deep source (J-15) and a shallow source (J-13).
 
 The source ship (R/V Sproul) started its track south of all of the arrays and proceeded northward at a speed of 5 knots (2.5 m/s), as Fig. (b) shows.
+
+The number of vertical array elements is 21, other specific deployment parameters are shown in Fig. (a).
+
+In all of our discussions, the shallow sound source is used, which was towed about 9 m in depth and emitted with 9 frequencies between 109 Hz and 385 Hz. 
 
 ## Performance comparison：
 In this part, the proposed model is tested on experimental data, and compared with two methods denoted as Bartlett and MCE, Bartlett use the measured pressure to match with a replica field computed by a numerical propagation model, while, MCE matches the covariance. Note that, there are two kinds of replica-field used in the Bartlett processor, one is simulated by Kraken (noted as Bartlett 2), the other is the measurement data (noted as Bartlett 1), same as the training data used in SCFNN.
@@ -96,14 +100,14 @@ In Fig., the legend ‘i905, combined’ means the model is trained by mixed dat
 We can say that, by using mixed data-model training, the SCFNN classifier can work well on two entirely diﬀerent SSPs. 
 
 ## Summary & Future work：
-Here is a brief summary of the presentation. 
-Machine learning has potential advantages in unstable underwater acoustic environment.
-Combined with data-model mixed training, the SCFNN model can help reduce the mismatch problem in matched-field source localization. It deserves more efforts. 
+In conclusion, Machine learning has potential advantages in unstable underwater acoustic environment.
+Combined with data-model mixed training, the SCFNN model can help reduce the mismatch problem in matched-field source localization. 
 
-For now, the discussions on applying machine learning based methods to overcome mismatch problem in underwater acoustics are preliminary [prɪ'lɪmə.neri]. 
+For now, the discussions are preliminary [prɪ'lɪmə.neri]. It deserves more eﬀorts.
 
-Our future work may include the following orientations.
+Our future work may include the following orientations [.ɔriən'teɪʃ(ə)n].
 Firstly, as the localization error at low SNR is still huge, we will integrate ['ɪntə.ɡreɪt] adversarial [.ædvɜr'seriəl] learning into our model, and make the characteristic [.kerəktə'rɪstɪk] parameters [pə'ræmɪtər] can be enhanced, when the noise is high.
 Secondly, we will try to do some mathematical analysis on the learned model and try to explain how does the model robustness been improved by mixed training. 
 
 Thank you for your listening.
+
