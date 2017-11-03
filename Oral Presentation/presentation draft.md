@@ -100,9 +100,9 @@ In Fig., the legend ‘i905, combined’ means the model is trained by mixed dat
 We can say that, by using mixed data-model training, the SCFNN classifier can work well on two entirely diﬀerent SSPs. 
 
 ## Summary & Future work：
-Here is a brief summary of the presentation. In our paper, we propose a SCFNN model. Combined with data-model mixed training, the model can help reduce the mismatch problem in matched-field source localization. The proposal is examined on SWellEx-96 experiment. 
-
-Machine learning has potential advantages in unstable underwater acoustic environment and thus deserves more eﬀorts. 
+Here is a brief summary of the presentation. 
+Machine learning has potential advantages in unstable underwater acoustic environment.
+Combined with data-model mixed training, the SCFNN model can help reduce the mismatch problem in matched-field source localization. It deserves more efforts. 
 
 For now, the discussions on applying machine learning based methods to overcome mismatch problem in underwater acoustics are preliminary [prɪ'lɪmə.neri]. 
 
