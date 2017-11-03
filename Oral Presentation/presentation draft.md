@@ -16,8 +16,6 @@ The feed-forward neural network (FNN), also known as multi-layer perceptron, is 
 
 Here, a three layer model (input layer L1, hidden layer L2 and output layer L3) is used to construct the FNN. The input layer L1 is comprised of D input variables x. The output y is discrete [dɪˈskrit] corresponding [.kɔrə'spɑndɪŋ] to the estimated source range.
 
-To make the processing independent of the complex source spectra, the received array pressure is transformed to a normalized sample covariance [kəʊ'veərɪəns] matrix.
-
 The output of FNN is the prediction of source range distribution.
 
 ## Network structure:
