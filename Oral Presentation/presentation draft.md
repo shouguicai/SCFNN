@@ -47,6 +47,8 @@ The second and third term are the sparsity constraints [kən'streɪnt] on neural
 
 In this paper, we use L1-norm to promote sparse neurons activations, and constrain the L2-norm of each row of the weight matrix V to prevent any one hidden unit from having very large weights. Thus, the neural network is sparsely coded, we named it as SCFNN.
 
+A sparsely-coded neural network encodes each input data as a sparse code firstly, and then accomplish the specific task with further processing.
+
 By minimizing this criteria [kraɪ'tɪriən], we can learn the model weights from training data and finally get a source localization prediction model.
 
 As the maximum likelihood criterion [kraɪ'tɪrion] is consistent, the model is capable of representing the training data distribution.
@@ -103,7 +105,9 @@ We can say that, by using mixed data-model training, the SCFNN classifier can wo
 In conclusion, Machine learning has potential advantages in unstable underwater acoustic environment.
 Combined with data-model mixed training, the SCFNN model can help reduce the mismatch problem in matched-field source localization. 
 
-For now, the discussions are preliminary [prɪ'lɪmə.neri]. It deserves more eﬀorts.
+SCFNN learns a sparse and low rank model, needs fewer basis functions to span the data space and is beneficial to capture characteristic of data distributions, which will make the model more descriptive, in our example, averagely, each data sample can be represented by only 16 features.
+
+For now, the discussions are preliminary [prɪ'lɪmə.neri]. It deserves more efforts.
 
 Our future work may include the following orientations [.ɔriən'teɪʃ(ə)n].
 Firstly, as the localization error at low SNR is still huge, we will integrate ['ɪntə.ɡreɪt] adversarial [.ædvɜr'seriəl] learning into our model, and make the characteristic [.kerəktə'rɪstɪk] parameters [pə'ræmɪtər] can be enhanced, when the noise is high.
